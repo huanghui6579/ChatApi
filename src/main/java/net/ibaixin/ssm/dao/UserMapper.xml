@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="net.ibaixin.ssm.dao.IUserDao">
-	<select id="getUser" resultType="User">
+<mapper namespace="net.ibaixin.ssm.dao.UserMapper">
+    
+    <resultMap type="User" id="usermap">
+		<id column="id" property="id"/>
+		<result column="username" property="username"/>
+		<result column="password" property="password"/>
+	</resultMap>
+    
+	<select id="getUser" resultType="User" parameterType="java.lang.String">
 		select * from t_user where id = #{id}
 	</select>
 	
@@ -17,4 +24,12 @@
 	<update id="updateUser" parameterType="User">
 	    update t_user set username = #{username}, password = #{password} where id = #{id}
 	</update>
+	
+	<select id="getUsers" resultMap="usermap">
+	    select * from t_user
+	</select>
+	
+	<select id="getUsersPage" resultMap="usermap" parameterType="UserDto" >
+	    select * from t_user limit #{pageOffset}, #{pageSize}
+	</select>
 </mapper>

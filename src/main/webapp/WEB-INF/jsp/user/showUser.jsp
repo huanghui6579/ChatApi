@@ -7,6 +7,6 @@
 <title>显示用户</title>
 </head>
 <body>
-
+hi:${hello }
 </body>
 </html>

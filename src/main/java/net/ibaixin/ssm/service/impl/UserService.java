@@ -1,11 +1,15 @@
 package net.ibaixin.ssm.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-import net.ibaixin.ssm.dao.IUserDao;
+import javax.annotation.Resource;
+
+import net.ibaixin.ssm.dao.UserMapper;
 import net.ibaixin.ssm.model.User;
+import net.ibaixin.ssm.model.UserDto;
 import net.ibaixin.ssm.service.IUserService;
+
+import org.springframework.stereotype.Service;
 
 /**
  * 用户的service
@@ -14,8 +18,12 @@ import net.ibaixin.ssm.service.IUserService;
  */
 @Service("userService")
 public class UserService implements IUserService {
-	@Autowired
-	private IUserDao userMapper;
+	private UserMapper userMapper;
+	
+	@Resource
+	public void setUserMapper(UserMapper userMapper) {
+		this.userMapper = userMapper;
+	}
 
 	@Override
 	public void add(User user) {
@@ -30,6 +38,21 @@ public class UserService implements IUserService {
 	@Override
 	public void update(User user) {
 		userMapper.updateUser(user);
+	}
+
+	@Override
+	public User getUser(String id) {
+		return userMapper.getUser(id);
+	}
+
+	@Override
+	public List<User> getUsers() {
+		return userMapper.getUsers();
+	}
+
+	@Override
+	public List<User> getUsers(UserDto userDto) {
+		return userMapper.getUsersPage(userDto);
 	}
 
 }
