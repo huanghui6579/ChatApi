@@ -24,6 +24,14 @@
 			<scope>test</scope>
 		</dependency>
 		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		
 		<!-- Spring lib -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -182,6 +190,11 @@
 			<artifactId>jackson-annotations</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
 		
 		<!-- inject lib -->
 		<dependency>
@@ -226,12 +239,10 @@
 				    <webApp>
 				    	<contextPath>/ssm</contextPath>
 				    </webApp>
-				    <connectors>
-						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>9090</port>
-							<maxIdleTime>60000</maxIdleTime>
-						</connector>
-					</connectors>
+					<httpConnector>
+						<port>9090</port>
+						<idleTimeout>60000</idleTimeout>
+					</httpConnector>
 				</configuration>
 			</plugin>
 			

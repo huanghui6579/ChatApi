@@ -12,12 +12,30 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath*:spring-mybatis.xml</param-value>
     </context-param>
+    
+    <filter>
+		<filter-name>CharacterFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
     <!-- Bootstrap the root application context as usual using ContextLoaderListener -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-
+    
+    <!-- 防止Spring内存溢出监听器 -->  
+    <listener>  
+        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>  
+    </listener>  
+    
     <!-- Declare a Spring MVC DispatcherServlet as usual -->
     <servlet>
         <servlet-name>ssm</servlet-name>
@@ -28,7 +46,7 @@
     <!-- map all requests for /app/* to the dispatcher servlet -->
     <servlet-mapping>
         <servlet-name>ssm</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
   
   <welcome-file-list>
