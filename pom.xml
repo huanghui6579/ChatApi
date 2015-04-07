@@ -31,7 +31,6 @@
 			<scope>test</scope>
 		</dependency>
 		
-		
 		<!-- Spring lib -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -127,11 +126,13 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -142,6 +143,7 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.0</version>
+			<scope>provided</scope>
 		</dependency>
 		
 		<!-- mysql lib -->
@@ -219,6 +221,22 @@
 	
 	<build>
 		<finalName>ssm</finalName>
+		<!-- maven自动打包时默认不会打包src/main/resources下的文件，这里需要手动配置，不然会报错 -->
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml </include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.* </include>
+				</includes>
+			</resource>
+
+		</resources>
 		
 		<plugins>
 			<plugin>
@@ -237,7 +255,7 @@
 				<configuration>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 				    <webApp>
-				    	<contextPath>/ssm</contextPath>
+				    	<contextPath>/chatapi</contextPath>
 				    </webApp>
 					<httpConnector>
 						<port>9090</port>

@@ -5,9 +5,9 @@ import java.util.UUID;
 
 import javax.annotation.Resource;
 
-import net.ibaixin.ssm.model.User;
-import net.ibaixin.ssm.model.UserDto;
-import net.ibaixin.ssm.service.IUserService;
+import net.ibaixin.chat.api.model.User;
+import net.ibaixin.chat.api.model.UserDto;
+import net.ibaixin.chat.api.service.IUserService;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -26,8 +26,8 @@ public class TestSsm {
 	public void setUserService(IUserService userService) {
 		this.userService = userService;
 	}
-	/*
-	@Test
+	
+	/*@Test
 	public void testAdd() {
 		User user = new User();
 		user.setId(UUID.randomUUID().toString());

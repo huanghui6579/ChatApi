@@ -1,0 +1,7 @@
+net\ibaixin\chat\api\service\IUserService.class
+net\ibaixin\chat\api\service\impl\UserService.class
+net\ibaixin\chat\api\model\UserDto.class
+net\ibaixin\chat\api\controller\UserController.class
+net\ibaixin\chat\api\controller\IndexController.class
+net\ibaixin\chat\api\model\User.class
+net\ibaixin\chat\api\dao\UserDao.class

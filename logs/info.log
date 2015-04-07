@@ -1,0 +1,1089 @@
+2015-04-07 10:27:01  [ main:46 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-07 10:27:01  [ main:62 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@609ba29e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9d1649f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@122507c2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3d205adc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@172d40de]
+2015-04-07 10:27:01  [ main:171 ] - [ INFO ]  Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2015-04-07 10:27:01  [ main:374 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@15c4d350: startup date [Tue Apr 07 10:27:01 CST 2015]; root of context hierarchy
+2015-04-07 10:27:02  [ main:483 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 10:27:02  [ main:483 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 10:27:02  [ main:1295 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 10:27:02  [ Thread-1:1295 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@15c4d350: startup date [Tue Apr 07 10:27:01 CST 2015]; root of context hierarchy
+2015-04-07 10:28:43  [ main:47 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-07 10:28:43  [ main:63 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@609ba29e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9d1649f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@122507c2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3d205adc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@172d40de]
+2015-04-07 10:28:44  [ main:172 ] - [ INFO ]  Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2015-04-07 10:28:44  [ main:390 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@15c4d350: startup date [Tue Apr 07 10:28:44 CST 2015]; root of context hierarchy
+2015-04-07 10:28:44  [ main:500 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 10:28:44  [ main:500 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 10:28:45  [ main:1327 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 10:28:45  [ Thread-1:1327 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@15c4d350: startup date [Tue Apr 07 10:28:44 CST 2015]; root of context hierarchy
+2015-04-07 10:29:22  [ main:46 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-07 10:29:22  [ main:62 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@9d1649f, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@122507c2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3d205adc, org.springframework.test.context.transaction.TransactionalTestExecutionListener@172d40de, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1bfdbab5]
+2015-04-07 10:29:22  [ main:156 ] - [ INFO ]  Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2015-04-07 10:29:22  [ main:374 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@2d0d345a: startup date [Tue Apr 07 10:29:22 CST 2015]; root of context hierarchy
+2015-04-07 10:29:22  [ main:483 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 10:29:22  [ main:499 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 10:29:23  [ main:1311 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 10:29:23  [ Thread-1:1327 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@2d0d345a: startup date [Tue Apr 07 10:29:22 CST 2015]; root of context hierarchy
+2015-04-07 10:29:36  [ main:47 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-07 10:29:36  [ main:62 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@609ba29e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9d1649f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@122507c2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3d205adc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@172d40de]
+2015-04-07 10:29:36  [ main:156 ] - [ INFO ]  Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2015-04-07 10:29:36  [ main:374 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@15c4d350: startup date [Tue Apr 07 10:29:36 CST 2015]; root of context hierarchy
+2015-04-07 10:29:37  [ main:483 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 10:29:37  [ main:483 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 10:29:37  [ main:1311 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 10:29:37  [ Thread-1:1327 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@15c4d350: startup date [Tue Apr 07 10:29:36 CST 2015]; root of context hierarchy
+2015-04-07 10:29:54  [ main:47 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-07 10:29:55  [ main:62 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3015b303, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@609ba29e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9d1649f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@122507c2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3d205adc]
+2015-04-07 10:29:55  [ main:171 ] - [ INFO ]  Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2015-04-07 10:29:55  [ main:374 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@70ea0c2a: startup date [Tue Apr 07 10:29:55 CST 2015]; root of context hierarchy
+2015-04-07 10:29:55  [ main:483 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 10:29:55  [ main:499 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 10:29:56  [ main:1311 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 10:29:56  [ Thread-1:1311 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@70ea0c2a: startup date [Tue Apr 07 10:29:55 CST 2015]; root of context hierarchy
+2015-04-07 10:30:28  [ main:47 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-04-07 10:30:28  [ main:62 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@609ba29e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9d1649f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@122507c2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3d205adc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@172d40de]
+2015-04-07 10:30:28  [ main:156 ] - [ INFO ]  Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2015-04-07 10:30:28  [ main:359 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@15c4d350: startup date [Tue Apr 07 10:30:28 CST 2015]; root of context hierarchy
+2015-04-07 10:30:28  [ main:468 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 10:30:28  [ main:484 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 10:30:29  [ main:1296 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 10:30:29  [ Thread-1:1296 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@15c4d350: startup date [Tue Apr 07 10:30:28 CST 2015]; root of context hierarchy
+2015-04-07 11:45:06  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 11:45:06  [ main:63 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 11:45:06 CST 2015]; root of context hierarchy
+2015-04-07 11:45:06  [ main:95 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 11:45:06  [ main:313 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 11:45:06  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 11:45:06  [ main:781 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 780 ms
+2015-04-07 11:45:06  [ main:843 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 11:45:06  [ main:843 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 11:45:06 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 11:45:06  [ main:843 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 11:45:07  [ main:968 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 11:45:07  [ main:1064 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 11:45:07  [ main:1064 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 11:45:07  [ main:1360 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 11:45:06 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 11:45:07  [ main:1392 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 11:45:06 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 11:45:07  [ main:1454 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 11:45:07  [ main:1454 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 11:45:06 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 11:45:07  [ main:1501 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 658 ms
+2015-04-07 11:45:46  [ qtp274270528-15:39858 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 11:46:38  [ qtp274270528-17:92431 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 11:47:04  [ qtp274270528-15:117932 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 11:50:11  [ qtp274270528-13:305562 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 11:50:33  [ qtp274270528-15:327002 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 11:50:41  [ qtp274270528-16:335826 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 11:53:40  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 11:53:40  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 11:53:40 CST 2015]; root of context hierarchy
+2015-04-07 11:53:40  [ main:64 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 11:53:40  [ main:282 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 11:53:40  [ main:282 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 11:53:41  [ main:703 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 703 ms
+2015-04-07 11:53:41  [ main:750 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 11:53:41  [ main:750 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 11:53:41 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 11:53:41  [ main:750 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 11:53:41  [ main:859 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 11:53:41  [ main:937 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 11:53:41  [ main:937 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 11:53:41  [ main:1157 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 11:53:41 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 11:53:41  [ main:1188 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 11:53:41 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 11:53:41  [ main:1250 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 11:53:41  [ main:1250 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 11:53:41 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 11:53:41  [ main:1281 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 531 ms
+2015-04-07 11:53:46  [ qtp577840820-17:5595 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 11:53:52  [ qtp577840820-12:12087 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 11:53:58  [ qtp577840820-18:17706 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 11:54:21  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 11:54:21  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 11:54:21 CST 2015]; root of context hierarchy
+2015-04-07 11:54:21  [ main:63 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 11:54:22  [ main:297 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 11:54:22  [ main:297 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 11:54:22  [ main:703 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 703 ms
+2015-04-07 11:54:22  [ main:750 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 11:54:22  [ main:765 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 11:54:22 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 11:54:22  [ main:765 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 11:54:22  [ main:875 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 11:54:22  [ main:937 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 11:54:22  [ main:937 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 11:54:22  [ main:1141 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 11:54:22 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 11:54:22  [ main:1172 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 11:54:22 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 11:54:22  [ main:1234 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 11:54:23  [ main:1281 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 531 ms
+2015-04-07 11:54:25  [ qtp941934657-13:4138 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 11:54:28  [ qtp941934657-15:7091 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 11:54:31  [ qtp941934657-14:9564 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 11:54:36  [ qtp941934657-13:14355 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 11:58:48  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 11:58:48  [ main:50 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 11:58:48 CST 2015]; root of context hierarchy
+2015-04-07 11:58:48  [ main:75 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 11:58:49  [ main:298 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 11:58:49  [ main:302 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 11:58:49  [ main:728 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 728 ms
+2015-04-07 11:58:49  [ main:778 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 11:58:49  [ main:782 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 11:58:49 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 11:58:49  [ main:783 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 11:58:49  [ main:891 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 11:58:49  [ main:955 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 11:58:49  [ main:955 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 11:58:50  [ main:1177 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 11:58:49 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 11:58:50  [ main:1216 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 11:58:49 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 11:58:50  [ main:1273 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 11:58:50  [ main:1311 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 533 ms
+2015-04-07 11:59:02  [ qtp695256664-14:13283 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 12:27:35  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 12:27:36  [ main:63 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 12:27:36 CST 2015]; root of context hierarchy
+2015-04-07 12:27:36  [ main:94 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 12:27:36  [ main:328 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 12:27:36  [ main:328 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 12:27:36  [ main:765 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 750 ms
+2015-04-07 12:27:36  [ main:812 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 12:27:36  [ main:812 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:27:36 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:27:36  [ main:812 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 12:27:36  [ main:937 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 12:27:37  [ main:1031 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 12:27:37  [ main:1031 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 12:27:37  [ main:1343 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:27:36 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:27:37  [ main:1374 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:27:36 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:27:37  [ main:1437 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 12:27:37  [ main:1452 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 12:27:37  [ main:1452 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 12:27:37  [ main:1452 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:27:36 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:27:37  [ main:1499 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 687 ms
+2015-04-07 12:28:10  [ qtp1309887627-12:34061 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 12:28:12  [ qtp1309887627-15:36780 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 12:28:20  [ qtp1309887627-13:44232 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 12:31:29  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 12:31:29  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 12:31:29 CST 2015]; root of context hierarchy
+2015-04-07 12:31:30  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 12:31:30  [ main:297 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 12:31:30  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 12:31:30  [ main:781 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 781 ms
+2015-04-07 12:31:30  [ main:828 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 12:31:30  [ main:829 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:31:30 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:31:30  [ main:829 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 12:31:30  [ main:953 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 12:31:30  [ main:1031 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 12:31:30  [ main:1031 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 12:31:31  [ main:1266 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:31:30 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:31:31  [ main:1313 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:31:30 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:31:31  [ main:1360 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 12:31:31  [ main:1376 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 12:31:31  [ main:1376 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 12:31:31  [ main:1376 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:31:30 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:31:31  [ main:1407 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 579 ms
+2015-04-07 12:31:45  [ qtp152361542-13:15547 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 12:32:09  [ qtp152361542-19:39213 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 12:32:51  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 12:32:51  [ main:52 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 12:32:51 CST 2015]; root of context hierarchy
+2015-04-07 12:32:51  [ main:78 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 12:32:51  [ main:310 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 12:32:51  [ main:314 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 12:32:52  [ main:753 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 753 ms
+2015-04-07 12:32:52  [ main:807 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 12:32:52  [ main:810 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:32:52 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:32:52  [ main:811 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 12:32:52  [ main:929 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 12:32:52  [ main:1004 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 12:32:52  [ main:1004 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 12:32:52  [ main:1226 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:32:52 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:32:52  [ main:1264 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:32:52 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:32:52  [ main:1324 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 12:32:52  [ main:1330 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 12:32:52  [ main:1330 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 12:32:52  [ main:1335 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:32:52 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:32:52  [ main:1374 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 567 ms
+2015-04-07 12:33:39  [ qtp153438751-13:47737 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 12:34:53  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 12:34:53  [ main:32 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 12:34:53 CST 2015]; root of context hierarchy
+2015-04-07 12:34:53  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 12:34:53  [ main:298 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 12:34:53  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 12:34:54  [ main:755 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 755 ms
+2015-04-07 12:34:54  [ main:817 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 12:34:54  [ main:817 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:34:54 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:34:54  [ main:817 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 12:34:54  [ main:942 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 12:34:54  [ main:1006 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 12:34:54  [ main:1006 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 12:34:54  [ main:1224 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:34:54 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:34:54  [ main:1271 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 12:34:54 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 12:34:54  [ main:1333 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 12:34:54  [ main:1380 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 563 ms
+2015-04-07 12:35:09  [ qtp1426481592-19:16348 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 12:35:12  [ qtp1426481592-12:19188 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 16:06:36  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 16:06:36  [ main:129 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 16:06:36 CST 2015]; root of context hierarchy
+2015-04-07 16:06:36  [ main:154 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 16:06:36  [ main:374 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 16:06:36  [ main:378 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 16:06:37  [ main:800 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 777 ms
+2015-04-07 16:06:37  [ main:850 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 16:06:37  [ main:853 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 16:06:37 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 16:06:37  [ main:854 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 16:06:37  [ main:960 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 16:06:37  [ main:1025 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 16:06:37  [ main:1025 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 16:06:37  [ main:1227 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 16:06:37 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 16:06:37  [ main:1268 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 16:06:37 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 16:06:37  [ main:1333 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 16:06:37  [ main:1370 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 520 ms
+2015-04-07 17:53:06  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 17:53:06  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 17:53:06 CST 2015]; root of context hierarchy
+2015-04-07 17:53:06  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 17:53:07  [ main:298 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 17:53:07  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 17:53:07  [ main:719 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 719 ms
+2015-04-07 17:53:07  [ main:797 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 17:53:07  [ main:797 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 17:53:07 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 17:53:07  [ main:797 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 17:53:07  [ main:906 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 17:53:07  [ main:969 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 17:53:07  [ main:969 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 17:53:07  [ main:969 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 17:53:07  [ main:1172 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 17:53:07 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 17:53:07  [ main:1219 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 17:53:07 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 17:53:08  [ main:1282 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 17:53:08  [ main:1328 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 531 ms
+2015-04-07 17:55:50  [ Scanner-0:163660 ] - [ INFO ]  Closing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 17:53:07 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 17:55:50  [ Scanner-0:163661 ] - [ INFO ]  Closing Root WebApplicationContext: startup date [Tue Apr 07 17:53:06 CST 2015]; root of context hierarchy
+2015-04-07 17:55:51  [ Scanner-0:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 17:55:52  [ Scanner-0:49 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 17:55:52 CST 2015]; root of context hierarchy
+2015-04-07 17:55:52  [ Scanner-0:80 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 17:55:52  [ Scanner-0:252 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 17:55:52  [ Scanner-0:252 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 17:55:52  [ Scanner-0:579 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 579 ms
+2015-04-07 17:55:52  [ Scanner-0:611 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 17:55:52  [ Scanner-0:626 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 17:55:52 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 17:55:52  [ Scanner-0:626 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 17:55:52  [ Scanner-0:689 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 17:55:52  [ Scanner-0:751 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 17:55:52  [ Scanner-0:751 ] - [ INFO ]  Mapped "{[/upload],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile()
+2015-04-07 17:55:52  [ Scanner-0:751 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 17:55:52  [ Scanner-0:751 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 17:55:52  [ Scanner-0:907 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 17:55:52 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 17:55:52  [ Scanner-0:938 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 17:55:52 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 17:55:52  [ Scanner-0:1001 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 17:55:52  [ Scanner-0:1033 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 422 ms
+2015-04-07 18:02:24  [ Scanner-0:392696 ] - [ INFO ]  Closing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 17:55:52 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:02:24  [ Scanner-0:392696 ] - [ INFO ]  Closing Root WebApplicationContext: startup date [Tue Apr 07 17:55:52 CST 2015]; root of context hierarchy
+2015-04-07 18:02:25  [ Scanner-0:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 18:02:25  [ Scanner-0:33 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 18:02:25 CST 2015]; root of context hierarchy
+2015-04-07 18:02:25  [ Scanner-0:64 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 18:02:25  [ Scanner-0:235 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 18:02:25  [ Scanner-0:235 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:02:26  [ Scanner-0:625 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 625 ms
+2015-04-07 18:02:26  [ Scanner-0:657 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 18:02:26  [ Scanner-0:657 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:02:26 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:02:26  [ Scanner-0:657 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 18:02:26  [ Scanner-0:750 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:02:26  [ Scanner-0:813 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 18:02:26  [ Scanner-0:813 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2015-04-07 18:02:26  [ Scanner-0:813 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 18:02:26  [ Scanner-0:813 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 18:02:26  [ Scanner-0:963 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:02:26 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:02:26  [ Scanner-0:1025 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:02:26 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:02:26  [ Scanner-0:1104 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 18:02:26  [ Scanner-0:1151 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 494 ms
+2015-04-07 18:03:10  [ qtp924591314-16:45008 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/index] in DispatcherServlet with name 'ssm'
+2015-04-07 18:03:35  [ Scanner-0:70021 ] - [ INFO ]  Closing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:02:26 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:03:35  [ Scanner-0:70021 ] - [ INFO ]  Closing Root WebApplicationContext: startup date [Tue Apr 07 18:02:25 CST 2015]; root of context hierarchy
+2015-04-07 18:03:36  [ Scanner-0:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 18:03:36  [ Scanner-0:32 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 18:03:36 CST 2015]; root of context hierarchy
+2015-04-07 18:03:36  [ Scanner-0:63 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 18:03:36  [ Scanner-0:219 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 18:03:36  [ Scanner-0:219 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:03:36  [ Scanner-0:578 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 578 ms
+2015-04-07 18:03:36  [ Scanner-0:609 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 18:03:36  [ Scanner-0:609 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:03:36 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:03:36  [ Scanner-0:610 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 18:03:36  [ Scanner-0:688 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:03:36  [ Scanner-0:735 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 18:03:36  [ Scanner-0:735 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2015-04-07 18:03:36  [ Scanner-0:751 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 18:03:36  [ Scanner-0:751 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 18:03:37  [ Scanner-0:907 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:03:36 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:03:37  [ Scanner-0:938 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:03:36 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:03:37  [ Scanner-0:985 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 18:03:37  [ Scanner-0:1017 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 408 ms
+2015-04-07 18:04:25  [ Scanner-0:49848 ] - [ INFO ]  Closing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:03:36 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:04:25  [ Scanner-0:49848 ] - [ INFO ]  Closing Root WebApplicationContext: startup date [Tue Apr 07 18:03:36 CST 2015]; root of context hierarchy
+2015-04-07 18:04:26  [ Scanner-0:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 18:04:26  [ Scanner-0:32 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 18:04:26 CST 2015]; root of context hierarchy
+2015-04-07 18:04:26  [ Scanner-0:64 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 18:04:41  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 18:04:41  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 18:04:41 CST 2015]; root of context hierarchy
+2015-04-07 18:04:41  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 18:04:42  [ main:313 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 18:04:42  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:04:42  [ main:734 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 734 ms
+2015-04-07 18:04:42  [ main:781 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 18:04:42  [ main:781 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:04:42 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:04:42  [ main:797 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 18:04:42  [ main:906 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:04:42  [ main:968 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 18:04:42  [ main:968 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2015-04-07 18:04:42  [ main:968 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 18:04:42  [ main:968 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 18:04:43  [ main:1164 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:04:42 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:04:43  [ main:1223 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:04:42 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:04:43  [ main:1285 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 18:04:43  [ main:1316 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 535 ms
+2015-04-07 18:14:49  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 18:14:49  [ main:160 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 18:14:49 CST 2015]; root of context hierarchy
+2015-04-07 18:14:49  [ main:186 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 18:14:49  [ main:431 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 18:14:49  [ main:434 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:14:50  [ main:922 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 896 ms
+2015-04-07 18:14:50  [ main:981 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 18:14:50  [ main:985 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:14:50 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:14:50  [ main:986 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 18:14:50  [ main:1097 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:14:50  [ main:1182 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 18:14:50  [ main:1182 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2015-04-07 18:14:50  [ main:1183 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 18:14:50  [ main:1183 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 18:14:50  [ main:1447 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:14:50 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:14:50  [ main:1498 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:14:50 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:14:51  [ main:1583 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 18:14:51  [ main:1631 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 650 ms
+2015-04-07 18:23:04  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 18:23:04  [ main:64 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 18:23:04 CST 2015]; root of context hierarchy
+2015-04-07 18:23:04  [ main:95 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 18:23:04  [ main:329 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 18:23:04  [ main:329 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:23:05  [ main:797 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 797 ms
+2015-04-07 18:23:05  [ main:859 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 18:23:05  [ main:859 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:23:05 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:23:05  [ main:859 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 18:23:05  [ main:969 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:23:05  [ main:1047 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 18:23:05  [ main:1047 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2015-04-07 18:23:05  [ main:1047 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 18:23:05  [ main:1047 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 18:23:05  [ main:1328 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:23:05 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:23:05  [ main:1375 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:23:05 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:23:05  [ main:1469 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 18:23:05  [ main:1516 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 657 ms
+2015-04-07 18:25:52  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 18:25:52  [ main:110 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 18:25:52 CST 2015]; root of context hierarchy
+2015-04-07 18:25:52  [ main:134 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 18:25:52  [ main:373 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 18:25:52  [ main:377 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:25:53  [ main:836 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 836 ms
+2015-04-07 18:25:53  [ main:895 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 18:25:53  [ main:898 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:25:53 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:25:53  [ main:900 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 18:25:53  [ main:1021 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:25:53  [ main:1107 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 18:25:53  [ main:1108 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2015-04-07 18:25:53  [ main:1109 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 18:25:53  [ main:1109 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 18:25:53  [ main:1368 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:25:53 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:25:53  [ main:1417 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:25:53 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:25:53  [ main:1499 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 18:25:53  [ main:1544 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 649 ms
+2015-04-07 18:26:44  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 18:26:44  [ main:47 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 18:26:44 CST 2015]; root of context hierarchy
+2015-04-07 18:26:44  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 18:26:44  [ main:297 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 18:26:44  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:26:45  [ main:734 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 734 ms
+2015-04-07 18:26:45  [ main:781 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 18:26:45  [ main:781 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:26:45 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:26:45  [ main:781 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 18:26:45  [ main:891 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:26:45  [ main:969 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 18:26:45  [ main:969 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2015-04-07 18:26:45  [ main:969 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 18:26:45  [ main:969 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 18:26:45  [ main:1188 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:26:45 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:26:45  [ main:1235 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:26:45 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:26:45  [ main:1298 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 18:26:45  [ main:1344 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 563 ms
+2015-04-07 18:27:06  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 18:27:06  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 18:27:06 CST 2015]; root of context hierarchy
+2015-04-07 18:27:06  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 18:27:06  [ main:313 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 18:27:06  [ main:328 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:27:06  [ main:828 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 828 ms
+2015-04-07 18:27:06  [ main:890 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 18:27:06  [ main:890 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:27:06 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:27:06  [ main:890 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 18:27:07  [ main:1016 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:27:07  [ main:1135 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 18:27:07  [ main:1135 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2015-04-07 18:27:07  [ main:1135 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 18:27:07  [ main:1135 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 18:27:07  [ main:1416 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:27:06 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:27:07  [ main:1463 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:27:06 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:27:07  [ main:1541 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 18:27:07  [ main:1603 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 713 ms
+2015-04-07 18:30:27  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 18:30:27  [ main:63 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 18:30:27 CST 2015]; root of context hierarchy
+2015-04-07 18:30:27  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 18:30:27  [ main:313 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 18:30:27  [ main:328 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:30:28  [ main:781 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 781 ms
+2015-04-07 18:30:28  [ main:843 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 18:30:28  [ main:843 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:30:28 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:30:28  [ main:843 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 18:30:28  [ main:952 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:30:28  [ main:1030 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 18:30:28  [ main:1030 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2015-04-07 18:30:28  [ main:1030 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 18:30:28  [ main:1030 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 18:30:28  [ main:1297 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:30:28 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:30:28  [ main:1343 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:30:28 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:30:28  [ main:1437 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 18:30:28  [ main:1468 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 625 ms
+2015-04-07 18:32:15  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 18:32:15  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 18:32:15 CST 2015]; root of context hierarchy
+2015-04-07 18:32:15  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 18:32:15  [ main:329 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 18:32:15  [ main:329 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:32:16  [ main:781 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 781 ms
+2015-04-07 18:32:16  [ main:844 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 18:32:16  [ main:859 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:32:16 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:32:16  [ main:859 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 18:32:16  [ main:968 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:32:16  [ main:1063 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 18:32:16  [ main:1063 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2015-04-07 18:32:16  [ main:1063 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 18:32:16  [ main:1063 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 18:32:16  [ main:1328 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:32:16 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:32:16  [ main:1391 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:32:16 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:32:16  [ main:1469 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 18:32:16  [ main:1531 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 687 ms
+2015-04-07 18:54:01  [ Scanner-0:1306171 ] - [ INFO ]  Closing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:32:16 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:54:01  [ Scanner-0:1306172 ] - [ INFO ]  Closing Root WebApplicationContext: startup date [Tue Apr 07 18:32:15 CST 2015]; root of context hierarchy
+2015-04-07 18:54:02  [ Scanner-0:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 18:54:02  [ Scanner-0:49 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 18:54:02 CST 2015]; root of context hierarchy
+2015-04-07 18:54:02  [ Scanner-0:64 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 18:54:03  [ Scanner-0:283 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 18:54:03  [ Scanner-0:283 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:54:03  [ Scanner-0:673 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 673 ms
+2015-04-07 18:54:03  [ Scanner-0:704 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 18:54:03  [ Scanner-0:704 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:54:03 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:54:03  [ Scanner-0:704 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 18:54:03  [ Scanner-0:797 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:54:03  [ Scanner-0:860 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 18:54:03  [ Scanner-0:860 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2015-04-07 18:54:03  [ Scanner-0:875 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 18:54:03  [ Scanner-0:875 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 18:54:03  [ Scanner-0:1079 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:54:03 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:54:04  [ Scanner-0:1126 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:54:03 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:54:04  [ Scanner-0:1220 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 18:54:04  [ Scanner-0:1251 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 547 ms
+2015-04-07 18:55:52  [ Scanner-0:109603 ] - [ INFO ]  Closing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:54:03 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:55:52  [ Scanner-0:109613 ] - [ INFO ]  Closing Root WebApplicationContext: startup date [Tue Apr 07 18:54:02 CST 2015]; root of context hierarchy
+2015-04-07 18:55:53  [ Scanner-0:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 18:55:53  [ Scanner-0:49 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 18:55:53 CST 2015]; root of context hierarchy
+2015-04-07 18:55:53  [ Scanner-0:165 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 18:55:53  [ Scanner-0:353 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 18:55:53  [ Scanner-0:356 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:55:53  [ Scanner-0:727 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 727 ms
+2015-04-07 18:55:54  [ Scanner-0:763 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 18:55:54  [ Scanner-0:766 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:55:54 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:55:54  [ Scanner-0:767 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 18:55:54  [ Scanner-0:848 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:55:54  [ Scanner-0:921 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 18:55:54  [ Scanner-0:922 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 18:55:54  [ Scanner-0:922 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 18:55:54  [ Scanner-0:922 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 18:55:54  [ Scanner-0:1133 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:55:54 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:55:54  [ Scanner-0:1177 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:55:54 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:55:54  [ Scanner-0:1260 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 18:56:33  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 18:56:33  [ main:54 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 18:56:33 CST 2015]; root of context hierarchy
+2015-04-07 18:56:33  [ main:80 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 18:56:34  [ main:327 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 18:56:34  [ main:331 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:56:34  [ main:800 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 799 ms
+2015-04-07 18:56:34  [ main:859 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 18:56:34  [ main:863 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:56:34 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:56:34  [ main:864 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 18:56:34  [ main:994 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 18:56:35  [ main:1095 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 18:56:35  [ main:1095 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 18:56:35  [ main:1096 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 18:56:35  [ main:1096 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 18:56:35  [ main:1371 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:56:34 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:56:35  [ main:1415 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 18:56:34 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 18:56:35  [ main:1489 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 18:56:35  [ main:1535 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 676 ms
+2015-04-07 18:56:57  [ qtp1694031474-16:23197 ] - [ INFO ]  -------------张三--------------
+2015-04-07 18:57:30  [ qtp1694031474-21:56252 ] - [ INFO ]  -------------李四--------------
+2015-04-07 19:08:04  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:08:04  [ main:126 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:08:04 CST 2015]; root of context hierarchy
+2015-04-07 19:08:04  [ main:142 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:08:04  [ main:391 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:08:04  [ main:407 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:08:05  [ main:860 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 860 ms
+2015-04-07 19:08:05  [ main:922 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:08:05  [ main:923 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:08:05 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:08:05  [ main:923 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:08:05  [ main:1064 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:08:05  [ main:1174 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.index()
+2015-04-07 19:08:05  [ main:1174 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:08:05  [ main:1174 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.ssm.model.User> net.ibaixin.ssm.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:08:05  [ main:1174 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.ssm.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:08:05  [ main:1439 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:08:05 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:08:05  [ main:1486 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:08:05 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:08:05  [ main:1564 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:08:05  [ main:1626 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 704 ms
+2015-04-07 19:08:18  [ qtp248791592-17:14046 ] - [ INFO ]  -------------李四--------------
+2015-04-07 19:20:15  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:20:15  [ main:52 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:20:15 CST 2015]; root of context hierarchy
+2015-04-07 19:20:15  [ main:76 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:20:15  [ main:308 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:20:15  [ main:312 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:20:15  [ main:672 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 672 ms
+2015-04-07 19:20:15  [ main:723 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:20:15  [ main:726 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:20:15 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:20:15  [ main:727 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:20:15  [ main:831 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:20:15  [ main:901 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:20:15  [ main:901 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:20:15  [ main:901 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:20:15  [ main:902 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:20:16  [ main:1127 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:20:15 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:20:16  [ main:1165 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:20:15 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:20:16  [ main:1225 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:20:16  [ main:1260 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 537 ms
+2015-04-07 19:20:58  [ qtp515921628-19:43282 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api] in DispatcherServlet with name 'ssm'
+2015-04-07 19:21:26  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:21:26  [ main:50 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:21:26 CST 2015]; root of context hierarchy
+2015-04-07 19:21:26  [ main:75 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:21:26  [ main:301 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:21:26  [ main:305 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:21:27  [ main:665 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 665 ms
+2015-04-07 19:21:27  [ main:716 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:21:27  [ main:720 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:21:27 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:21:27  [ main:721 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:21:27  [ main:825 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:21:27  [ main:891 ] - [ INFO ]  Mapped "{[/api/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:21:27  [ main:891 ] - [ INFO ]  Mapped "{[/api/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:21:27  [ main:892 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:21:27  [ main:892 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:21:27  [ main:1111 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:21:27 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:21:27  [ main:1146 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:21:27 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:21:27  [ main:1206 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:21:27  [ main:1240 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 523 ms
+2015-04-07 19:21:29  [ qtp1592683760-12:3501 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api] in DispatcherServlet with name 'ssm'
+2015-04-07 19:24:02  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:24:02  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:24:02 CST 2015]; root of context hierarchy
+2015-04-07 19:24:02  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:24:02  [ main:297 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:24:02  [ main:297 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:24:03  [ main:656 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 656 ms
+2015-04-07 19:24:03  [ main:703 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:24:03  [ main:703 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:24:03 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:24:03  [ main:703 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:24:03  [ main:813 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:24:03  [ main:876 ] - [ INFO ]  Mapped "{[/api/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:24:03  [ main:876 ] - [ INFO ]  Mapped "{[/api/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:24:03  [ main:876 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:24:03  [ main:876 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:24:03  [ main:1095 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:24:03 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:24:03  [ main:1126 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:24:03 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:24:03  [ main:1189 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:24:03  [ main:1220 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 517 ms
+2015-04-07 19:24:09  [ qtp1999778112-15:7117 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api/] in DispatcherServlet with name 'ssm'
+2015-04-07 19:24:20  [ qtp1999778112-14:17992 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api/] in DispatcherServlet with name 'ssm'
+2015-04-07 19:24:49  [ qtp1999778112-18:47338 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api/upload] in DispatcherServlet with name 'ssm'
+2015-04-07 19:25:26  [ qtp1999778112-13:84125 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api] in DispatcherServlet with name 'ssm'
+2015-04-07 19:25:34  [ qtp1999778112-19:92176 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api] in DispatcherServlet with name 'ssm'
+2015-04-07 19:26:20  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:26:20  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:26:20 CST 2015]; root of context hierarchy
+2015-04-07 19:26:20  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:26:20  [ main:313 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:26:20  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:26:21  [ main:657 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 657 ms
+2015-04-07 19:26:21  [ main:719 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:26:21  [ main:719 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:26:21 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:26:21  [ main:719 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:26:21  [ main:815 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:26:21  [ main:877 ] - [ INFO ]  Mapped "{[/api/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:26:21  [ main:877 ] - [ INFO ]  Mapped "{[/api/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:26:21  [ main:877 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:26:21  [ main:877 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:26:21  [ main:1096 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:26:21 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:26:21  [ main:1143 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:26:21 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:26:21  [ main:1206 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:26:21  [ main:1237 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 518 ms
+2015-04-07 19:26:25  [ qtp1352049205-19:5121 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api] in DispatcherServlet with name 'ssm'
+2015-04-07 19:27:17  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:27:17  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:27:17 CST 2015]; root of context hierarchy
+2015-04-07 19:27:17  [ main:63 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:27:17  [ main:282 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:27:17  [ main:282 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:27:18  [ main:641 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 641 ms
+2015-04-07 19:27:18  [ main:687 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:27:18  [ main:703 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:27:18 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:27:18  [ main:703 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:27:18  [ main:797 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:27:18  [ main:859 ] - [ INFO ]  Mapped "{[/api/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:27:18  [ main:859 ] - [ INFO ]  Mapped "{[/api/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:27:18  [ main:859 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:27:18  [ main:859 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:27:18  [ main:1078 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:27:18 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:27:18  [ main:1125 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:27:18 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:27:18  [ main:1172 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:27:18  [ main:1203 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 516 ms
+2015-04-07 19:28:31  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:28:31  [ main:32 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:28:31 CST 2015]; root of context hierarchy
+2015-04-07 19:28:31  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:28:32  [ main:298 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:28:32  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:28:32  [ main:656 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 656 ms
+2015-04-07 19:28:32  [ main:703 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:28:32  [ main:719 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:28:32 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:28:32  [ main:719 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:28:32  [ main:812 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:28:32  [ main:890 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:28:32  [ main:890 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:28:32  [ main:890 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:28:32  [ main:890 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:28:32  [ main:1110 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:28:32 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:28:32  [ main:1141 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:28:32 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:28:33  [ main:1203 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:28:33  [ main:1235 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 532 ms
+2015-04-07 19:28:59  [ qtp1397233412-17:27870 ] - [ INFO ]  -------------李四--------------
+2015-04-07 19:30:33  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:30:33  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:30:33 CST 2015]; root of context hierarchy
+2015-04-07 19:30:33  [ main:64 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:30:33  [ main:298 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:30:33  [ main:298 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:30:33  [ main:657 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 657 ms
+2015-04-07 19:30:33  [ main:703 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:30:33  [ main:703 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:30:33 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:30:33  [ main:719 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:30:33  [ main:813 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:30:33  [ main:875 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:30:33  [ main:875 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:30:33  [ main:875 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:30:33  [ main:875 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:30:34  [ main:1094 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:30:33 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:30:34  [ main:1126 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:30:33 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:30:34  [ main:1188 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:30:34  [ main:1219 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 516 ms
+2015-04-07 19:31:16  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:31:16  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:31:16 CST 2015]; root of context hierarchy
+2015-04-07 19:31:16  [ main:63 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:31:16  [ main:297 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:31:16  [ main:297 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:31:17  [ main:937 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 937 ms
+2015-04-07 19:31:17  [ main:984 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:31:17  [ main:984 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:31:17 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:31:17  [ main:999 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:31:17  [ main:1111 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:31:17  [ main:1173 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:31:17  [ main:1173 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:31:17  [ main:1173 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:31:17  [ main:1173 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:31:17  [ main:1391 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:31:17 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:31:17  [ main:1438 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:31:17 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:31:18  [ main:1485 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:31:18  [ main:1532 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 548 ms
+2015-04-07 19:31:20  [ qtp1999778112-19:4123 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 19:31:43  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:31:43  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:31:43 CST 2015]; root of context hierarchy
+2015-04-07 19:31:43  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:31:43  [ main:298 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:31:43  [ main:298 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:31:43  [ main:719 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 719 ms
+2015-04-07 19:31:43  [ main:766 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:31:43  [ main:766 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:31:43 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:31:43  [ main:781 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:31:43  [ main:891 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:31:43  [ main:953 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:31:43  [ main:953 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:31:43  [ main:953 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:31:43  [ main:953 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:31:44  [ main:1172 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:31:43 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:31:44  [ main:1204 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:31:43 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:31:44  [ main:1266 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:31:44  [ main:1297 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 531 ms
+2015-04-07 19:32:23  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:32:23  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:32:23 CST 2015]; root of context hierarchy
+2015-04-07 19:32:23  [ main:64 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:32:23  [ main:298 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:32:23  [ main:298 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:32:23  [ main:719 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 719 ms
+2015-04-07 19:32:23  [ main:766 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:32:23  [ main:766 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:32:23 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:32:23  [ main:766 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:32:24  [ main:876 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:32:24  [ main:954 ] - [ INFO ]  Mapped "{[/api/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:32:24  [ main:954 ] - [ INFO ]  Mapped "{[/api/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:32:24  [ main:954 ] - [ INFO ]  Mapped "{[/api/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:32:24  [ main:954 ] - [ INFO ]  Mapped "{[/api/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:32:24  [ main:1173 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:32:23 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:32:24  [ main:1204 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:32:23 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:32:24  [ main:1267 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:32:24  [ main:1298 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 532 ms
+2015-04-07 19:33:09  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:33:09  [ main:47 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:33:09 CST 2015]; root of context hierarchy
+2015-04-07 19:33:09  [ main:63 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:33:09  [ main:297 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:33:09  [ main:297 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:33:09  [ main:718 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 718 ms
+2015-04-07 19:33:10  [ main:781 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:33:10  [ main:781 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:33:10 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:33:10  [ main:781 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:33:10  [ main:891 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:33:10  [ main:953 ] - [ INFO ]  Mapped "{[/api/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:33:10  [ main:953 ] - [ INFO ]  Mapped "{[/api/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:33:10  [ main:953 ] - [ INFO ]  Mapped "{[/api/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:33:10  [ main:953 ] - [ INFO ]  Mapped "{[/api/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:33:10  [ main:1188 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:33:10 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:33:10  [ main:1219 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:33:10 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:33:10  [ main:1282 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:33:10  [ main:1313 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 532 ms
+2015-04-07 19:33:13  [ qtp1999778112-16:4560 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api] in DispatcherServlet with name 'ssm'
+2015-04-07 19:33:53  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:33:53  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:33:53 CST 2015]; root of context hierarchy
+2015-04-07 19:33:53  [ main:64 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:33:54  [ main:298 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:33:54  [ main:298 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:33:54  [ main:703 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 703 ms
+2015-04-07 19:33:54  [ main:750 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:33:54  [ main:750 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:33:54 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:33:54  [ main:751 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:33:54  [ main:876 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:33:54  [ main:938 ] - [ INFO ]  Mapped "{[/api/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:33:54  [ main:938 ] - [ INFO ]  Mapped "{[/api/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:33:54  [ main:938 ] - [ INFO ]  Mapped "{[/api/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:33:54  [ main:938 ] - [ INFO ]  Mapped "{[/api/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:33:54  [ main:1158 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:33:54 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:33:54  [ main:1205 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:33:54 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:33:55  [ main:1251 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:33:55  [ main:1298 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 548 ms
+2015-04-07 19:33:59  [ qtp1999778112-16:5791 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api] in DispatcherServlet with name 'ssm'
+2015-04-07 19:34:28  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:34:28  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:34:28 CST 2015]; root of context hierarchy
+2015-04-07 19:34:28  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:34:28  [ main:313 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:34:28  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:34:29  [ main:734 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 718 ms
+2015-04-07 19:34:29  [ main:781 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:34:29  [ main:782 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:34:29 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:34:29  [ main:782 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:34:29  [ main:907 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:34:29  [ main:969 ] - [ INFO ]  Mapped "{[/api/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:34:29  [ main:969 ] - [ INFO ]  Mapped "{[/api/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:34:29  [ main:969 ] - [ INFO ]  Mapped "{[/api/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:34:29  [ main:969 ] - [ INFO ]  Mapped "{[/api/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:34:29  [ main:1189 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:34:29 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:34:29  [ main:1220 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:34:29 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:34:29  [ main:1282 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:34:29  [ main:1314 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 533 ms
+2015-04-07 19:34:33  [ qtp4169187-18:4371 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api/] in DispatcherServlet with name 'ssm'
+2015-04-07 19:34:34  [ qtp4169187-15:6338 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api] in DispatcherServlet with name 'ssm'
+2015-04-07 19:34:37  [ qtp4169187-16:8773 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api] in DispatcherServlet with name 'ssm'
+2015-04-07 19:34:39  [ qtp4169187-12:10381 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api] in DispatcherServlet with name 'ssm'
+2015-04-07 19:39:46  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:39:46  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:39:46 CST 2015]; root of context hierarchy
+2015-04-07 19:39:46  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:39:47  [ main:313 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:39:47  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:39:47  [ main:734 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 734 ms
+2015-04-07 19:39:47  [ main:781 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:39:47  [ main:797 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:39:47 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:39:47  [ main:797 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:39:47  [ main:906 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:39:47  [ main:968 ] - [ INFO ]  Mapped "{[/api/ || /api],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:39:47  [ main:968 ] - [ INFO ]  Mapped "{[/api/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:39:47  [ main:968 ] - [ INFO ]  Mapped "{[/api/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:39:47  [ main:968 ] - [ INFO ]  Mapped "{[/api/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:39:48  [ main:1188 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:39:47 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:39:48  [ main:1234 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:39:47 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:39:48  [ main:1281 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:39:48  [ main:1312 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 531 ms
+2015-04-07 19:40:15  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:40:15  [ main:32 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:40:15 CST 2015]; root of context hierarchy
+2015-04-07 19:40:15  [ main:63 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:40:16  [ main:297 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:40:16  [ main:297 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:40:16  [ main:718 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 718 ms
+2015-04-07 19:40:16  [ main:765 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:40:16  [ main:765 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:40:16 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:40:16  [ main:765 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:40:16  [ main:874 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:40:16  [ main:937 ] - [ INFO ]  Mapped "{[/api/ || /api],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:40:16  [ main:937 ] - [ INFO ]  Mapped "{[/api/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:40:16  [ main:937 ] - [ INFO ]  Mapped "{[/api/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:40:16  [ main:937 ] - [ INFO ]  Mapped "{[/api/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:40:16  [ main:1156 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:40:16 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:40:16  [ main:1187 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:40:16 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:40:16  [ main:1250 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:40:16  [ main:1281 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 516 ms
+2015-04-07 19:40:43  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:40:43  [ main:63 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:40:43 CST 2015]; root of context hierarchy
+2015-04-07 19:40:43  [ main:94 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:40:43  [ main:313 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:40:43  [ main:328 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:40:44  [ main:734 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 734 ms
+2015-04-07 19:40:44  [ main:781 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:40:44  [ main:796 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:40:44 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:40:44  [ main:796 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:40:44  [ main:905 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:40:44  [ main:968 ] - [ INFO ]  Mapped "{[/api/ || /api],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:40:44  [ main:968 ] - [ INFO ]  Mapped "{[/api/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:40:44  [ main:968 ] - [ INFO ]  Mapped "{[/api/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:40:44  [ main:968 ] - [ INFO ]  Mapped "{[/api/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:40:44  [ main:1187 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:40:44 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:40:44  [ main:1218 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:40:44 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:40:44  [ main:1281 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:40:44  [ main:1312 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 531 ms
+2015-04-07 19:41:25  [ Scanner-0:42332 ] - [ INFO ]  Closing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:40:44 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:41:25  [ Scanner-0:42332 ] - [ INFO ]  Closing Root WebApplicationContext: startup date [Tue Apr 07 19:40:43 CST 2015]; root of context hierarchy
+2015-04-07 19:41:26  [ Scanner-0:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:41:27  [ Scanner-0:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:41:27 CST 2015]; root of context hierarchy
+2015-04-07 19:41:27  [ Scanner-0:63 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:41:27  [ Scanner-0:235 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:41:27  [ Scanner-0:235 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:41:27  [ Scanner-0:563 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 563 ms
+2015-04-07 19:41:27  [ Scanner-0:594 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:41:27  [ Scanner-0:594 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:41:27 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:41:27  [ Scanner-0:594 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:41:27  [ Scanner-0:672 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:41:27  [ Scanner-0:734 ] - [ INFO ]  Mapped "{[/api/ || /api],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:41:27  [ Scanner-0:734 ] - [ INFO ]  Mapped "{[/api/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:41:27  [ Scanner-0:734 ] - [ INFO ]  Mapped "{[/api/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:41:27  [ Scanner-0:734 ] - [ INFO ]  Mapped "{[/api/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:41:27  [ Scanner-0:890 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:41:27 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:41:27  [ Scanner-0:921 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:41:27 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:41:27  [ Scanner-0:968 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:41:27  [ Scanner-0:999 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 405 ms
+2015-04-07 19:44:18  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:44:18  [ main:63 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:44:18 CST 2015]; root of context hierarchy
+2015-04-07 19:44:18  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:44:19  [ main:297 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:44:19  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:44:19  [ main:718 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 718 ms
+2015-04-07 19:44:19  [ main:765 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:44:19  [ main:765 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:44:19 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:44:19  [ main:765 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:44:19  [ main:890 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:44:19  [ main:952 ] - [ INFO ]  Mapped "{[/api/ || /api],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:44:19  [ main:952 ] - [ INFO ]  Mapped "{[/api/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:44:19  [ main:952 ] - [ INFO ]  Mapped "{[/api/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:44:19  [ main:952 ] - [ INFO ]  Mapped "{[/api/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:44:20  [ main:1203 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:44:19 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:44:20  [ main:1234 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:44:19 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:44:20  [ main:1297 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:44:20  [ main:1328 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 563 ms
+2015-04-07 19:46:03  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:46:03  [ main:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:46:03 CST 2015]; root of context hierarchy
+2015-04-07 19:46:03  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:46:03  [ main:297 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:46:03  [ main:297 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:46:04  [ main:718 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 718 ms
+2015-04-07 19:46:04  [ main:765 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:46:04  [ main:765 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:46:04 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:46:04  [ main:765 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:46:04  [ main:874 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:46:04  [ main:937 ] - [ INFO ]  Mapped "{[/api/ || /api],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:46:04  [ main:937 ] - [ INFO ]  Mapped "{[/api/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:46:04  [ main:937 ] - [ INFO ]  Mapped "{[/api/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:46:04  [ main:937 ] - [ INFO ]  Mapped "{[/api/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:46:04  [ main:1156 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:46:04 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:46:04  [ main:1187 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:46:04 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:46:04  [ main:1250 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:46:04  [ main:1281 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 516 ms
+2015-04-07 19:48:53  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:48:53  [ main:49 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:48:53 CST 2015]; root of context hierarchy
+2015-04-07 19:48:53  [ main:65 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:48:53  [ main:299 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:48:53  [ main:299 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:48:54  [ main:720 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 720 ms
+2015-04-07 19:48:54  [ main:767 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:48:54  [ main:767 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:48:54 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:48:54  [ main:767 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:48:54  [ main:877 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:48:54  [ main:939 ] - [ INFO ]  Mapped "{[/ || ],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:48:54  [ main:939 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:48:54  [ main:955 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:48:54  [ main:955 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:48:54  [ main:1159 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:48:54 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:48:54  [ main:1205 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:48:54 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:48:54  [ main:1252 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:48:54  [ main:1299 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 532 ms
+2015-04-07 19:49:07  [ qtp1366519528-12:14090 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api/] in DispatcherServlet with name 'ssm'
+2015-04-07 19:50:13  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:50:13  [ main:64 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:50:13 CST 2015]; root of context hierarchy
+2015-04-07 19:50:13  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:50:13  [ main:313 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:50:13  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:50:13  [ main:750 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 750 ms
+2015-04-07 19:50:13  [ main:797 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:50:13  [ main:812 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:50:13 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:50:13  [ main:812 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:50:13  [ main:937 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:50:14  [ main:1000 ] - [ INFO ]  Mapped "{[/ || ],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:50:14  [ main:1000 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:50:14  [ main:1000 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:50:14  [ main:1000 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:50:14  [ main:1235 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:50:13 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:50:14  [ main:1266 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:50:13 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:50:14  [ main:1328 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:50:14  [ main:1375 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 578 ms
+2015-04-07 19:50:21  [ qtp359839940-15:7976 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 19:51:07  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:51:07  [ main:64 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:51:07 CST 2015]; root of context hierarchy
+2015-04-07 19:51:07  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:51:08  [ main:313 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:51:08  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:51:08  [ main:719 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 719 ms
+2015-04-07 19:51:08  [ main:781 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:51:08  [ main:781 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:51:08 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:51:08  [ main:781 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:51:08  [ main:891 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:51:08  [ main:953 ] - [ INFO ]  Mapped "{[/ || ],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:51:08  [ main:953 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:51:08  [ main:969 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:51:08  [ main:969 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:51:08  [ main:1188 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:51:08 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:51:08  [ main:1219 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:51:08 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:51:09  [ main:1282 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:51:09  [ main:1313 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 532 ms
+2015-04-07 19:51:17  [ qtp515921628-15:9410 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api] in DispatcherServlet with name 'ssm'
+2015-04-07 19:51:27  [ qtp515921628-12:19955 ] - [ WARN ]  No mapping found for HTTP request with URI [/ssm/api] in DispatcherServlet with name 'ssm'
+2015-04-07 19:51:40  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:51:40  [ main:47 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:51:40 CST 2015]; root of context hierarchy
+2015-04-07 19:51:40  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:51:40  [ main:297 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:51:40  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:51:41  [ main:718 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 718 ms
+2015-04-07 19:51:41  [ main:765 ] - [ INFO ]  FrameworkServlet 'ssm': initialization started
+2015-04-07 19:51:41  [ main:780 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:51:41 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:51:41  [ main:780 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ssm-servlet.xml]
+2015-04-07 19:51:41  [ main:891 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:51:41  [ main:953 ] - [ INFO ]  Mapped "{[/ || ],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:51:41  [ main:953 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:51:41  [ main:953 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:51:41  [ main:953 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:51:41  [ main:1188 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:51:41 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:51:41  [ main:1235 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ssm-servlet': startup date [Tue Apr 07 19:51:41 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:51:41  [ main:1297 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:51:41  [ main:1328 ] - [ INFO ]  FrameworkServlet 'ssm': initialization completed in 563 ms
+2015-04-07 19:51:42  [ qtp1903586078-18:1921 ] - [ INFO ]  [User [id=06a4e0cb-d759-4701-b1d0-26479acc148e, username=李四, password=123456], User [id=1d3374c1-3023-400e-9982-aebf58a637f1, username=张三, password=123456], User [id=1f5bdfaf-cced-424d-86d7-a4a132a06426, username=张三, password=123456], User [id=4f6f6168-b7ed-49e1-8b35-a23f69ba22cc, username=张三, password=123456], User [id=6990d6e8-686a-4983-a1ca-dca5f0c6ab28, username=张三, password=123456], User [id=97228090-3ea4-4693-b7f5-e7d1f3e4128e, username=张三, password=123456], User [id=b5f33f47-0335-4ff0-a765-9826dd2d58de, username=张三, password=123456], User [id=f5f40ab8-8552-4b1a-88f5-24fdcb728edd, username=张三, password=123456]]
+2015-04-07 19:53:31  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:53:31  [ main:49 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:53:31 CST 2015]; root of context hierarchy
+2015-04-07 19:53:31  [ main:80 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:53:32  [ main:299 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:53:32  [ main:314 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:53:32  [ main:720 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 720 ms
+2015-04-07 19:53:32  [ main:767 ] - [ INFO ]  FrameworkServlet 'ChatAPi': initialization started
+2015-04-07 19:53:32  [ main:782 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ChatAPi-servlet': startup date [Tue Apr 07 19:53:32 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:53:32  [ main:782 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ChatAPi-servlet.xml]
+2015-04-07 19:53:32  [ main:782 ] - [ ERROR ]  Context initialization failed
+org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from ServletContext resource [/WEB-INF/ChatAPi-servlet.xml]; nested exception is java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/ChatAPi-servlet.xml]
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:452)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:663)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:629)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:677)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:548)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:489)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:613)
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:396)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:871)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:341)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1349)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.startWebapp(JettyWebAppContext.java:296)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1342)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:742)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:505)
+	at org.eclipse.jetty.maven.plugin.JettyWebAppContext.doStart(JettyWebAppContext.java:365)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:163)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:399)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:366)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:516)
+	at org.eclipse.jetty.maven.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:359)
+	at org.eclipse.jetty.maven.plugin.JettyRunMojo.execute(JettyRunMojo.java:167)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:132)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:120)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:347)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:154)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:582)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:214)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:158)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/ChatAPi-servlet.xml]
+	at org.springframework.web.context.support.ServletContextResource.getInputStream(ServletContextResource.java:141)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
+	... 66 more
+2015-04-07 19:54:22  [ main:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:54:22  [ main:47 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:54:22 CST 2015]; root of context hierarchy
+2015-04-07 19:54:22  [ main:79 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:54:22  [ main:297 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:54:22  [ main:313 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:54:22  [ main:734 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 734 ms
+2015-04-07 19:54:23  [ main:781 ] - [ INFO ]  FrameworkServlet 'ChatApi': initialization started
+2015-04-07 19:54:23  [ main:796 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ChatApi-servlet': startup date [Tue Apr 07 19:54:23 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:54:23  [ main:796 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ChatApi-servlet.xml]
+2015-04-07 19:54:23  [ main:902 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:54:23  [ main:980 ] - [ INFO ]  Mapped "{[/ || ],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:54:23  [ main:980 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:54:23  [ main:980 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:54:23  [ main:980 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:54:23  [ main:1215 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ChatApi-servlet': startup date [Tue Apr 07 19:54:23 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:54:23  [ main:1246 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ChatApi-servlet': startup date [Tue Apr 07 19:54:23 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:54:23  [ main:1308 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:54:23  [ main:1340 ] - [ INFO ]  FrameworkServlet 'ChatApi': initialization completed in 544 ms
+2015-04-07 19:54:34  [ qtp1903586078-15:12384 ] - [ WARN ]  No mapping found for HTTP request with URI [/chatapi/api] in DispatcherServlet with name 'ChatApi'
+2015-04-07 19:55:09  [ qtp1903586078-16:46785 ] - [ WARN ]  No mapping found for HTTP request with URI [/chatapi/api] in DispatcherServlet with name 'ChatApi'
+2015-04-07 19:55:14  [ Scanner-0:52496 ] - [ INFO ]  Closing WebApplicationContext for namespace 'ChatApi-servlet': startup date [Tue Apr 07 19:54:23 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:55:14  [ Scanner-0:52496 ] - [ INFO ]  Closing Root WebApplicationContext: startup date [Tue Apr 07 19:54:22 CST 2015]; root of context hierarchy
+2015-04-07 19:55:16  [ Scanner-0:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2015-04-07 19:55:16  [ Scanner-0:48 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Tue Apr 07 19:55:16 CST 2015]; root of context hierarchy
+2015-04-07 19:55:16  [ Scanner-0:63 ] - [ INFO ]  Loading XML bean definitions from URL [file:/E:/AndroidOpenSource/ChatApi/target/classes/spring-mybatis.xml]
+2015-04-07 19:55:16  [ Scanner-0:235 ] - [ INFO ]  Loading properties file from class path resource [jdbc.properties]
+2015-04-07 19:55:16  [ Scanner-0:235 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:55:16  [ Scanner-0:563 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 563 ms
+2015-04-07 19:55:16  [ Scanner-0:594 ] - [ INFO ]  FrameworkServlet 'ChatApi': initialization started
+2015-04-07 19:55:16  [ Scanner-0:594 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'ChatApi-servlet': startup date [Tue Apr 07 19:55:16 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:55:16  [ Scanner-0:594 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/ChatApi-servlet.xml]
+2015-04-07 19:55:16  [ Scanner-0:687 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-07 19:55:16  [ Scanner-0:750 ] - [ INFO ]  Mapped "{[/ || ],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.index()
+2015-04-07 19:55:16  [ Scanner-0:750 ] - [ INFO ]  Mapped "{[/upload],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.IndexController.uploadFile(org.springframework.web.multipart.MultipartFile,java.lang.String,javax.servlet.http.HttpServletRequest)
+2015-04-07 19:55:16  [ Scanner-0:750 ] - [ INFO ]  Mapped "{[/user/users],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<net.ibaixin.chat.api.model.User> net.ibaixin.chat.api.controller.UserController.show(org.springframework.ui.Model)
+2015-04-07 19:55:16  [ Scanner-0:750 ] - [ INFO ]  Mapped "{[/user/hello],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String net.ibaixin.chat.api.controller.UserController.hello(org.springframework.ui.Model)
+2015-04-07 19:55:17  [ Scanner-0:921 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ChatApi-servlet': startup date [Tue Apr 07 19:55:16 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:55:17  [ Scanner-0:953 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'ChatApi-servlet': startup date [Tue Apr 07 19:55:16 CST 2015]; parent: Root WebApplicationContext
+2015-04-07 19:55:17  [ Scanner-0:999 ] - [ INFO ]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2015-04-07 19:55:17  [ Scanner-0:1032 ] - [ INFO ]  FrameworkServlet 'ChatApi': initialization completed in 438 ms
