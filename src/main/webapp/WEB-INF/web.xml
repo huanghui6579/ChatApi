@@ -3,7 +3,7 @@
     xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
     id="WebApp_ID" version="3.1">
-  <display-name>ssm</display-name>
+  <display-name>chatapi</display-name>
 
     <!-- Configuration locations must consist of one or more comma- or space-delimited
         fully-qualified @Configuration classes. Fully-qualified packages may also be

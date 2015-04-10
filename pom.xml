@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.example</groupId>
-	<artifactId>ssm</artifactId>
+	<artifactId>chatapi</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ssm Maven Webapp</name>
@@ -220,7 +220,7 @@
 	</dependencies>
 	
 	<build>
-		<finalName>ssm</finalName>
+		<finalName>chatapi</finalName>
 		<!-- maven自动打包时默认不会打包src/main/resources下的文件，这里需要手动配置，不然会报错 -->
 		<resources>
 			<resource>

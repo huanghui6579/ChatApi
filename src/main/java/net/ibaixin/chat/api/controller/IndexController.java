@@ -32,7 +32,8 @@ public class IndexController {
 	}
 	
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
-	public String uploadFile(@RequestParam("uploadFile") MultipartFile file, String username, HttpServletRequest request) {
+	@ResponseBody
+	public void uploadFile(@RequestParam("uploadFile") MultipartFile file, String username, HttpServletRequest request) {
 		logger.info("-------------" + username + "--------------");
 		//判断文件是否为空
 		if (!file.isEmpty()) {
@@ -50,7 +51,6 @@ public class IndexController {
 				e.printStackTrace();
 			}
 		}
-		return "redirect:/";
 	}
 	
 	/*@ResponseBody
