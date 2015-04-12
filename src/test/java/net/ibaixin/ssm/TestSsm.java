@@ -1,19 +1,28 @@
 package net.ibaixin.ssm;
 
-import java.util.List;
-import java.util.UUID;
+import java.io.IOException;
+import java.util.Date;
 
 import javax.annotation.Resource;
 
-import net.ibaixin.chat.api.model.User;
-import net.ibaixin.chat.api.model.UserDto;
+import net.ibaixin.chat.api.model.AttachDto;
+import net.ibaixin.chat.api.model.Attachment;
+import net.ibaixin.chat.api.service.IAttachService;
 import net.ibaixin.chat.api.service.IUserService;
+import net.ibaixin.chat.api.utils.SystemUtil;
 
 import org.apache.log4j.Logger;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.fasterxml.jackson.core.JsonEncoding;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
@@ -22,9 +31,56 @@ public class TestSsm {
 	
 	private IUserService userService;
 	
+	@Autowired
+	private IAttachService attachService;
+	
+    private JsonGenerator jsonGenerator = null;
+
+    private ObjectMapper objectMapper = null;
+    
+    @Before
+    public void setup() {
+    	objectMapper = new ObjectMapper();
+    	try {
+			jsonGenerator = objectMapper.getFactory().createGenerator(System.out, JsonEncoding.UTF8);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    @After
+    public void destory() {
+        try {
+			if (jsonGenerator != null) {
+			    jsonGenerator.flush();
+			}
+			if (!jsonGenerator.isClosed()) {
+			    jsonGenerator.close();
+			}
+			jsonGenerator = null;
+			objectMapper = null;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+	
 	@Resource
 	public void setUserService(IUserService userService) {
 		this.userService = userService;
+	}
+	
+	@Test
+	public void testJson() {
+		AttachDto attachDto = new AttachDto();
+		attachDto.setReceiver("bbb");
+		attachDto.setSender("aaa");
+		
+		
+		try {
+			jsonGenerator.writeObject(attachDto);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	/*@Test
@@ -64,4 +120,33 @@ public class TestSsm {
 		List<User> users = userService.getUsers(userDto);
 		logger.info(users);
 	}*/
+	
+	@Test
+	public void testAddAttach() {
+		Attachment attachment = new Attachment();
+		
+		attachment.setId(SystemUtil.encoderByMd5("aaa_bbbb_123344545"));
+		attachment.setSender("aaa");
+		attachment.setReceiver("bbb");
+		attachment.setCreationDate(new Date());
+		attachment.setFileName("abc.txt");
+		attachment.setHasThumb(true);
+		attachment.setMimeType("text/plain");
+		attachment.setSotreName("dsafdsfgdgfdgfdhgfhg");
+		
+		attachService.addAttach(attachment);
+	}
+	
+	@Test
+	public void testDeleteAttach() {
+		String id = "a88f81ebe084a3523d1934bb7bea6cbb";
+		
+		attachService.deleteAttach(id);
+	}
+	
+	@Test
+	public void testGetAttachment() {
+		Attachment attachment = attachService.getAttachment("a88f81ebe084a3523d1934bb7bea6cbb");
+		logger.info(attachment);
+	}
 }

@@ -43,6 +43,8 @@
 		<!-- <property name="configLocation" value="classpath:sqlMapConfig.xml" /> -->
 		<property name="mapperLocations" value="classpath:net/ibaixin/chat/api/mappers/*.xml" />
 		<property name="typeAliasesPackage" value="net.ibaixin.chat.api.model" />
+		<property name="typeHandlersPackage" value="net.ibaixin.chat.api.typehandler" />
+		
 	</bean>
 	
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

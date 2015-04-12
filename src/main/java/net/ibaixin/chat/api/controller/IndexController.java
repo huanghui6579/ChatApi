@@ -4,17 +4,26 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.util.Calendar;
+import java.util.UUID;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
+import net.ibaixin.chat.api.model.AttachDto;
+import net.ibaixin.chat.api.utils.SystemUtil;
+
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.springframework.beans.propertyeditors.UUIDEditor;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,23 +42,121 @@ public class IndexController {
 	
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	@ResponseBody
-	public void uploadFile(@RequestParam("uploadFile") MultipartFile file, String username, HttpServletRequest request) {
-		logger.info("-------------" + username + "--------------");
+	public void uploadFile(@RequestParam(value = "uploadFile", required = false) MultipartFile[] files, @RequestParam(required = true) String jsonStr, HttpServletRequest request) {
+		AttachDto attachDto = null;
+		if (StringUtils.isNoneBlank(jsonStr)) {
+			attachDto = SystemUtil.json2obj(jsonStr, AttachDto.class);
+			logger.info("--------------" + attachDto);
+		} else {
+			return;
+		}
+		if (attachDto == null) {
+			return;
+		}
 		//判断文件是否为空
-		if (!file.isEmpty()) {
+		if (files != null && files.length > 0) {
+			File baseDir = getBaseDir(request);
 			try {
-				String fileDir = request.getServletContext().getRealPath("") + File.separator + "upload" + File.separator;
-				File saveDir = new File(fileDir);
-				if (!saveDir.exists()) {
-					saveDir.mkdirs();
+				
+				//缩略图的名称
+				String thumbName = attachDto.getThumbName();
+				String fileName = attachDto.getFileName();
+				String sender = attachDto.getSender();
+				String receiver = attachDto.getReceiver();
+				if (StringUtils.isNoneBlank(thumbName)) {	//有缩略图
+					long time = System.currentTimeMillis();
+					for (MultipartFile file : files) {
+						if (!file.isEmpty()) {
+							String originalFilename = file.getOriginalFilename();
+							boolean isThumb = false;
+							String saveName = null;
+							if (!originalFilename.equals(fileName)) {	//缩略图
+								isThumb = true;
+								saveName = UUID.randomUUID().toString() + "_thumb";
+							} else {
+								saveName = UUID.randomUUID().toString();
+							}
+							File saveDir = getSaveDir(baseDir, sender, receiver, time, isThumb);
+							String mimeType = file.getContentType();
+							saveFile(file, saveDir, saveName);
+						}
+					}
 				}
-				File saveFile = new File(saveDir, file.getOriginalFilename());
-				file.transferTo(saveFile);
-			} catch (IllegalStateException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+	}
+	
+	/**
+	 * 或得存储文件的根目录
+	 * @return
+	 */
+	private File getBaseDir(HttpServletRequest request) {
+		String fileDir = request.getServletContext().getRealPath("/") + File.separator + "upload";
+		File saveDir = new File(fileDir);
+		if (!saveDir.exists()) {
+			saveDir.mkdirs();
+		}
+		return saveDir;
+	}
+	
+	/**
+	 * 根据发送这和接受者来动态生成文件的存储目录,生成的目录为:upload/2015/04/12/sender/receiver/...,缩略图的为:upload/sender/receiver/thumb/...
+	 * @param baseDir
+	 * @param sender
+	 * @param receiver
+	 * @param time
+	 * @param isThumb
+	 * @return
+	 */
+	private File getSaveDir(File baseDir, String sender, String receiver, long time, boolean isThumb) {
+		StringBuilder sb = new StringBuilder();
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTimeInMillis(time);
+		int year = calendar.get(Calendar.YEAR);
+		int month = calendar.get(Calendar.MONTH) + 1;
+		int day = calendar.get(Calendar.DAY_OF_MONTH);
+		
+		sb.append(year).append(File.separator).append(valueOnInt(month)).append(File.separator).append(valueOnInt(day)).append(File.separator);
+		
+		sb.append(sender).append(File.separator).append(receiver);
+		if (isThumb) {
+			sb.append(File.separator).append("thumb");
+		}
+		
+		File saveFile = new File(baseDir, sb.toString());
+		if (!saveFile.exists()) {
+			saveFile.mkdirs();
+		}
+		return saveFile;
+	}
+	
+	/**
+	 * 将int值装换成两位数的字符串,如1----->01
+	 * @param value
+	 * @return
+	 */
+	private String valueOnInt(int value) {
+		StringBuilder sb = new StringBuilder(String.valueOf(value));
+		if (Math.abs(value) < 10) {	//个位数
+			sb.insert(0, 0);
+		}
+		return sb.toString();
+	}
+	
+	/**
+	 * 保存文件到本地磁盘
+	 * @param file
+	 * @param saveDir 保存文件的路径
+	 * @param saveFileName 保存文件的名称,以UUID命名
+	 */
+	private void saveFile(MultipartFile file, File saveDir, String saveFileName) {
+		File saveFile = new File(saveDir, saveFileName);
+		try {
+			file.transferTo(saveFile);
+		} catch (IllegalStateException | IOException e) {
+			e.printStackTrace();
 		}
 	}
 	

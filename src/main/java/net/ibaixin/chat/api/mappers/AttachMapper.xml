@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.ibaixin.chat.api.dao.AttachDao">
+    <resultMap type="Attachment" id="attachResultMap">
+        <id column="id" property="id"/>
+        <result column="sender" property="sender"/>
+        <result column="receiver" property="receiver"/>
+        <result column="fileName" property="fileName"/>
+        <result column="creationDate" property="creationDate"/>
+        <result column="hasThumb" property="hasThumb" typeHandler="net.ibaixin.chat.api.typehandler.BooleanHandler"/>
+        <result column="mimeType" property="mimeType"/>
+        <result column="sotreName" property="sotreName"/>
+    </resultMap>
+    
+    <insert id="addAttach" parameterType="Attachment">
+        insert into t_attach values (#{id}, #{sender}, #{receiver}, #{fileName}, #{creationDate}, #{hasThumb, typeHandler=net.ibaixin.chat.api.typehandler.BooleanHandler}, #{mimeType}, #{sotreName})
+    </insert>
+    
+    <delete id="deleteAttach" parameterType="java.lang.String">
+        delete from t_attach where id = #{id}
+    </delete>
+    
+    <select id="getAttachment" parameterType="java.lang.String" resultMap="attachResultMap">
+        select * from t_attach where id = #{id}
+    </select>
+    
+    <select id="getAttachmentCount" parameterType="java.lang.String" resultType="long">
+        select count(id) from t_attach where id = #{id}
+    </select>
+    
+</mapper>
