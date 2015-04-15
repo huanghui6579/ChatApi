@@ -17,7 +17,7 @@ public class Attachment implements Serializable {
 
 
 	/**
-	 * 唯一主键，该主键根据发送者_接受者_文件的md5值一起进行md5加密来的
+	 * 唯一主键，该主键根据发送者_接受者_文件的md5值_文件的接收时间(long 类型)一起进行md5加密来的
 	 */
 	private String id;
 	
@@ -55,6 +55,11 @@ public class Attachment implements Serializable {
 	 * 文件在本地的存放名称，以UUID的字符串来进行名称
 	 */
 	private String sotreName;
+	
+	/**
+	 * 该文件的hash值
+	 */
+	private String hash;
 
 	public String getId() {
 		return id;
@@ -120,11 +125,20 @@ public class Attachment implements Serializable {
 		this.sotreName = sotreName;
 	}
 
+	public String getHash() {
+		return hash;
+	}
+
+	public void setHash(String hash) {
+		this.hash = hash;
+	}
+
 	@Override
 	public String toString() {
 		return "Attachment [id=" + id + ", sender=" + sender + ", receiver="
 				+ receiver + ", fileName=" + fileName + ", creationDate="
 				+ creationDate + ", hasThumb=" + hasThumb + ", mimeType="
-				+ mimeType + ", sotreName=" + sotreName + "]";
+				+ mimeType + ", sotreName=" + sotreName + ", hash=" + hash
+				+ "]";
 	}
 }

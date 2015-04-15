@@ -5,16 +5,21 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.UUID;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
+import net.ibaixin.chat.api.model.ActionResult;
 import net.ibaixin.chat.api.model.AttachDto;
+import net.ibaixin.chat.api.model.Attachment;
+import net.ibaixin.chat.api.service.IAttachService;
 import net.ibaixin.chat.api.utils.SystemUtil;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.UUIDEditor;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
@@ -35,6 +40,9 @@ import org.springframework.web.multipart.MultipartFile;
 public class IndexController {
 	private static Logger logger = Logger.getLogger(IndexController.class);
 	
+	@Autowired
+	private IAttachService attachService;
+	
 	@RequestMapping(value = {"/", ""})
 	public String index() {
 		return "index";
@@ -42,50 +50,84 @@ public class IndexController {
 	
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	@ResponseBody
-	public void uploadFile(@RequestParam(value = "uploadFile", required = false) MultipartFile[] files, @RequestParam(required = true) String jsonStr, HttpServletRequest request) {
+	public ActionResult uploadFile(@RequestParam(value = "uploadFile", required = false) MultipartFile[] files, @RequestParam(required = true) String jsonStr, HttpServletRequest request) {
 		AttachDto attachDto = null;
+		ActionResult result = new ActionResult();
 		if (StringUtils.isNoneBlank(jsonStr)) {
-			attachDto = SystemUtil.json2obj(jsonStr, AttachDto.class);
-			logger.info("--------------" + attachDto);
+			try {
+				attachDto = SystemUtil.json2obj(jsonStr, AttachDto.class);
+			} catch (IOException e) {
+				result.setResultCode(ActionResult.CODE_ERROR);
+				logger.error((e == null ? "error" : e.getMessage()));
+			}
 		} else {
-			return;
+			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+			return result;
 		}
 		if (attachDto == null) {
-			return;
+			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+			return result;
 		}
 		//判断文件是否为空
 		if (files != null && files.length > 0) {
 			File baseDir = getBaseDir(request);
 			try {
 				
+				long time = System.currentTimeMillis();
 				//缩略图的名称
 				String thumbName = attachDto.getThumbName();
 				String fileName = attachDto.getFileName();
 				String sender = attachDto.getSender();
 				String receiver = attachDto.getReceiver();
+				String mimeType = attachDto.getMimeType();
+				String hash = attachDto.getHash();
+				boolean hasThumb = false;
+				String storeName = UUID.randomUUID().toString();
 				if (StringUtils.isNoneBlank(thumbName)) {	//有缩略图
-					long time = System.currentTimeMillis();
+					hasThumb = true;
 					for (MultipartFile file : files) {
 						if (!file.isEmpty()) {
 							String originalFilename = file.getOriginalFilename();
 							boolean isThumb = false;
-							String saveName = null;
 							if (!originalFilename.equals(fileName)) {	//缩略图
 								isThumb = true;
-								saveName = UUID.randomUUID().toString() + "_thumb";
-							} else {
-								saveName = UUID.randomUUID().toString();
+								storeName = storeName + "_thumb";
 							}
 							File saveDir = getSaveDir(baseDir, sender, receiver, time, isThumb);
-							String mimeType = file.getContentType();
-							saveFile(file, saveDir, saveName);
+							logger.info("-------saveDir-------" + saveDir.getAbsolutePath() + "-----storeName------" + storeName);
+							//保存文件到本地
+							saveFile(file, saveDir, storeName);
 						}
 					}
 				}
+				
+				Attachment attachment = new Attachment();
+				attachment.setCreationDate(new Date(time));
+				attachment.setFileName(fileName);
+				attachment.setHasThumb(hasThumb);
+				attachment.setReceiver(receiver);
+				attachment.setSender(sender);
+				attachment.setMimeType(mimeType);
+				attachment.setSotreName(storeName);
+				StringBuilder sb = new StringBuilder();
+				String splite = "_";
+				sb.append(sender).append(splite).append(receiver).append(splite).append(hash).append(splite).append(time);
+				String id = SystemUtil.encoderByMd5(sb.toString());
+				attachment.setId(id);
+				
+				attachService.saveAttach(attachment);
+				
+				result.setId(id);
+				result.setResultCode(ActionResult.CODE_SUCCESS);
+				
 			} catch (Exception e) {
-				e.printStackTrace();
+				result.setResultCode(ActionResult.CODE_ERROR);
+				logger.error((e == null ? "error" : e.getMessage()));
 			}
+		} else {
+			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
 		}
+		return result;
 	}
 	
 	/**
@@ -150,14 +192,17 @@ public class IndexController {
 	 * @param file
 	 * @param saveDir 保存文件的路径
 	 * @param saveFileName 保存文件的名称,以UUID命名
+	 * @return true:保存到本地磁盘成功，false:保存到本地磁盘失败
 	 */
-	private void saveFile(MultipartFile file, File saveDir, String saveFileName) {
+	private boolean saveFile(MultipartFile file, File saveDir, String saveFileName) {
 		File saveFile = new File(saveDir, saveFileName);
 		try {
 			file.transferTo(saveFile);
+			return true;
 		} catch (IllegalStateException | IOException e) {
 			e.printStackTrace();
 		}
+		return false;
 	}
 	
 	/*@ResponseBody

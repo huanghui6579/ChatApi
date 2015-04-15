@@ -7,7 +7,7 @@ public interface IAttachService {
 	 * 添加附件
 	 * @param attachment
 	 */
-	public boolean addAttach(Attachment attachment);
+	public boolean saveAttach(Attachment attachment);
 	
 	/**
 	 * 根据ID删除附件

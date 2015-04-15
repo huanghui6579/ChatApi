@@ -21,7 +21,7 @@ public class AttachService implements IAttachService {
 	private AttachDao attachDao;
 
 	@Override
-	public boolean addAttach(Attachment attachment) {
+	public boolean saveAttach(Attachment attachment) {
 		boolean flag = false;
 		try {
 			attachDao.addAttach(attachment);

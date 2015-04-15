@@ -11,6 +11,7 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class SystemUtil {
 	private SystemUtil() {}
@@ -58,18 +59,9 @@ public class SystemUtil {
 		return null;
 	}
 	
-	public static <T> T json2obj(String json, Class<T> clazz) {
-		try {
-			T t = mapper.readValue(json, clazz);
-			return t;
-		} catch (JsonParseException e) {
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return null;
+	public static <T> T json2obj(String json, Class<T> clazz) throws JsonParseException, JsonMappingException, IOException {
+		T t = mapper.readValue(json, clazz);
+		return t;
 	}
 	
 	/**

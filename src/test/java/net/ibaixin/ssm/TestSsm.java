@@ -20,9 +20,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
@@ -73,9 +75,6 @@ public class TestSsm {
 	public void testJson() {
 		AttachDto attachDto = new AttachDto();
 		attachDto.setReceiver("bbb");
-		attachDto.setSender("aaa");
-		
-		
 		try {
 			jsonGenerator.writeObject(attachDto);
 		} catch (IOException e) {
@@ -134,7 +133,7 @@ public class TestSsm {
 		attachment.setMimeType("text/plain");
 		attachment.setSotreName("dsafdsfgdgfdgfdhgfhg");
 		
-		attachService.addAttach(attachment);
+		attachService.saveAttach(attachment);
 	}
 	
 	@Test
