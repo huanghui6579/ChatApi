@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
  *
  */
 @JsonInclude(Include.NON_NULL)
-public class ActionResult {
+public class ActionResult<T> {
 	
 
 	/**
@@ -27,6 +27,10 @@ public class ActionResult {
 	 */
 	public static final int CODE_ERROR_PARAM = 101;
 	
+	/**
+	 * 没有对应的数据
+	 */
+	public static final int CODE_NO_DATA = 102;
 	
 	/**
 	 * 返回码
@@ -41,7 +45,7 @@ public class ActionResult {
 	/**
 	 * 返回的内容,限于文本内容
 	 */
-	private String data;
+	private T data;
 
 	public int getResultCode() {
 		return resultCode;
@@ -59,22 +63,22 @@ public class ActionResult {
 		this.id = id;
 	}
 
-	public String getData() {
+	public T getData() {
 		return data;
 	}
 
-	public void setData(String data) {
+	public void setData(T data) {
 		this.data = data;
 	}
 
-	public ActionResult(int resultCode, String id, String data) {
+	public ActionResult(int resultCode, String id, T data) {
 		super();
 		this.resultCode = resultCode;
 		this.id = id;
 		this.data = data;
 	}
 
-	public ActionResult(int resultCode, String data) {
+	public ActionResult(int resultCode, T data) {
 		super();
 		this.resultCode = resultCode;
 		this.data = data;

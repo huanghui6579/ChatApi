@@ -20,15 +20,12 @@ import net.ibaixin.chat.api.utils.SystemUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.UUIDEditor;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,7 +34,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping()
-public class IndexController {
+public class IndexController extends BaseController {
 	private static Logger logger = Logger.getLogger(IndexController.class);
 	
 	@Autowired
@@ -50,10 +47,10 @@ public class IndexController {
 	
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	@ResponseBody
-	public ActionResult uploadFile(@RequestParam(value = "uploadFile", required = false) MultipartFile[] files, @RequestParam(required = true) String jsonStr, HttpServletRequest request) {
+	public ActionResult<Void> uploadFile(@RequestParam(value = "uploadFile", required = false) MultipartFile[] files, @RequestParam(required = true) String jsonStr, HttpServletRequest request) {
 		AttachDto attachDto = null;
-		ActionResult result = new ActionResult();
-		if (StringUtils.isNoneBlank(jsonStr)) {
+		ActionResult<Void> result = new ActionResult<>();
+		if (StringUtils.isNotBlank(jsonStr)) {
 			try {
 				attachDto = SystemUtil.json2obj(jsonStr, AttachDto.class);
 			} catch (IOException e) {
@@ -83,7 +80,7 @@ public class IndexController {
 				String hash = attachDto.getHash();
 				boolean hasThumb = false;
 				String storeName = UUID.randomUUID().toString();
-				if (StringUtils.isNoneBlank(thumbName)) {	//有缩略图
+				if (StringUtils.isNotBlank(thumbName)) {	//有缩略图
 					hasThumb = true;
 					for (MultipartFile file : files) {
 						if (!file.isEmpty()) {
@@ -128,19 +125,6 @@ public class IndexController {
 			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
 		}
 		return result;
-	}
-	
-	/**
-	 * 或得存储文件的根目录
-	 * @return
-	 */
-	private File getBaseDir(HttpServletRequest request) {
-		String fileDir = request.getServletContext().getRealPath("/") + File.separator + "upload";
-		File saveDir = new File(fileDir);
-		if (!saveDir.exists()) {
-			saveDir.mkdirs();
-		}
-		return saveDir;
 	}
 	
 	/**

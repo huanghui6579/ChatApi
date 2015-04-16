@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.ibaixin.chat.api.dao.VcardDao">
+    
+    <resultMap type="Vcard" id="vcardResultMap">
+        <id column="username" property="username"/>
+        <result column="nickName" property="nickName"/>
+        <result column="realName" property="realName"/>
+        <result column="country" property="country"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="street" property="street"/>
+        <result column="mobilePhone" property="mobilePhone"/>
+        <result column="telephone" property="telephone"/>
+        <result column="avatarPath" property="avatarPath"/>
+        <result column="gender" property="gender" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+        <result column="signature" property="signature"/>
+    </resultMap>
+    
+    <parameterMap type="Vcard" id="vcardParameterMap">
+        <parameter property="username" />
+        <parameter property="nickName" />
+        <parameter property="realName" />
+        <parameter property="country" />
+        <parameter property="province" />
+        <parameter property="city" />
+        <parameter property="street" />
+        <parameter property="mobilePhone" />
+        <parameter property="telephone" />
+        <parameter property="avatarPath" />
+        <parameter property="gender" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler" />
+        <parameter property="signature" />
+    </parameterMap>
+    
+	<select id="getVcard" resultMap="vcardResultMap" parameterType="java.lang.String">
+		select * from t_vcard where username = #{username}
+	</select>
+	
+	<select id="getMoblePhone" resultType="java.lang.String" parameterType="java.lang.String">
+		select mobilePhone from t_vcard where username = #{username}
+	</select>
+	
+	<select id="getTelephone" resultType="java.lang.String" parameterType="java.lang.String">
+		select telephone from t_vcard where username = #{username}
+	</select>
+	
+	<select id="getVcardCountById" resultType="java.lang.Long" parameterType="java.lang.String">
+		select count(*) from t_vcard where username = #{username}
+	</select>
+	
+	<insert id="addVcard" parameterMap="vcardParameterMap">
+	    insert into t_vcard values (#{username}, #{nickName}, #{realName}, #{country}, #{province}, #{city}, #{street}, #{mobilePhone}, #{telephone}, #{avatarPath}, #{gender.value}, #{signature})
+	</insert>
+	
+	<delete id="deleteVcard" parameterType="java.lang.String">
+	    delete from t_vcard where username = #{username}
+	</delete>
+	
+	<update id="updateVcard" parameterMap="vcardParameterMap">
+	    update t_vcard set nickName = #{nickName}, realName = #{realName}, country = #{country}, province = #{province}, city = #{city}, street = #{street}, mobilePhone = #{mobilePhone}, telephone = #{telephone}, avatarPath = #{avatarPath}, gender = #{gender.value}, signature = #{signature} where username = #{username}
+	</update>
+</mapper>
