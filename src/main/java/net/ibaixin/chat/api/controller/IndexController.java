@@ -2,7 +2,9 @@ package net.ibaixin.chat.api.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Calendar;
 import java.util.Date;
@@ -128,6 +130,16 @@ public class IndexController extends BaseController {
 	}
 	
 	/**
+	 * 根据文件名获取文件的本地存放路径
+	 * @param saveDir
+	 * @param storeName
+	 * @return
+	 */
+	private File getStoreFile(File saveDir, String storeName) {
+		return new File(storeName, storeName);
+	}
+	
+	/**
 	 * 根据发送这和接受者来动态生成文件的存储目录,生成的目录为:upload/2015/04/12/sender/receiver/...,缩略图的为:upload/sender/receiver/thumb/...
 	 * @param baseDir
 	 * @param sender
@@ -245,6 +257,80 @@ public class IndexController extends BaseController {
 		}
 		
 	}*/
+	
+	/**
+	 * 接收好友发送的文件
+	 * @param request
+	 * @param fileToken 文件的主键
+	 * @param fileType 要下载的文类型，有两种类型，1：表示缩略图，2：表示原始文件
+	 * @return
+	 */
+	@RequestMapping("/receiverFile")
+	@ResponseBody
+	public ResponseEntity<InputStreamResource> receiveFile(HttpServletRequest request, @RequestParam(required = true) String fileToken, @RequestParam(required = true) int fileType) {
+		HttpHeaders headers = new HttpHeaders();
+		if (StringUtils.isNoneBlank(fileToken)) {
+			Attachment attachment = attachService.getAttachment(fileToken);
+			if (attachment != null) {
+				String receiver = attachment.getReceiver();
+				String sender = attachment.getSender();
+				Date date = attachment.getCreationDate();
+				boolean hasThumb = attachment.isHasThumb();
+				String storeName = attachment.getSotreName();
+				String mimeType = attachment.getMimeType();
+				String fileName = attachment.getFileName();
+				File downloadFile = null;
+				if (fileType == 1) {	//下载缩略图
+					if (hasThumb) {	//存在缩略图
+						downloadFile = getStoreFile(getSaveDir(getBaseDir(request), sender, receiver, date.getTime(), true), storeName + "_thumb");
+					}
+				} else {	//下载原始图片
+					downloadFile = getStoreFile(getSaveDir(getBaseDir(request), sender, receiver, date.getTime(), false), storeName);
+				}
+				if (downloadFile == null || !downloadFile.exists()) {
+					//文件已被删除
+					return new ResponseEntity<InputStreamResource>(null, headers, HttpStatus.NO_CONTENT);
+				} else {
+					MediaType mediaType = null;
+					
+					try {
+						mediaType = MediaType.parseMediaType(mimeType);
+					} catch (Exception e) {
+						logger.error(e.getMessage());
+					}
+					if (mediaType == null) {
+						mediaType = MediaType.APPLICATION_OCTET_STREAM;
+					}
+					String encodeFilename = null;
+					try {
+						encodeFilename = URLEncoder.encode(fileName,"UTF-8");
+					} catch (UnsupportedEncodingException e) {
+						logger.error(e.getMessage());
+						encodeFilename = fileName;
+					}
+					headers.setContentType(mediaType);
+					headers.setContentLength(downloadFile.length());
+					StringBuilder sb = new StringBuilder();
+					sb.append("attachment;filename=")
+					.append(encodeFilename)
+					.append(";filename*=UTF-8''")
+					.append(encodeFilename);
+					headers.add(HttpHeaders.CONTENT_DISPOSITION, sb.toString());
+					InputStreamResource inputStreamResource = null;
+					try {
+						inputStreamResource = new InputStreamResource(new FileInputStream(downloadFile));
+						return new ResponseEntity<InputStreamResource>(inputStreamResource, headers, HttpStatus.OK);
+					} catch (FileNotFoundException e) {
+						logger.error(e.getMessage());
+					}
+					return new ResponseEntity<InputStreamResource>(inputStreamResource, headers, HttpStatus.NO_CONTENT);
+				}
+			} else {
+				return new ResponseEntity<InputStreamResource>(null, headers, HttpStatus.NO_CONTENT);
+			}
+		}
+		return new ResponseEntity<InputStreamResource>(null, headers, HttpStatus.NO_CONTENT);
+	}
 	
 	@RequestMapping("/download")
 	@ResponseBody
