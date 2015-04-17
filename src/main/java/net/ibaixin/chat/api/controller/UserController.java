@@ -2,11 +2,13 @@ package net.ibaixin.chat.api.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import net.ibaixin.chat.api.model.ActionResult;
+import net.ibaixin.chat.api.model.AttachDto;
 import net.ibaixin.chat.api.model.User;
 import net.ibaixin.chat.api.model.Vcard;
 import net.ibaixin.chat.api.model.VcardDto;
@@ -24,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping("/user")
@@ -67,21 +70,26 @@ public class UserController extends BaseController {
 	public ActionResult<VcardDto> getUserVcard(@PathVariable String username) {
 		ActionResult<VcardDto> result = new ActionResult<>();
 		if (StringUtils.isNotBlank(username)) {
-			Vcard vcard = vcardService.getVcard(username);
-			if (vcard != null) {
-				VcardDto vcardDto = new VcardDto();
-				vcardDto.setCity(vcard.getCity());
-				vcardDto.setCountry(vcard.getCountry());
-				vcardDto.setGender(vcard.getGender().ordinal());
-				vcardDto.setMobilePhone(vcard.getMobilePhone());
-				vcardDto.setNickName(vcard.getNickName());
-				vcardDto.setProvince(vcard.getProvince());
-				vcardDto.setRealName(vcard.getRealName());
-				vcardDto.setStreet(vcard.getStreet());
-				vcardDto.setSignature(vcard.getSignature());
-				result.setData(vcardDto);
-			} else {
-				result.setResultCode(ActionResult.CODE_NO_DATA);
+			try {
+				Vcard vcard = vcardService.getVcard(username);
+				if (vcard != null) {
+					VcardDto vcardDto = new VcardDto();
+					vcardDto.setCity(vcard.getCity());
+					vcardDto.setCountry(vcard.getCountry());
+					vcardDto.setGender(vcard.getGender().ordinal());
+					vcardDto.setMobilePhone(vcard.getMobilePhone());
+					vcardDto.setNickName(vcard.getNickName());
+					vcardDto.setProvince(vcard.getProvince());
+					vcardDto.setRealName(vcard.getRealName());
+					vcardDto.setStreet(vcard.getStreet());
+					vcardDto.setSignature(vcard.getSignature());
+					result.setData(vcardDto);
+				} else {
+					result.setResultCode(ActionResult.CODE_NO_DATA);
+				}
+			} catch (SQLException e) {
+				result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+				e.printStackTrace();
 			}
 		} else {	//错误的请求参数
 			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
@@ -89,34 +97,76 @@ public class UserController extends BaseController {
 		return result;
 	}
 	
-	/**
-	 * 更新用户的电子名片信息，如果没有名片，则创建
-	 * @update 2015年4月16日 下午8:39:20
-	 * @param request
-	 * @param username
-	 * @param jsonStr
-	 * @return
-	 */
-	@RequestMapping(value = {"/vcard/{username}"}, method = RequestMethod.POST)
+	@RequestMapping(value = "/uploadAvatar", method = RequestMethod.POST)
 	@ResponseBody
-	public ActionResult<Void> updateVcard(@PathVariable String username, @RequestParam(required = true) String jsonStr, @RequestParam(required = true) int fileType, HttpServletRequest request) {
+	public ActionResult<Void> uploadAvatar(@RequestParam(value = "avatarFile", required = false) MultipartFile[] files, @RequestParam(required = true) String jsonStr, HttpServletRequest request) {
 		ActionResult<Void> result = new ActionResult<>();
+		AttachDto attachDto = null;
 		if (StringUtils.isNotBlank(jsonStr)) {
 			try {
-				VcardDto vcardDto = SystemUtil.json2obj(jsonStr, VcardDto.class);
-				if (vcardDto != null) {
-					File avatarFile = new File(getAvatarSaveDir(request, username, fileType), avatarName(username, fileType));
-					Vcard vcard = new Vcard();
-					vcard.setUsername(username);
-//					vcard.setAvatarPath(avatarPath);
-				}
+				attachDto = SystemUtil.json2obj(jsonStr, AttachDto.class);
 			} catch (IOException e) {
-				logger.error(e.getMessage());
+				result.setResultCode(ActionResult.CODE_ERROR);
+				logger.error((e == null ? "error" : e.getMessage()));
+			}
+		} else {
+			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+			return result;
+		}
+		if (attachDto == null) {
+			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+			return result;
+		}
+		//判断文件是否为空
+		if (files != null && files.length > 0) {
+			String sender = attachDto.getSender();
+			String hash = attachDto.getHash();
+			String fileName = attachDto.getFileName();
+			
+			//源文件的存储路径
+			File avatarSaveDir = getAvatarSaveDir(request, sender, 2);
+			//缩略图的存储路径
+			File avatarThumbSaveDir = getAvatarSaveDir(request, sender, 1);
+			
+			//原始文件的名称
+			String avatarName = avatarName(sender, 2);
+			//文件的缩略图名称
+			String avatarThumbName = avatarName(sender, 1);
+			
+			for (MultipartFile file : files) {
+				if (!file.isEmpty()) {
+					String originalFilename = file.getOriginalFilename();
+					//保存文件到本地
+					if (!originalFilename.equals(fileName)) {	//缩略图
+						saveFile(file, avatarThumbSaveDir, avatarThumbName);
+					} else {
+						saveFile(file, avatarSaveDir, avatarName);
+					}
+				}
 			}
 			
+			//添加或者保存该头像信息
+			Vcard vcard = new Vcard();
+			vcard.setUsername(sender);
+			vcard.setAvatarPath(avatarName);
+			vcard.setHash(hash);
+			
+			try {
+				boolean success = vcardService.saveAvatar(avatarName, hash, sender);
+				if (success) {
+					result.setResultCode(ActionResult.CODE_SUCCESS);
+				} else {
+					result.setResultCode(ActionResult.CODE_ERROR);
+				}
+			} catch (SQLException e) {
+				result.setResultCode(ActionResult.CODE_ERROR);
+				logger.error(e.getMessage());
+			}
 		}
 		return result;
 	}
+	
+	
 	
 	/**
 	 * 根据用户名以及是否是缩略图来获得对应的文件存储路径

@@ -1,16 +1,21 @@
 package net.ibaixin.ssm;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Date;
 
 import javax.annotation.Resource;
 
 import net.ibaixin.chat.api.model.AttachDto;
 import net.ibaixin.chat.api.model.Attachment;
+import net.ibaixin.chat.api.model.Vcard;
+import net.ibaixin.chat.api.model.Vcard.Gender;
 import net.ibaixin.chat.api.service.IAttachService;
 import net.ibaixin.chat.api.service.IUserService;
+import net.ibaixin.chat.api.service.IVcardService;
 import net.ibaixin.chat.api.utils.SystemUtil;
 
+import org.apache.commons.lang3.Validate;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
@@ -31,10 +36,14 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 public class TestSsm {
 	private static Logger logger = Logger.getLogger(TestSsm.class);
 	
+	@Autowired
 	private IUserService userService;
 	
 	@Autowired
 	private IAttachService attachService;
+	
+	@Autowired
+	private IVcardService vcardService;
 	
     private JsonGenerator jsonGenerator = null;
 
@@ -120,7 +129,7 @@ public class TestSsm {
 		logger.info(users);
 	}*/
 	
-	@Test
+	/*@Test
 	public void testAddAttach() {
 		Attachment attachment = new Attachment();
 		
@@ -147,5 +156,115 @@ public class TestSsm {
 	public void testGetAttachment() {
 		Attachment attachment = attachService.getAttachment("a88f81ebe084a3523d1934bb7bea6cbb");
 		logger.info(attachment);
+	}*/
+	
+	@Test
+	public void testAddVcard() {
+		Vcard vcard = new Vcard();
+		vcard.setUsername("aaa");
+		vcard.setGender(Gender.WOMAN);
+		try {
+			vcardService.saveVcard(vcard);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testGetVcard() {
+		Vcard vcard;
+		try {
+			vcard = vcardService.getVcard("aaa");
+			logger.info(vcard);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testDeleteVcard() {
+		try {
+			vcardService.deleteVcard("aaa");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testSaveAvatar() {
+		String avatarPath = "sdsfdfggf";
+		try {
+			vcardService.saveAvatar(avatarPath, "434", "aaa");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testGetAvatarPath() {
+		try {
+			String avatarPath = vcardService.getAvatarPath("aaa");
+			logger.info("-----avatarPath-----" + avatarPath);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testSaveNickName() {
+		String nickname = "大AAA";
+		try {
+			vcardService.saveNickName(nickname, "aaa");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testSaveGender() {
+		Gender gender = Gender.MAN;
+		try {
+			vcardService.saveGender(gender, "aaa");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testSaveAddress() {
+		String country = "中国";
+		String province = "广东";
+		String city = "深圳";
+		String street = "南山";
+		Vcard vcard = new Vcard();
+		vcard.setCountry(country);
+		vcard.setProvince(province);
+		vcard.setUsername("aaa");
+		vcard.setCity(city);
+		vcard.setStreet(street);
+		try {
+			vcardService.saveAddress(vcard);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testSaveSignature() {
+		String signature = "个性签名";
+		try {
+			vcardService.saveSignature(signature, "aaa");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

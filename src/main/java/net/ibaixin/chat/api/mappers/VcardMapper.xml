@@ -58,6 +58,46 @@
 	</delete>
 	
 	<update id="updateVcard" parameterMap="vcardParameterMap">
-	    update t_vcard set nickName = #{nickName}, realName = #{realName}, country = #{country}, province = #{province}, city = #{city}, street = #{street}, mobilePhone = #{mobilePhone}, telephone = #{telephone}, avatarPath = #{avatarPath}, gender = #{gender.value}, signature = #{signature} where username = #{username}
+	    update t_vcard set nickName = #{nickName}, realName = #{realName}, country = #{country}, province = #{province}, city = #{city}, street = #{street}, mobilePhone = #{mobilePhone}, telephone = #{telephone}, avatarPath = #{avatarPath}, hash = #{hash}, gender = #{gender.value}, signature = #{signature} where username = #{username}
 	</update>
+	
+	<update id="updateAvatar" parameterMap="vcardParameterMap">
+	    update t_vcard set avatarPath = #{avatarPath}, hash = #{hash} where username = #{username}
+	</update>
+	
+	<select id="getAvatarPath" parameterType="java.lang.String" resultType="java.lang.String">
+	    select avatarPath from t_vcard where username = #{username}
+	</select>
+	
+	<update id="updateNickName" parameterMap="vcardParameterMap">
+	    update t_vcard set nickName = #{nickName} where username = #{username}
+	</update>
+	
+	<update id="updateGender" parameterMap="vcardParameterMap">
+	    update t_vcard set gender = #{gender.value} where username = #{username}
+	</update>
+	
+	<update id="updateAddress" parameterMap="vcardParameterMap">
+	    update t_vcard set 
+	    <if test="country != null and country != ''">
+	        country = #{country}, 
+	    </if>
+	    
+	    province = #{province}, city = #{city}
+	    
+	    <if test="street != null and street != ''">
+	        , street = #{street} 
+	    </if>
+	    
+	    where username = #{username}
+	</update>
+	
+	<update id="updateSignature" parameterMap="vcardParameterMap">
+	    update t_vcard set signature = #{signature} where username = #{username}
+	</update>
+	
+	<select id="getAvatarHash" parameterType="java.lang.String" resultType="java.lang.String">
+	    select hash from t_avatar where username = #{username}
+	</select>
+	
 </mapper>

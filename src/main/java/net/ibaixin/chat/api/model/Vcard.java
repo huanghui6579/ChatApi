@@ -102,6 +102,11 @@ public class Vcard implements Serializable {
 	 * 个性签名
 	 */
 	private String signature;
+	
+	/**
+	 * 文件的hash值
+	 */
+	private String hash;
 
 	public String getUsername() {
 		return username;
@@ -199,6 +204,14 @@ public class Vcard implements Serializable {
 		this.signature = signature;
 	}
 
+	public String getHash() {
+		return hash;
+	}
+
+	public void setHash(String hash) {
+		this.hash = hash;
+	}
+
 	@Override
 	public String toString() {
 		return "Vcard [username=" + username + ", nickName=" + nickName
@@ -206,6 +219,6 @@ public class Vcard implements Serializable {
 				+ ", province=" + province + ", city=" + city + ", street="
 				+ street + ", mobilePhone=" + mobilePhone + ", telephone="
 				+ telephone + ", avatarPath=" + avatarPath + ", gender="
-				+ gender + ", signature=" + signature + "]";
+				+ gender + ", signature=" + signature + ", hash=" + hash + "]";
 	}
 }

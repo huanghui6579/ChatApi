@@ -14,20 +14,20 @@ public interface VcardDao {
 	 * @param vcard
 	 * @return
 	 */
-	public void addVcard(Vcard vcard);
+	public int addVcard(Vcard vcard);
 	
 	/**
 	 * 更新用户电子名片
 	 * @param vcard
 	 * @return
 	 */
-	public void updateVcard(Vcard vcard);
+	public int updateVcard(Vcard vcard);
 	
 	/**
 	 * 根据主键删除电子名片
 	 * @param id
 	 */
-	public void deleteVcard(String id);
+	public int deleteVcard(String id);
 	
 	/**
 	 * 根据主键获得对应的电子名片信息
@@ -59,4 +59,55 @@ public interface VcardDao {
 	 * @return
 	 */
 	public long getVcardCountById(String id);
+	
+	/**
+	 * 保存或更新用户头像的存储文件名或路径
+	 * @update 2015年4月17日 上午9:09:23
+	 * @param avatarPath
+	 */
+	public int updateAvatar(Vcard vcard);
+	
+	/**
+	 * 获取用户头像的存储名称或者路径
+	 * @update 2015年4月17日 上午9:11:11
+	 * @param username
+	 * @return
+	 */
+	public String getAvatarPath(String username);
+	
+	/**
+	 * 保存用户昵称
+	 * @update 2015年4月17日 上午9:12:20
+	 * @param nickname
+	 */
+	public int updateNickName(Vcard vcard);
+	
+	/**
+	 * 保存用户性别
+	 * @update 2015年4月17日 上午9:13:15
+	 * @param gender
+	 */
+	public int updateGender(Vcard vcard);
+	
+	/**
+	 * 保存用户地址
+	 * @update 2015年4月17日 上午9:26:41
+	 * @param vcard
+	 */
+	public int updateAddress(Vcard vcard);
+	
+	/**
+	 * 保存用户签名
+	 * @update 2015年4月17日 上午9:27:42
+	 * @param signature
+	 */
+	public int updateSignature(Vcard vcard);
+	
+	/**
+	 * 获取该用户头像的hash值
+	 * @update 2015年4月17日 下午6:27:50
+	 * @param id
+	 * @return
+	 */
+	public String getAvatarHash(String id);
 }

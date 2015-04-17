@@ -84,19 +84,20 @@ public class IndexController extends BaseController {
 				String storeName = UUID.randomUUID().toString();
 				if (StringUtils.isNotBlank(thumbName)) {	//有缩略图
 					hasThumb = true;
-					for (MultipartFile file : files) {
-						if (!file.isEmpty()) {
-							String originalFilename = file.getOriginalFilename();
-							boolean isThumb = false;
-							if (!originalFilename.equals(fileName)) {	//缩略图
-								isThumb = true;
-								storeName = storeName + "_thumb";
-							}
-							File saveDir = getSaveDir(baseDir, sender, receiver, time, isThumb);
-							logger.info("-------saveDir-------" + saveDir.getAbsolutePath() + "-----storeName------" + storeName);
-							//保存文件到本地
-							saveFile(file, saveDir, storeName);
+				}
+				
+				for (MultipartFile file : files) {
+					if (!file.isEmpty()) {
+						String originalFilename = file.getOriginalFilename();
+						boolean isThumb = false;
+						if (!originalFilename.equals(fileName)) {	//缩略图
+							isThumb = true;
+							storeName = storeName + "_thumb";
 						}
+						File saveDir = getSaveDir(baseDir, sender, receiver, time, isThumb);
+						logger.info("-------saveDir-------" + saveDir.getAbsolutePath() + "-----storeName------" + storeName);
+						//保存文件到本地
+						saveFile(file, saveDir, storeName);
 					}
 				}
 				
@@ -181,24 +182,6 @@ public class IndexController extends BaseController {
 			sb.insert(0, 0);
 		}
 		return sb.toString();
-	}
-	
-	/**
-	 * 保存文件到本地磁盘
-	 * @param file
-	 * @param saveDir 保存文件的路径
-	 * @param saveFileName 保存文件的名称,以UUID命名
-	 * @return true:保存到本地磁盘成功，false:保存到本地磁盘失败
-	 */
-	private boolean saveFile(MultipartFile file, File saveDir, String saveFileName) {
-		File saveFile = new File(saveDir, saveFileName);
-		try {
-			file.transferTo(saveFile);
-			return true;
-		} catch (IllegalStateException | IOException e) {
-			e.printStackTrace();
-		}
-		return false;
 	}
 	
 	/*@ResponseBody

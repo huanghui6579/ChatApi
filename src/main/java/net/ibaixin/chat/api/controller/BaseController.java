@@ -1,8 +1,11 @@
 package net.ibaixin.chat.api.controller;
 
 import java.io.File;
+import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 
@@ -22,5 +25,26 @@ public abstract class BaseController {
 			saveDir.mkdirs();
 		}
 		return saveDir;
+	}
+	
+	/**
+	 * 保存文件到本地磁盘
+	 * @param file
+	 * @param saveDir 保存文件的路径
+	 * @param saveFileName 保存文件的名称,以UUID命名
+	 * @return true:保存到本地磁盘成功，false:保存到本地磁盘失败
+	 */
+	protected boolean saveFile(MultipartFile file, File saveDir, String saveFileName) {
+		File saveFile = new File(saveDir, saveFileName);
+		if (saveFile.exists()) {
+			saveFile.delete();
+		}
+		try {
+			file.transferTo(saveFile);
+			return true;
+		} catch (IllegalStateException | IOException e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 }
