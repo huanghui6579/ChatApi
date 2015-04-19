@@ -1,5 +1,7 @@
 package net.ibaixin.chat.api.dao;
 
+import java.util.List;
+
 import net.ibaixin.chat.api.model.Vcard;
 
 /**
@@ -110,4 +112,14 @@ public interface VcardDao {
 	 * @return
 	 */
 	public String getAvatarHash(String id);
+	
+	/**
+	 * 根据主键的集合查询对应的头像的hash值
+	 * @author tiger
+	 * @version 1.0.0
+	 * @update 2015年4月18日 下午6:03:05
+	 * @param ids
+	 * @return
+	 */
+	public List<Vcard> getVcards(List<String> ids);
 }

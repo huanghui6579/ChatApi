@@ -14,6 +14,16 @@ import org.springframework.web.multipart.MultipartFile;
  * @update 2015年4月16日 下午8:51:10
  */
 public abstract class BaseController {
+	
+	/**
+	 * 缩略图文件
+	 */
+	public static final int FILE_TYPE_THUMB = 1;
+	
+	/**
+	 * 原始文件
+	 */
+	public static final int FILE_TYPE_ORIGINAL = 2;
 	/**
 	 * 或得存储文件的根目录
 	 * @return

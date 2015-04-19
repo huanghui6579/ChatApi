@@ -2,11 +2,15 @@ package net.ibaixin.chat.api.model;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 /**
  * 用户的电子名片
  * @author huanghui1
  *
  */
+@JsonInclude(Include.NON_NULL)
 public class Vcard implements Serializable {
 
 	/**
@@ -96,7 +100,7 @@ public class Vcard implements Serializable {
 	/**
 	 * 性别
 	 */
-	private Gender gender = Gender.UNKOWN;
+	private Gender gender;
 	
 	/**
 	 * 个性签名

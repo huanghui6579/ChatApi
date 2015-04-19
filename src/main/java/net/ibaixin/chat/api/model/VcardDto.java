@@ -13,6 +13,11 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 public class VcardDto {
 	
 	/**
+	 * 用户名
+	 */
+	private String username;
+	
+	/**
 	 * 昵称
 	 */
 	private String nickName;
@@ -140,5 +145,13 @@ public class VcardDto {
 
 	public void setSignature(String signature) {
 		this.signature = signature;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 }

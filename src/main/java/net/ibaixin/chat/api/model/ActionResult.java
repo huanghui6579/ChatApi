@@ -15,22 +15,22 @@ public class ActionResult<T> {
 	/**
 	 * 请求成功
 	 */
-	public static final int CODE_SUCCESS = 99;
+	public static final int CODE_SUCCESS = 100;
 	
 	/**
 	 * 请求、处理失败
 	 */
-	public static final int CODE_ERROR = 100;
+	public static final int CODE_ERROR = 101;
 	
 	/**
 	 * 错误的请求参数
 	 */
-	public static final int CODE_ERROR_PARAM = 101;
+	public static final int CODE_ERROR_PARAM = 102;
 	
 	/**
 	 * 没有对应的数据
 	 */
-	public static final int CODE_NO_DATA = 102;
+	public static final int CODE_NO_DATA = 103;
 	
 	/**
 	 * 返回码

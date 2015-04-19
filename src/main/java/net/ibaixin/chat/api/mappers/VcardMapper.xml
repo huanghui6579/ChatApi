@@ -16,6 +16,7 @@
         <result column="avatarPath" property="avatarPath"/>
         <result column="gender" property="gender" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
         <result column="signature" property="signature"/>
+        <result column="hash" property="hash"/>
     </resultMap>
     
     <parameterMap type="Vcard" id="vcardParameterMap">
@@ -31,6 +32,7 @@
         <parameter property="avatarPath" />
         <parameter property="gender" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler" />
         <parameter property="signature" />
+        <parameter property="hash" />
     </parameterMap>
     
 	<select id="getVcard" resultMap="vcardResultMap" parameterType="java.lang.String">
@@ -50,7 +52,7 @@
 	</select>
 	
 	<insert id="addVcard" parameterMap="vcardParameterMap">
-	    insert into t_vcard values (#{username}, #{nickName}, #{realName}, #{country}, #{province}, #{city}, #{street}, #{mobilePhone}, #{telephone}, #{avatarPath}, #{gender.value}, #{signature})
+	    insert into t_vcard values (#{username}, #{nickName}, #{realName}, #{country}, #{province}, #{city}, #{street}, #{mobilePhone}, #{telephone}, #{avatarPath}, #{gender.value}, #{signature}, #{hash})
 	</insert>
 	
 	<delete id="deleteVcard" parameterType="java.lang.String">
@@ -98,6 +100,16 @@
 	
 	<select id="getAvatarHash" parameterType="java.lang.String" resultType="java.lang.String">
 	    select hash from t_avatar where username = #{username}
+	</select>
+	
+	<select id="getVcards" parameterType="java.util.List" resultMap="vcardResultMap">
+	    select username, hash, nickName, gender from t_vcard 
+	    <where>
+	        username in 
+	        <foreach collection="list" open="(" close=")" separator="," item="uid" index="index">
+	            #{uid}
+	        </foreach>
+	    </where>
 	</select>
 	
 </mapper>

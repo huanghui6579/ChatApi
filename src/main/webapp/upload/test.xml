@@ -1,1 +1,0 @@
-<message to='bbb@home-pc.com' id='NSWpv-19' type='chat'><body>123</body><thread>0cc4c7d8-61e7-465c-8dc9-6e52366d7e7b</thread><request xmlns='urn:xmpp:receipts'/><composing xmlns='http://jabber.org/protocol/chatstates'/><base_info xmlns='uc:staff_name'><send_name>发送人张三</send_name><rec_name>接收人李四</rec_name></base_info></message>

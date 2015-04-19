@@ -35,7 +35,7 @@ public class AttachService implements IAttachService {
 			} else {
 				logger.error("-------添加-------" + attachment.getId() + "-------失败");
 			}
-//			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
 		return flag;
 	}

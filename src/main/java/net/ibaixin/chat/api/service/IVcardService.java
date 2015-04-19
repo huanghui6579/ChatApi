@@ -1,6 +1,7 @@
 package net.ibaixin.chat.api.service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import net.ibaixin.chat.api.model.Vcard;
 import net.ibaixin.chat.api.model.Vcard.Gender;
@@ -101,4 +102,14 @@ public interface IVcardService {
 	 * @return
 	 */
 	public String getAvatarHash(String id) throws SQLException;
+	
+	/**
+	 * 根据主键的集合查询对应的电子名片基本信息
+	 * @author tiger
+	 * @version 1.0.0
+	 * @update 2015年4月18日 下午6:03:05
+	 * @param ids
+	 * @return
+	 */
+	public List<Vcard> getVcardByIds(List<String> ids);
 }

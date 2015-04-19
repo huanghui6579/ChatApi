@@ -3,6 +3,7 @@ package net.ibaixin.ssm;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -13,9 +14,9 @@ import net.ibaixin.chat.api.model.Vcard.Gender;
 import net.ibaixin.chat.api.service.IAttachService;
 import net.ibaixin.chat.api.service.IUserService;
 import net.ibaixin.chat.api.service.IVcardService;
+import net.ibaixin.chat.api.service.impl.IRosterOpenfireService;
 import net.ibaixin.chat.api.utils.SystemUtil;
 
-import org.apache.commons.lang3.Validate;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
@@ -25,11 +26,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
@@ -45,9 +44,13 @@ public class TestSsm {
 	@Autowired
 	private IVcardService vcardService;
 	
-    private JsonGenerator jsonGenerator = null;
+	@Autowired
+	private IRosterOpenfireService rosterOpenfireService;
+
+	private JsonGenerator jsonGenerator = null;
 
     private ObjectMapper objectMapper = null;
+    
     
     @Before
     public void setup() {
@@ -129,7 +132,7 @@ public class TestSsm {
 		logger.info(users);
 	}*/
 	
-	/*@Test
+	@Test
 	public void testAddAttach() {
 		Attachment attachment = new Attachment();
 		
@@ -156,12 +159,12 @@ public class TestSsm {
 	public void testGetAttachment() {
 		Attachment attachment = attachService.getAttachment("a88f81ebe084a3523d1934bb7bea6cbb");
 		logger.info(attachment);
-	}*/
+	}
 	
 	@Test
 	public void testAddVcard() {
 		Vcard vcard = new Vcard();
-		vcard.setUsername("aaa");
+		vcard.setUsername("ccc");
 		vcard.setGender(Gender.WOMAN);
 		try {
 			vcardService.saveVcard(vcard);
@@ -197,7 +200,7 @@ public class TestSsm {
 	public void testSaveAvatar() {
 		String avatarPath = "sdsfdfggf";
 		try {
-			vcardService.saveAvatar(avatarPath, "434", "aaa");
+			vcardService.saveAvatar(avatarPath, "gfdghfggffghghhghf", "ccc");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -266,5 +269,20 @@ public class TestSsm {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	@Test
+	public void testGetRosters() {
+		
+		List<String> users = rosterOpenfireService.getRosters("aaa");
+		
+		logger.info("--------" + users);
+	}
+	
+	@Test
+	public void testGetVcards() {
+		List<String> users = rosterOpenfireService.getRosters("aaa");
+		List<Vcard> vcards = vcardService.getVcardByIds(users);
+		logger.info("------------------" + vcards);
 	}
 }

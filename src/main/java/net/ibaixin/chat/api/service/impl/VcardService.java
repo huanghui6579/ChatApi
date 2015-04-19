@@ -1,6 +1,7 @@
 package net.ibaixin.chat.api.service.impl;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import net.ibaixin.chat.api.dao.VcardDao;
 import net.ibaixin.chat.api.model.Vcard;
@@ -161,5 +162,10 @@ public class VcardService implements IVcardService {
 	@Override
 	public String getAvatarHash(String id) throws SQLException {
 		return vcardDao.getAvatarHash(id);
+	}
+
+	@Override
+	public List<Vcard> getVcardByIds(List<String> ids) {
+		return vcardDao.getVcards(ids);
 	}
 }

@@ -47,7 +47,7 @@ public class IndexController extends BaseController {
 		return "index";
 	}
 	
-	@RequestMapping(value = "/upload", method = RequestMethod.POST)
+	@RequestMapping(value = "/sendFile", method = RequestMethod.POST)
 	@ResponseBody
 	public ActionResult<Void> uploadFile(@RequestParam(value = "uploadFile", required = false) MultipartFile[] files, @RequestParam(required = true) String jsonStr, HttpServletRequest request) {
 		AttachDto attachDto = null;
@@ -115,10 +115,12 @@ public class IndexController extends BaseController {
 				String id = SystemUtil.encoderByMd5(sb.toString());
 				attachment.setId(id);
 				
-				attachService.saveAttach(attachment);
-				
-				result.setId(id);
-				result.setResultCode(ActionResult.CODE_SUCCESS);
+				if (attachService.saveAttach(attachment)) {
+					result.setId(id);
+					result.setResultCode(ActionResult.CODE_SUCCESS);
+				} else {
+					result.setResultCode(ActionResult.CODE_ERROR);
+				}
 				
 			} catch (Exception e) {
 				result.setResultCode(ActionResult.CODE_ERROR);
@@ -263,12 +265,14 @@ public class IndexController extends BaseController {
 				String mimeType = attachment.getMimeType();
 				String fileName = attachment.getFileName();
 				File downloadFile = null;
-				if (fileType == 1) {	//下载缩略图
+				if (fileType == FILE_TYPE_THUMB) {	//下载缩略图
 					if (hasThumb) {	//存在缩略图
 						downloadFile = getStoreFile(getSaveDir(getBaseDir(request), sender, receiver, date.getTime(), true), storeName + "_thumb");
 					}
-				} else {	//下载原始图片
+				} else if (fileType == FILE_TYPE_ORIGINAL) {	//下载原始图片
 					downloadFile = getStoreFile(getSaveDir(getBaseDir(request), sender, receiver, date.getTime(), false), storeName);
+				} else {
+					downloadFile = null;
 				}
 				if (downloadFile == null || !downloadFile.exists()) {
 					//文件已被删除
@@ -286,7 +290,7 @@ public class IndexController extends BaseController {
 					}
 					String encodeFilename = null;
 					try {
-						encodeFilename = URLEncoder.encode(fileName,"UTF-8");
+						encodeFilename = URLEncoder.encode(fileName, "UTF-8");
 					} catch (UnsupportedEncodingException e) {
 						logger.error(e.getMessage());
 						encodeFilename = fileName;
@@ -295,9 +299,9 @@ public class IndexController extends BaseController {
 					headers.setContentLength(downloadFile.length());
 					StringBuilder sb = new StringBuilder();
 					sb.append("attachment;filename=")
-					.append(encodeFilename)
-					.append(";filename*=UTF-8''")
-					.append(encodeFilename);
+						.append(encodeFilename)
+						.append(";filename*=UTF-8''")
+						.append(encodeFilename);
 					headers.add(HttpHeaders.CONTENT_DISPOSITION, sb.toString());
 					InputStreamResource inputStreamResource = null;
 					try {
