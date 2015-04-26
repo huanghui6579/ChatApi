@@ -35,6 +35,6 @@
 		
 	</form>
 	
-	<button id="sendData" style="margin-top: 20px;">发送数据</button>
+	<button id="sendData" style="margin-top: 20px;">发送数据2</button>
 </body>
 </html>

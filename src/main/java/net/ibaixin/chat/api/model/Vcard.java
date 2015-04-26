@@ -100,7 +100,7 @@ public class Vcard implements Serializable {
 	/**
 	 * 性别
 	 */
-	private Gender gender;
+	private Gender gender = Gender.UNKOWN;
 	
 	/**
 	 * 个性签名

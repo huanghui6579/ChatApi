@@ -5,7 +5,7 @@
 	<artifactId>chatapi</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ssm Maven Webapp</name>
+	<name>chatapi Maven Webapp</name>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -238,33 +238,80 @@
 
 		</resources>
 		
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
-			</plugin>
-			
-			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<configuration>
-					<scanIntervalSeconds>10</scanIntervalSeconds>
-				    <webApp>
-				    	<contextPath>/chatapi</contextPath>
-				    </webApp>
-					<httpConnector>
-						<port>9090</port>
-						<idleTimeout>60000</idleTimeout>
-					</httpConnector>
-				</configuration>
-			</plugin>
-			
-		</plugins>
-		
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.3</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.eclipse.jetty</groupId>
+					<artifactId>jetty-maven-plugin</artifactId>
+					<configuration>
+						<scanIntervalSeconds>10</scanIntervalSeconds>
+					    <webApp>
+					    	<contextPath>/chatapi</contextPath>
+					    </webApp>
+						<httpConnector>
+							<port>9090</port>
+							<idleTimeout>60000</idleTimeout>
+						</httpConnector>
+					</configuration>
+				</plugin>
+				
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.7</version>
+					<executions>
+						<execution>
+							<id>copy-resources-folder</id>
+							<!-- here the phase you need -->
+							<phase>install</phase>
+							<goals>
+								<goal>copy-resources</goal>
+							</goals>
+							<configuration>
+								<includeEmptyDirs>true</includeEmptyDirs>
+								<overwrite>true</overwrite>
+								<outputDirectory>${env.CATALINA_HOME}/webapps/${project.build.finalName}</outputDirectory>
+								<resources>
+									<resource>
+										<directory>${project.build.directory}/${project.build.finalName}</directory>
+									</resource>
+								</resources>
+							</configuration>
+						</execution>
+						<!-- <execution>
+							<id>copy-resources-war</id>
+							here the phase you need
+							<phase>install</phase>
+							<goals>
+								<goal>copy-resources</goal>
+							</goals>
+							<configuration>
+								<includeEmptyDirs>true</includeEmptyDirs>
+								<overwrite>true</overwrite>
+								<outputDirectory>${env.CATALINA_HOME}/webapps/</outputDirectory>
+								<resources>
+									<resource>
+										<directory>${project.build.directory}</directory>
+										<includes>
+											<include>${project.build.finalName}.war</include>
+										</includes>
+									</resource>
+								</resources>
+							</configuration>
+						</execution> -->
+					</executions>
+				</plugin>
+				
+			</plugins>
+		</pluginManagement>
 	</build>
 </project>

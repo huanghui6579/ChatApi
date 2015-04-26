@@ -139,7 +139,7 @@ public class IndexController extends BaseController {
 	 * @return
 	 */
 	private File getStoreFile(File saveDir, String storeName) {
-		return new File(storeName, storeName);
+		return new File(saveDir, storeName);
 	}
 	
 	/**
