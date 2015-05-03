@@ -90,14 +90,15 @@ public class IndexController extends BaseController {
 					if (!file.isEmpty()) {
 						String originalFilename = file.getOriginalFilename();
 						boolean isThumb = false;
+						String tname = storeName;
 						if (!originalFilename.equals(fileName)) {	//缩略图
 							isThumb = true;
-							storeName = storeName + "_thumb";
+							tname = storeName + "_thumb";
 						}
 						File saveDir = getSaveDir(baseDir, sender, receiver, time, isThumb);
-						logger.info("-------saveDir-------" + saveDir.getAbsolutePath() + "-----storeName------" + storeName);
+						logger.info("-------saveDir-------" + saveDir.getAbsolutePath() + "-----tname------" + tname);
 						//保存文件到本地
-						saveFile(file, saveDir, storeName);
+						saveFile(file, saveDir, tname);
 					}
 				}
 				
@@ -109,6 +110,7 @@ public class IndexController extends BaseController {
 				attachment.setSender(sender);
 				attachment.setMimeType(mimeType);
 				attachment.setSotreName(storeName);
+				attachment.setHash(hash);
 				StringBuilder sb = new StringBuilder();
 				String splite = "_";
 				sb.append(sender).append(splite).append(receiver).append(splite).append(hash).append(splite).append(time);

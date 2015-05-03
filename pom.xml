@@ -259,7 +259,7 @@
 					    	<contextPath>/chatapi</contextPath>
 					    </webApp>
 						<httpConnector>
-							<port>9090</port>
+							<port>8080</port>
 							<idleTimeout>60000</idleTimeout>
 						</httpConnector>
 					</configuration>
