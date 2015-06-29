@@ -66,6 +66,16 @@ public class VcardDto {
 	 * 个性签名
 	 */
 	private String signature;
+	
+	/**
+	 * 用户头像的原始图片的下载地址
+	 */
+	private String avatarPath;
+	
+	/**
+	 * 文件的hash值
+	 */
+	private String hash;
 
 	public String getNickName() {
 		return nickName;
@@ -153,5 +163,21 @@ public class VcardDto {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getAvatarPath() {
+		return avatarPath;
+	}
+
+	public void setAvatarPath(String avatarPath) {
+		this.avatarPath = avatarPath;
+	}
+
+	public String getHash() {
+		return hash;
+	}
+
+	public void setHash(String hash) {
+		this.hash = hash;
 	}
 }

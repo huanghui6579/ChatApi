@@ -75,6 +75,8 @@ public class UserController extends BaseController {
 					vcardDto.setRealName(vcard.getRealName());
 					vcardDto.setStreet(vcard.getStreet());
 					vcardDto.setSignature(vcard.getSignature());
+					vcardDto.setAvatarPath(vcard.getAvatarPath());
+					vcardDto.setHash(vcard.getHash());
 					result.setData(vcardDto);
 					result.setResultCode(ActionResult.CODE_SUCCESS);
 				} else {

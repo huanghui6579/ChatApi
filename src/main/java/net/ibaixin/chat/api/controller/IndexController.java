@@ -91,7 +91,7 @@ public class IndexController extends BaseController {
 						String originalFilename = file.getOriginalFilename();
 						boolean isThumb = false;
 						String tname = storeName;
-						if (!originalFilename.equals(fileName)) {	//缩略图
+						if (originalFilename.equals(thumbName)) {	//缩略图
 							isThumb = true;
 							tname = storeName + "_thumb";
 						}
