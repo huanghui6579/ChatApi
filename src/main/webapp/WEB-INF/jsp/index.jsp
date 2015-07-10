@@ -5,8 +5,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>首页</title>
-
+<style type="text/css">
+	div {
+		margin: 20px;
+	}
+</style>
+<link href="resources/bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="resources/js/jquery-2.1.3.js"></script>
+<script type="text/javascript" src="resources/bootstrap/js/bootstrap.js"></script>
+
+
 <script type="text/javascript">
 	$(function() {
 		$("#sendData").click(function() {
@@ -24,6 +32,35 @@
 			    }
 			});
 		});
+		$("#getUserVcard").click(function() {
+			var vcardResultObj = $("#vcardResult");
+			vcardResultObj.html("正在加载...");
+			$.ajax({
+				url : "http://localhost:8080/chatapi/api/user/vcard/" + $("#username").val(),
+			    type : "POST", 
+			    success : function(data) {
+			    	vcardResultObj.html(data);
+			    },
+				error:function(e){
+				    vcardResultObj.html("加载失败:" + e);
+			    }
+			});
+		});
+		$("#getRosterVcards").click(function() {
+			var friendVcardResultObj = $("#friendsVcardResult");
+			friendVcardResultObj.html("正在加载...");
+			$.ajax({
+				url : "http://localhost:8080/chatapi/api/user/rosterVcards/" + $("#username").val(),
+			    type : "POST", 
+			    success : function(data) {
+			    	friendVcardResultObj.html(data);
+			    },
+				error:function(e){
+					friendVcardResultObj.html("加载失败:" + e);
+			    }
+			});
+		});
+		
 	});
 </script>
 </head>
@@ -35,6 +72,22 @@
 		
 	</form>
 	
-	<button id="sendData" style="margin-top: 20px;">发送数据2</button>
+	<div>
+		<input type="text" id="username" placeholder="请输入用户名" /><br/>
+	</div>
+	<div>
+		<input type="button" id="getUserVcard" value="获得用户电子名片" />
+		<div id="vcardResult"></div>
+	</div>
+	
+	<div>
+		<input type="button" id="getRosterVcards" value="获取好友头像" />
+		<div id="friendsVcardResult"></div>
+	</div>
+	
+	<!-- <div>
+		<input type="button" id="uploadAvatar" value="上传头像" />
+		<div id="friendsVcardResult"></div>
+	</div> -->
 </body>
 </html>

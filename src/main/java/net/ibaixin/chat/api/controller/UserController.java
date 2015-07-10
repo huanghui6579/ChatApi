@@ -267,7 +267,7 @@ public class UserController extends BaseController {
 	 * @param fileType
 	 * @return
 	 */
-	public File getAvatarSaveDir(HttpServletRequest request, String username, int fileType) {
+	private File getAvatarSaveDir(HttpServletRequest request, String username, int fileType) {
 		if (fileType != FILE_TYPE_THUMB || fileType != FILE_TYPE_ORIGINAL) {
 			return null;
 		}
@@ -295,7 +295,7 @@ public class UserController extends BaseController {
 	 * @version 1.0.0
 	 * @update 2015年4月19日 下午12:43:35
 	 */
-	public File getAvatarSaveFile(HttpServletRequest request, String username, int fileType) {
+	private File getAvatarSaveFile(HttpServletRequest request, String username, int fileType) {
 		if (fileType != FILE_TYPE_THUMB || fileType != FILE_TYPE_ORIGINAL) {
 			return null;
 		}
@@ -344,7 +344,7 @@ public class UserController extends BaseController {
 	 * @param fileType 1表示缩略图，2表示原始文件
 	 * @return
 	 */
-	public String avatarName(String username, int fileType) {
+	private String avatarName(String username, int fileType) {
 		String fileName = null;
 		if (fileType == 1) {	//缩略图
 			fileName = "icon_" + username + "_thumb";
