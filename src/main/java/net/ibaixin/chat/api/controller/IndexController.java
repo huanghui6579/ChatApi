@@ -1,5 +1,6 @@
 package net.ibaixin.chat.api.controller;
 
+import java.awt.Desktop.Action;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -19,6 +20,9 @@ import net.ibaixin.chat.api.model.Attachment;
 import net.ibaixin.chat.api.service.IAttachService;
 import net.ibaixin.chat.api.utils.SystemUtil;
 
+import org.apache.commons.fileupload.FileUpload;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +37,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 @Controller
 @RequestMapping()
@@ -351,6 +356,45 @@ public class IndexController extends BaseController {
 		headers.add(HttpHeaders.CONTENT_DISPOSITION, sb.toString());
 		InputStreamResource inputStreamResource = new InputStreamResource(new FileInputStream(downloadFile));
 		return new ResponseEntity<InputStreamResource>(inputStreamResource, headers, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/uploadTest", method = RequestMethod.POST)
+	@ResponseBody
+	public ActionResult<Void> uploadTest(MultipartHttpServletRequest request, @RequestParam(value = "myfile", required = false) MultipartFile[] files) {
+		ActionResult<Void> result = new ActionResult<>();
+		result.setResultCode(ActionResult.CODE_ERROR);
+		String name = request.getParameter("name");
+		String comment = request.getParameter("comment");
+		logger.info("name = " + name + "-----comment = " + comment);
+		if (files != null && files.length > 0) {
+			logger.info("文件数量：" + files.length);
+			File saveDir = getBaseDir(request);
+			for (MultipartFile file : files) {
+				String fileName = file.getOriginalFilename();
+				try {
+					File saveFile = new File(saveDir, fileName);
+					file.transferTo(saveFile);
+					logger.info("文件保存位置：" + saveFile.getAbsolutePath());
+					result.setResultCode(ActionResult.CODE_SUCCESS);
+				} catch (IllegalStateException | IOException e) {
+					logger.error(e.getMessage());
+				}
+			}
+		} else {
+			logger.info("没有文件");
+		}
+		return result;
+	}
+	
+	@RequestMapping(value = "/testForm", method = RequestMethod.POST)
+	@ResponseBody
+	public ActionResult<Void> testForm(HttpServletRequest request) {
+		ActionResult<Void> result = new ActionResult<>();
+		result.setResultCode(ActionResult.CODE_SUCCESS);
+		String name = request.getParameter("name");
+		String comment = request.getParameter("comment");
+		logger.info("name = " + name + "-----comment = " + comment);
+		return result;
 	}
 	
 /*	@RequestMapping("/download")
