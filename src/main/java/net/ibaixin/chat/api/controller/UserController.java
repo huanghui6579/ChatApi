@@ -137,7 +137,7 @@ public class UserController extends BaseController {
 			String avatarName = avatarName(sender, FILE_TYPE_ORIGINAL);
 			//文件的缩略图名称
 			String avatarThumbName = avatarName(sender, FILE_TYPE_THUMB);
-			
+			logger.info("---原始文件保存路径----" + avatarSaveDir.getAbsolutePath());
 			for (MultipartFile file : files) {
 				if (!file.isEmpty()) {
 					String originalFilename = file.getOriginalFilename();

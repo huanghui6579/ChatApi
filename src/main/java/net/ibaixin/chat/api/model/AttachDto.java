@@ -66,4 +66,10 @@ public class AttachDto {
 		this.hash = hash;
 	}
 
+	@Override
+	public String toString() {
+		return "AttachDto [sender=" + sender + ", receiver=" + receiver + ", fileName=" + fileName + ", thumbName="
+				+ thumbName + ", mimeType=" + mimeType + ", hash=" + hash + "]";
+	}
+
 }
