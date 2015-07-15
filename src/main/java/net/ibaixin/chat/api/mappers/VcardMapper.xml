@@ -14,6 +14,7 @@
         <result column="mobilePhone" property="mobilePhone"/>
         <result column="telephone" property="telephone"/>
         <result column="avatarPath" property="avatarPath"/>
+        <result column="mimeType" property="mimeType"/>
         <result column="gender" property="gender" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
         <result column="signature" property="signature"/>
         <result column="hash" property="hash"/>
@@ -30,6 +31,7 @@
         <parameter property="mobilePhone" />
         <parameter property="telephone" />
         <parameter property="avatarPath" />
+        <parameter property="mimeType" />
         <parameter property="gender" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler" />
         <parameter property="signature" />
         <parameter property="hash" />
@@ -60,15 +62,19 @@
 	</delete>
 	
 	<update id="updateVcard" parameterMap="vcardParameterMap">
-	    update t_vcard set nickName = #{nickName}, realName = #{realName}, country = #{country}, province = #{province}, city = #{city}, street = #{street}, mobilePhone = #{mobilePhone}, telephone = #{telephone}, avatarPath = #{avatarPath}, hash = #{hash}, gender = #{gender.value}, signature = #{signature} where username = #{username}
+	    update t_vcard set nickName = #{nickName}, realName = #{realName}, country = #{country}, province = #{province}, city = #{city}, street = #{street}, mobilePhone = #{mobilePhone}, telephone = #{telephone}, avatarPath = #{avatarPath}, mimeType = #{mimeType}, hash = #{hash}, gender = #{gender.value}, signature = #{signature} where username = #{username}
 	</update>
 	
 	<update id="updateAvatar" parameterMap="vcardParameterMap">
-	    update t_vcard set avatarPath = #{avatarPath}, hash = #{hash} where username = #{username}
+	    update t_vcard set avatarPath = #{avatarPath}, mimeType = #{mimeType}, hash = #{hash} where username = #{username}
 	</update>
 	
 	<select id="getAvatarPath" parameterType="java.lang.String" resultType="java.lang.String">
 	    select avatarPath from t_vcard where username = #{username}
+	</select>
+	
+	<select id="getAvatarInfo" parameterType="java.lang.String" resultMap="vcardResultMap">
+	    select avatarPath, mimeType from t_vcard where username = #{username}
 	</select>
 	
 	<update id="updateNickName" parameterMap="vcardParameterMap">

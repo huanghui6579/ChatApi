@@ -4,6 +4,9 @@ import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import net.ibaixin.chat.api.serializer.GenderSerializer;
 
 /**
  * 用户的电子名片
@@ -44,6 +47,19 @@ public class Vcard implements Serializable {
 
 		private Gender(final int pValue) {
 			this.value = pValue;
+		}
+		
+		/**
+		 * 根据数值获取对应的gender
+		 * @update 2015年7月15日 下午2:01:34
+		 * @param ordinal
+		 * @return
+		 */
+		public static Gender valueOf(int ordinal) {
+			if (ordinal < 0 || ordinal >= values().length) {
+				throw new IndexOutOfBoundsException("Invalid ordinal");
+			}
+			return values()[ordinal];
 		}
 	}
 
@@ -98,8 +114,14 @@ public class Vcard implements Serializable {
 	private String avatarPath;
 	
 	/**
+	 * 头像的mime类型
+	 */
+	private String mimeType;
+	
+	/**
 	 * 性别
 	 */
+	@JsonSerialize(using = GenderSerializer.class)
 	private Gender gender = Gender.UNKOWN;
 	
 	/**
@@ -216,13 +238,19 @@ public class Vcard implements Serializable {
 		this.hash = hash;
 	}
 
+	public String getMimeType() {
+		return mimeType;
+	}
+
+	public void setMimeType(String mimeType) {
+		this.mimeType = mimeType;
+	}
+
 	@Override
 	public String toString() {
-		return "Vcard [username=" + username + ", nickName=" + nickName
-				+ ", realName=" + realName + ", country=" + country
-				+ ", province=" + province + ", city=" + city + ", street="
-				+ street + ", mobilePhone=" + mobilePhone + ", telephone="
-				+ telephone + ", avatarPath=" + avatarPath + ", gender="
-				+ gender + ", signature=" + signature + ", hash=" + hash + "]";
+		return "Vcard [username=" + username + ", nickName=" + nickName + ", realName=" + realName + ", country="
+				+ country + ", province=" + province + ", city=" + city + ", street=" + street + ", mobilePhone="
+				+ mobilePhone + ", telephone=" + telephone + ", avatarPath=" + avatarPath + ", mimeType=" + mimeType
+				+ ", gender=" + gender + ", signature=" + signature + ", hash=" + hash + "]";
 	}
 }

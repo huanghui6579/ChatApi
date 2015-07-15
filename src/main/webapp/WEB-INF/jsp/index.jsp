@@ -43,6 +43,9 @@
 	.progress { position:relative; width:400px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
 	.bar { background-color: #B4F5B4; width:0%; height:20px; border-radius: 3px; }
 	.percent { position:absolute; display:inline-block; top:3px; left:48%; }
+	label {
+		display: inline;
+	}
 </style>
 <script type="text/javascript" src="http://hayageek.github.io/jQuery-Upload-File/jquery.uploadfile.min.js"></script>
 
@@ -54,7 +57,7 @@
 	$(function() {
 		$("#sendData").click(function() {
 			$.ajax({
-				url : "http://localhost:9090/chatapi/api/upload",
+				url : "upload",
 			    type : "POST", 
 			    dataType:"json",
 			    contentType:'application/json;charset=UTF-8',
@@ -71,13 +74,13 @@
 			var vcardResultObj = $("#vcardResult");
 			vcardResultObj.html("正在加载...");
 			$.ajax({
-				url : "http://localhost:8080/chatapi/api/user/vcard/" + $("#username").val(),
+				url : "user/vcard/" + $("#username").val(),
 			    type : "POST", 
 			    success : function(data) {
 			    	vcardResultObj.html(data);
 			    },
 				error:function(e){
-				    vcardResultObj.html("加载失败:" + e);
+				    $(vcardResultObj).html("加载失败:" + e);
 			    }
 			});
 		});
@@ -85,15 +88,31 @@
 			var friendVcardResultObj = $("#friendsVcardResult");
 			friendVcardResultObj.html("正在加载...");
 			$.ajax({
-				url : "http://localhost:8080/chatapi/api/user/rosterVcards/" + $("#username").val(),
+				url : "user/rosterVcards/" + $("#username").val(),
 			    type : "POST", 
 			    success : function(data) {
-			    	friendVcardResultObj.html(data);
+			    	$(friendVcardResultObj).html(data);
 			    },
 				error:function(e){
-					friendVcardResultObj.html("加载失败:" + e);
+					$(friendVcardResultObj).html("加载失败:" + e);
 			    }
 			});
+		});
+		
+		$("#downloadAvatar").click(function() {
+			var fileType = $('input:radio[name=fileType]:checked');
+			window.location = 'user/avatar/' + $("#username").val() + '?fileType=' + fileType.val();
+			/* $.ajax({
+				url : "user/avatar/" + $("#username").val(),
+				type : "POST", 
+				data: fileType.serialize(),
+			    success : function(data) {
+			    	console.log(data);
+			    },
+				error:function(e){
+					console.log("加载失败:" + e);
+			    }
+			}); */
 		});
 		
 		
@@ -150,13 +169,15 @@
 		        if (currentChunk < chunks) {
 		            loadNext();
 		        } else {// Compute hash
-		        	var fileName = file.name;
-		        	var fileSize = file.size;
-		        	var fileType = file.type;
-		        	var hash = spark.end();
-		        	$('#fileName').val(fileName);
-		        	$('#mimeType').val(fileType);
-		        	$('#hash').val(hash);
+		        	if ($(currentInput).hasClass('originalFile')) {	//原始图片
+			        	var fileName = file.name;
+			        	var fileSize = file.size;
+			        	var fileType = file.type;
+			        	var hash = spark.end();
+			        	$('#fileName').val(fileName);
+			        	$('#mimeType').val(fileType);
+			        	$('#hash').val(hash);
+		        	}
 		        }
 		    };
 	
@@ -187,8 +208,10 @@
 		}
 		$('#myForm').ajaxForm({
 			dataType:  'json',
-			data: {
-				'jsonStr': JSON.stringify($('#myForm').serializeObject())
+			beforeSerialize: function(form, options) {
+				options.data = {
+						'jsonStr': JSON.stringify($('#myForm').serializeObject())
+				}
 			},
 			beforeSend: function() {
 				status.empty();
@@ -210,18 +233,108 @@
 				status.html(xhr.responseText);
 			}
 		});
+		
+		
+		$('#nickButton').click(function() {
+			var nickModifyResult = $("#nickModifyResult");
+			nickModifyResult.html("正在提交...");
+			$.ajax({
+				url : "http://localhost:8080/chatapi/api/user/vcard/" + $("#username").val(),
+			    type : "POST", 
+			    success : function(data) {
+			    	$(nickModifyResult).html(data);
+			    },
+				error:function(e){
+				    $(nickModifyResult).html("加载失败:" + e);
+			    }
+			});
+		});
+		
+		$('#nickModifyButton').click(function() {
+			var nickModifyResultObj = $('#nickModifyResult');
+			$.ajax({
+			  method: "POST",
+			  url: 'user/modify/nick/' + $('#nickModifyForm input:first').val(),
+			  data: $('#nickModifyForm').serialize(),
+			  beforeSend: function(xhr, o) {
+				  nickModifyResultObj.html("正在提交...");
+			  }
+			})
+		  	.always(function(msg) {
+		  		nickModifyResultObj.html(msg);
+		  	});
+		});
+		
+		$('#genderModifyButton').click(function() {
+			var genderModifyResultObj = $('#genderModifyResult');
+			$.ajax({
+			  method: "POST",
+			  url: 'user/modify/gender/' + $('#genderModifyForm input:first').val(),
+			  data: $('#genderModifyForm').serialize(),
+			  beforeSend: function(xhr, o) {
+				  genderModifyResultObj.html("正在提交...");
+			  }
+			})
+		  	.always(function(msg) {
+		  		genderModifyResultObj.html(msg);
+		  	});
+		});
+		
+		$('#addressModifyButton').click(function() {
+			var addressModifyResultObj = $('#addressModifyResult');
+			$.ajax({
+			  method: "POST",
+			  contentType: "application/json;charset=UTF-8",
+			  url: 'user/modify/address/' + $('#addressModifyForm input:first').val(),
+			  data: JSON.stringify($('#addressModifyForm').serializeObject()),
+			  beforeSend: function(xhr, o) {
+				  addressModifyResultObj.html("正在提交...");
+			  }
+			})
+		  	.always(function(msg) {
+		  		addressModifyResultObj.html(msg);
+		  	});
+		});
+		
+		$('#signatureModifyButton').click(function() {
+			var signatureModifyResultObj = $('#signatureModifyResult');
+			$.ajax({
+			  method: "POST",
+			  url: 'user/modify/signature/' + $('#signatureModifyForm input:first').val(),
+			  data: $('#signatureModifyForm').serialize(),
+			  beforeSend: function(xhr, o) {
+				  signatureModifyResultObj.html("正在提交...");
+			  }
+			})
+		  	.always(function(msg) {
+		  		signatureModifyResultObj.html(msg);
+		  	});
+		});
+		
+		//修改昵称
+		/* $('#nickModifyForm').ajaxForm({
+			url: 'user/modify/nick/' + $('#nickModifyForm input:first').val(),
+			dataType:  'json',
+			beforeSend: function(xhr, o) {
+				nickModifyResultObj.html("正在提交...");
+			}, 
+			complete: function(xhr) {
+				nickModifyResultObj.html(xhr.responseText);
+			}
+		}); */
+		
 	});
 </script>
 </head>
 <body>
-	<div class="testBlock">
+	<!-- <div class="testBlock">
 		<form action="upload" method="post" enctype="multipart/form-data">
 			用户名：<input type="text" name="jsonStr" /><br />
 			选择文件:<input type="file" name="uploadFile"><br />
 			选择文件2:<input type="file" name="uploadFile"> <input type="submit" value="上传"><br />
 			
 		</form>
-	</div>
+	</div> -->
 	
 	<div class="testBlock">
 		<h2>获取用户电子名片</h2>
@@ -235,8 +348,14 @@
 		</div>
 		
 		<div>
-			<input type="button" id="getRosterVcards" value="获取好友头像" />
+			<input type="button" id="getRosterVcards" value="获取好友头像信息" />
 			<div id="friendsVcardResult"></div>
+		</div>
+		
+		<div>
+			<label><input type="radio" name="fileType" value="1">下载缩略图</label>
+			<label><input type="radio" name="fileType" value="2">下载原始图</label><br/>
+			<input type="button" id="downloadAvatar" value="下载头像" />
 		</div>
 	</div>
 	
@@ -276,21 +395,20 @@
 		</table>
 	</div> -->
 	
-	<div class="testBlock">
+	<!-- <div class="testBlock">
 		<h2>测试文件上传</h2>
 		<div id="fileuploader">选择文件</div>
 		<div id="startUpload" class="ajax-file-upload-green">开始上传</div>
-	</div>
+	</div> -->
 	
 	<div class="testBlock">
 		<h2>头像上传</h2><!-- uploadTest -->
 		<form id="myForm" action="user/uploadAvatar" method="post"  enctype="multipart/form-data"> 
-			发送人: <input type="text" name="sender" /> <br/>
-			接收人: <input type="text" name="receiver" /> <br/>
+			用户名: <input type="text" name="sender" /> <br/>
 			文件名: <input type="text" name="fileName" id="fileName" /> <br/>
 			文件类型: <input type="text" name="mimeType" id="mimeType" /> <br/>
 			文件MD5: <input type="text" name="hash" id="hash" /> <br/>
-   		    <span class="inputSpan"><input type="file" name="avatarFile"> </span>
+   		    <span class="inputSpan"><input type="file" class="originalFile" name="avatarFile"> </span>
    		    <span class="inputSpan"><input type="file" name="avatarFile"> </span>
 		    <input type="submit" id="submitBtn" value="开始上传" /> 
 			<input type="button" id="addFile" value="添加文件"/>
@@ -302,7 +420,53 @@
 		</div>
 	    
 	    <div id="status"></div>
-		
+	</div>
+	
+	<div class="testBlock">
+		<h2>修改昵称</h2>
+		<form action="#" id="nickModifyForm" method="post">
+			用户名：<input type="text" name="username" placeholder="请输入用户名"><br/>
+			新昵称：<input type="text" name="nickname" placeholder="请输入新昵称"/><br/>
+			<input type="button" id="nickModifyButton" value="提交昵称" />
+			<!-- <input type="button" id="realnameModifyButton" value="提交真实姓名" /> -->
+		</form>
+		<div id="nickModifyResult"></div>
+	</div>
+	
+	<div class="testBlock">
+		<h2>修改性别</h2>
+		<form action="#" id="genderModifyForm" method="post">
+			用户名：<input type="text" name="username" placeholder="请输入用户名"><br/>
+			性别：<label><input type="radio" name="gender" value="1" />男</label><label><input type="radio" name="gender" value="2" />女</label><br/>
+			<input type="button" id="genderModifyButton" value="提交性别" />
+			<!-- <input type="button" id="realnameModifyButton" value="提交真实姓名" /> -->
+		</form>
+		<div id="genderModifyResult"></div>
+	</div>
+	
+	<div class="testBlock">
+		<h2>修改地址</h2>
+		<form action="#" id="addressModifyForm" method="post">
+			用户名：<input type="text" name="username" placeholder="请输入用户名"><br/>
+			国家：<input type="text" name="country" placeholder="请输入国家名称"/><br/>
+			省份：<input type="text" name="province" placeholder="请输入省份名称"/><br/>
+			城市：<input type="text" name="city" placeholder="请输入城市名称"/><br/>
+			街道地址：<input type="text" name="street" placeholder="请输入详细街道地址"/><br/>
+			<input type="button" id="addressModifyButton" value="提交地址" />
+			<!-- <input type="button" id="realnameModifyButton" value="提交真实姓名" /> -->
+		</form>
+		<div id="addressModifyResult"></div>
+	</div>
+	
+	<div class="testBlock">
+		<h2>修改个性签名</h2>
+		<form action="#" id="signatureModifyForm" method="post">
+			用户名：<input type="text" name="username" placeholder="请输入用户名"><br/>
+			个性签名：<input type="text" name="signature" placeholder="请输入个性签名"/><br/>
+			<input type="button" id="signatureModifyButton" value="提交签名" />
+			<!-- <input type="button" id="realnameModifyButton" value="提交真实姓名" /> -->
+		</form>
+		<div id="signatureModifyResult"></div>
 	</div>
 	
 </body>

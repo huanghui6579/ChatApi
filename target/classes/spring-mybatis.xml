@@ -23,13 +23,27 @@
 	    <property name="locations" value="classpath:jdbc.properties"/>
 	</bean>
 
-    <!-- 数据库连接池 -->
-	<bean id="dataSource" destroy-method="close"
+    <!-- api数据库连接池 -->
+	<bean id="apiDataSource" destroy-method="close"
 	        class="org.apache.commons.dbcp2.BasicDataSource">
-	    <property name="driverClassName" value="${jdbc.driver}"/>
-	    <property name="url" value="${jdbc.url}"/>
-	    <property name="username" value="${jdbc.username}"/>
-	    <property name="password" value="${jdbc.password}"/>
+	    <property name="driverClassName" value="${jdbc.api.driver}"/>
+	    <property name="url" value="${jdbc.api.url}"/>
+	    <property name="username" value="${jdbc.api.username}"/>
+	    <property name="password" value="${jdbc.api.password}"/>
+	    <property name="initialSize" value="${jdbc.initialSize}"/>
+	    <property name="maxTotal" value="${jdbc.maxTotal}"/>
+	    <property name="maxIdle" value="${jdbc.maxIdle}"/>
+	    <property name="minIdle" value="${jdbc.minIdle}"/>
+	    <property name="maxWaitMillis" value="${jdbc.maxWaitMillis}"/>
+	</bean>
+
+    <!-- openfire数据库连接池 -->
+	<bean id="openfireDataSource" destroy-method="close"
+	        class="org.apache.commons.dbcp2.BasicDataSource">
+	    <property name="driverClassName" value="${jdbc.openfire.driver}"/>
+	    <property name="url" value="${jdbc.openfire.url}"/>
+	    <property name="username" value="${jdbc.openfire.username}"/>
+	    <property name="password" value="${jdbc.openfire.password}"/>
 	    <property name="initialSize" value="${jdbc.initialSize}"/>
 	    <property name="maxTotal" value="${jdbc.maxTotal}"/>
 	    <property name="maxIdle" value="${jdbc.maxIdle}"/>
@@ -37,9 +51,19 @@
 	    <property name="maxWaitMillis" value="${jdbc.maxWaitMillis}"/>
 	</bean>
 	
+	<bean id="multipleDataSource" class="net.ibaixin.chat.api.utils.MultipleDataSource">
+        <property name="targetDataSources">
+            <map>
+                <entry key="apiDataSource" value-ref="apiDataSource"/>
+                <entry key="openfireDataSource" value-ref="openfireDataSource"/>
+            </map>
+        </property>
+        <property name="defaultTargetDataSource" ref="apiDataSource"/>
+    </bean>
+	
 	<!-- session 工厂 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
+		<property name="dataSource" ref="multipleDataSource" />
 		<!-- <property name="configLocation" value="classpath:sqlMapConfig.xml" /> -->
 		<property name="mapperLocations" value="classpath:net/ibaixin/chat/api/mappers/*.xml" />
 		<property name="typeAliasesPackage" value="net.ibaixin.chat.api.model" />
@@ -49,13 +73,15 @@
 	
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="net.ibaixin.chat.api.dao" />
-		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
 	</bean>
 	
 	<!-- similarly, don't forget the PlatformTransactionManager -->
     <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
+        <property name="dataSource" ref="multipleDataSource"/>
     </bean>
+    
+    <bean id="dataSourceAspectBean" class="net.ibaixin.chat.api.aop.DataSourceOperation"/>
 	
 	<!-- the transactional advice (what 'happens'; see the <aop:advisor/> bean below) -->
     <tx:advice id="txAdvice" transaction-manager="txManager">
@@ -65,6 +91,8 @@
             <tx:method name="get*" read-only="true"/>
             <tx:method name="find*" read-only="true"/>
             <tx:method name="load*" read-only="true"/>
+            <tx:method name="has*" read-only="true"/>
+            <tx:method name="is*" read-only="true"/>
             <!-- other methods use the default transaction settings (see below) -->
             <tx:method name="*"/>
         </tx:attributes>
@@ -73,10 +101,14 @@
     <!-- ensure that the above transactional advice runs for any execution
         of an operation defined by the FooService interface -->
     <aop:config>
-        <aop:pointcut id="ssmServiceOperation" expression="execution(* net.ibaixin.chat.api.service..*Service.*(..))"/>
-        <aop:advisor advice-ref="txAdvice" pointcut-ref="ssmServiceOperation"/>
+        <aop:pointcut id="chatapiServiceOperation" expression="execution(* net.ibaixin.chat.api.service..*Service.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="chatapiServiceOperation" order="2"/>
+        
+        <!-- 切面的order 很重要，一定要排在事物的前面 -->
+        <aop:aspect id="dataSourceAspect" ref="dataSourceAspectBean" order="1">
+            <aop:before pointcut-ref="chatapiServiceOperation" method="doBefore"/>
+        </aop:aspect>
     </aop:config>
-    
     
 
 </beans>

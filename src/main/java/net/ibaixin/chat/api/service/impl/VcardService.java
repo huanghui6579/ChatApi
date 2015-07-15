@@ -56,11 +56,7 @@ public class VcardService implements IVcardService {
 	}
 
 	@Override
-	public boolean saveAvatar(String avatarPath, String hash, String id) throws SQLException {
-		Vcard vcard = new Vcard();
-		vcard.setAvatarPath(avatarPath);
-		vcard.setUsername(id);
-		vcard.setHash(hash);
+	public boolean saveAvatar(Vcard vcard) throws SQLException {
 		int count = 0;
 		boolean success = false;
 		count = vcardDao.updateAvatar(vcard);
@@ -167,5 +163,67 @@ public class VcardService implements IVcardService {
 	@Override
 	public List<Vcard> getVcardByIds(List<String> ids) {
 		return vcardDao.getVcards(ids);
+	}
+
+	@Override
+	public Vcard addVcard(Vcard vcard) throws SQLException {
+		if (vcard != null) {
+			int count = vcardDao.addVcard(vcard);
+			if (count > 0) {
+				return vcard;
+			} else {
+				return null;
+			}
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public boolean updateAvatar(Vcard vcard) throws SQLException {
+		int count = vcardDao.updateAvatar(vcard);
+		return count > 0;
+	}
+
+	@Override
+	public boolean updateNickName(String nickName, String id) throws SQLException {
+		Vcard vcard = new Vcard();
+		vcard.setNickName(nickName);
+		vcard.setUsername(id);
+		int count = vcardDao.updateNickName(vcard);
+		return count > 0;
+	}
+
+	@Override
+	public boolean updateGender(Gender gender, String id) throws SQLException {
+		Vcard vcard = new Vcard();
+		vcard.setGender(gender);
+		vcard.setUsername(id);
+		int count = vcardDao.updateGender(vcard);
+		return count > 0;
+	}
+
+	@Override
+	public boolean updateAddress(Vcard vcard) throws SQLException {
+		if (vcard != null) {
+			int count = vcardDao.updateAddress(vcard);
+			return count > 0;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public boolean updateSignature(String signature, String id) throws SQLException {
+		Vcard vcard = new Vcard();
+		vcard.setSignature(signature);
+		vcard.setUsername(id);
+		int count = vcardDao.updateSignature(vcard);
+		return count > 0;
+	}
+
+	@Override
+	public Vcard getAvatarInfo(String id) throws SQLException {
+		return vcardDao.getAvatarInfo(id);
 	}
 }

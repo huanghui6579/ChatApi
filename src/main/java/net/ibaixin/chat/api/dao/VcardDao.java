@@ -78,6 +78,14 @@ public interface VcardDao {
 	public String getAvatarPath(String username);
 	
 	/**
+	 * 获取用户头像文件信息，包括存储名称和mime类型
+	 * @param username
+	 * @return
+	 * @update 2015年7月15日 下午9:19:49
+	 */
+	public Vcard getAvatarInfo(String username);
+	
+	/**
 	 * 保存用户昵称
 	 * @update 2015年4月17日 上午9:12:20
 	 * @param nickname

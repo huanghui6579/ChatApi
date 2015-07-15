@@ -18,6 +18,7 @@ import net.ibaixin.chat.api.service.impl.IRosterOpenfireService;
 import net.ibaixin.chat.api.utils.SystemUtil;
 
 import org.apache.log4j.Logger;
+import org.aspectj.weaver.ast.Var;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -199,8 +200,12 @@ public class TestSsm {
 	@Test
 	public void testSaveAvatar() {
 		String avatarPath = "sdsfdfggf";
+		Vcard vcard = new Vcard();
+		vcard.setUsername("ccc");
+		vcard.setAvatarPath(avatarPath);
+		vcard.setHash("gfdghfggffghghhghf");
 		try {
-			vcardService.saveAvatar(avatarPath, "gfdghfggffghghhghf", "ccc");
+			vcardService.saveAvatar(vcard);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

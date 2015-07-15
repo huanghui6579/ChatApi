@@ -12,14 +12,7 @@ import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
-import net.ibaixin.chat.api.model.ActionResult;
-import net.ibaixin.chat.api.model.AttachDto;
-import net.ibaixin.chat.api.model.Vcard;
-import net.ibaixin.chat.api.model.VcardDto;
-import net.ibaixin.chat.api.service.IVcardService;
-import net.ibaixin.chat.api.service.impl.IRosterOpenfireService;
-import net.ibaixin.chat.api.utils.SystemUtil;
-
+import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,11 +24,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+
+import net.ibaixin.chat.api.model.ActionResult;
+import net.ibaixin.chat.api.model.AttachDto;
+import net.ibaixin.chat.api.model.Vcard;
+import net.ibaixin.chat.api.model.Vcard.Gender;
+import net.ibaixin.chat.api.model.VcardDto;
+import net.ibaixin.chat.api.service.IVcardService;
+import net.ibaixin.chat.api.service.impl.IRosterOpenfireService;
+import net.ibaixin.chat.api.utils.SystemUtil;
 
 @Controller
 @RequestMapping("/user")
@@ -127,6 +130,7 @@ public class UserController extends BaseController {
 			String sender = attachDto.getSender();
 			String hash = attachDto.getHash();
 			String fileName = attachDto.getFileName();
+			String mimeType = attachDto.getMimeType();
 			
 			//源文件的存储路径
 			File avatarSaveDir = getAvatarSaveDir(request, sender, FILE_TYPE_ORIGINAL);
@@ -137,14 +141,22 @@ public class UserController extends BaseController {
 			String avatarName = avatarName(sender, FILE_TYPE_ORIGINAL);
 			//文件的缩略图名称
 			String avatarThumbName = avatarName(sender, FILE_TYPE_THUMB);
-			logger.info("---原始文件保存路径----" + avatarSaveDir.getAbsolutePath());
+			logger.info("---原始文件保存路径----" + avatarSaveDir);
 			for (MultipartFile file : files) {
 				if (!file.isEmpty()) {
 					String originalFilename = file.getOriginalFilename();
+					//文件的后缀
+					String ext = FilenameUtils.getExtension(originalFilename);
 					//保存文件到本地
 					if (!originalFilename.equals(fileName)) {	//缩略图
+						if (StringUtils.isNotBlank(ext)) {
+							avatarThumbName = avatarThumbName + "." + ext;
+						}
 						saveFile(file, avatarThumbSaveDir, avatarThumbName);
 					} else {
+						if (StringUtils.isNotBlank(ext)) {
+							avatarName = avatarName + "." + ext;
+						}
 						saveFile(file, avatarSaveDir, avatarName);
 					}
 				}
@@ -154,10 +166,11 @@ public class UserController extends BaseController {
 			Vcard vcard = new Vcard();
 			vcard.setUsername(sender);
 			vcard.setAvatarPath(avatarName);
+			vcard.setMimeType(mimeType);
 			vcard.setHash(hash);
 			
 			try {
-				boolean success = vcardService.saveAvatar(avatarName, hash, sender);
+				boolean success = vcardService.updateAvatar(vcard);
 				if (success) {
 					result.setResultCode(ActionResult.CODE_SUCCESS);
 				} else {
@@ -185,43 +198,48 @@ public class UserController extends BaseController {
 	public ResponseEntity<InputStreamResource> downloadAvatar(@PathVariable String username, @RequestParam(required = true) int fileType, HttpServletRequest request) {
 		HttpHeaders headers = new HttpHeaders();
 		if (StringUtils.isNotBlank(username)) {
-			File avatarFile = getAvatarSaveFile(request, username, fileType);
-			if (avatarFile != null) {	//文件存在
-				MediaType mediaType = null;
-				ServletContext context = request.getServletContext();
-				String fileName = avatarFile.getName();
-				try {
-					mediaType = MediaType.parseMediaType(context.getMimeType(fileName));
-				} catch (Exception e) {
-					logger.error(e.getMessage());
+			try {
+				Vcard vcard = vcardService.getAvatarInfo(username);
+				if (vcard != null) {
+					vcard.setUsername(username);
+					File avatarFile = getAvatarSaveFile(request, vcard, fileType);
+					if (avatarFile != null) {	//文件存在
+						MediaType mediaType = null;
+						String fileName = avatarFile.getName();
+						try {
+							mediaType = MediaType.parseMediaType(vcard.getMimeType());
+						} catch (Exception e) {
+							logger.error(e.getMessage());
+						}
+						if (mediaType == null) {
+							mediaType = MediaType.APPLICATION_OCTET_STREAM;
+						}
+						String encodeFilename = null;
+						try {
+							encodeFilename = URLEncoder.encode(fileName, "UTF-8");
+						} catch (UnsupportedEncodingException e) {
+							logger.error(e.getMessage());
+							encodeFilename = fileName;
+						}
+						headers.setContentType(mediaType);
+						headers.setContentLength(avatarFile.length());
+						StringBuilder sb = new StringBuilder();
+						sb.append("attachment;filename=")
+							.append(encodeFilename)
+							.append(";filename*=UTF-8''")
+							.append(encodeFilename);
+						headers.add(HttpHeaders.CONTENT_DISPOSITION, sb.toString());
+						InputStreamResource inputStreamResource = null;
+						inputStreamResource = new InputStreamResource(new FileInputStream(avatarFile));
+						return new ResponseEntity<InputStreamResource>(inputStreamResource, headers, HttpStatus.OK);
+					} else {
+						return new ResponseEntity<InputStreamResource>(null, headers, HttpStatus.NO_CONTENT);
+					}
+				} else {
+					return new ResponseEntity<InputStreamResource>(null, headers, HttpStatus.NO_CONTENT);
 				}
-				if (mediaType == null) {
-					mediaType = MediaType.APPLICATION_OCTET_STREAM;
-				}
-				String encodeFilename = null;
-				try {
-					encodeFilename = URLEncoder.encode(fileName, "UTF-8");
-				} catch (UnsupportedEncodingException e) {
-					logger.error(e.getMessage());
-					encodeFilename = fileName;
-				}
-				headers.setContentType(mediaType);
-				headers.setContentLength(avatarFile.length());
-				StringBuilder sb = new StringBuilder();
-				sb.append("attachment;filename=")
-					.append(encodeFilename)
-					.append(";filename*=UTF-8''")
-					.append(encodeFilename);
-				headers.add(HttpHeaders.CONTENT_DISPOSITION, sb.toString());
-				InputStreamResource inputStreamResource = null;
-				try {
-					inputStreamResource = new InputStreamResource(new FileInputStream(avatarFile));
-					return new ResponseEntity<InputStreamResource>(inputStreamResource, headers, HttpStatus.OK);
-				} catch (FileNotFoundException e) {
-					logger.error(e.getMessage());
-				}
-				return new ResponseEntity<InputStreamResource>(inputStreamResource, headers, HttpStatus.NO_CONTENT);
-			} else {
+			} catch (SQLException | FileNotFoundException e) {
+				logger.error(e.getMessage());
 				return new ResponseEntity<InputStreamResource>(null, headers, HttpStatus.NO_CONTENT);
 			}
 		} else {
@@ -260,6 +278,92 @@ public class UserController extends BaseController {
 		return result;
 	}
 	
+	@RequestMapping(value = "/modify/nick/{username}")
+	@ResponseBody
+	public ActionResult<Void> modifyNickname(@PathVariable String username, @RequestParam(required = true) String nickname) {
+		ActionResult<Void> result = new ActionResult<>();
+		if (StringUtils.isNotEmpty(nickname)) {
+			try {
+				boolean success = vcardService.updateNickName(nickname, username);
+				if (success) {
+					result.setResultCode(ActionResult.CODE_SUCCESS);
+				} else {
+					result.setResultCode(ActionResult.CODE_ERROR);
+				}
+			} catch (SQLException e) {
+				logger.error(e.getMessage(), e);
+				result.setResultCode(ActionResult.CODE_ERROR);
+			}
+		} else {
+			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+		}
+		return result;
+	}
+	
+	@RequestMapping(value = "/modify/gender/{username}")
+	@ResponseBody
+	public ActionResult<Void> modifyGender(@PathVariable String username, @RequestParam(required = true) Integer gender) {
+		ActionResult<Void> result = new ActionResult<>();
+		if (gender != null) {
+			try {
+				
+				boolean success = vcardService.updateGender(Gender.valueOf(gender.intValue()), username);
+				if (success) {
+					result.setResultCode(ActionResult.CODE_SUCCESS);
+				} else {
+					result.setResultCode(ActionResult.CODE_ERROR);
+				}
+			} catch (SQLException e) {
+				logger.error(e.getMessage(), e);
+				result.setResultCode(ActionResult.CODE_ERROR);
+			}
+		} else {
+			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+		}
+		return result;
+	}
+	
+	@RequestMapping(value = "/modify/address/{username}")
+	@ResponseBody
+	public ActionResult<Void> modifyAddress(@PathVariable String username, @RequestBody(required = true) Vcard vcard) {
+		ActionResult<Void> result = new ActionResult<>();
+		try {
+			if (vcard != null) {
+				vcard.setUsername(username);
+				boolean success = vcardService.updateAddress(vcard);
+				if (success) {
+					result.setResultCode(ActionResult.CODE_SUCCESS);
+				} else {
+					result.setResultCode(ActionResult.CODE_ERROR);
+				}
+			}
+		} catch (SQLException e) {
+			logger.error(e.getMessage(), e);
+			result.setResultCode(ActionResult.CODE_ERROR);
+		}
+		return result;
+	}
+	
+	@RequestMapping(value = "/modify/signature/{username}")
+	@ResponseBody
+	public ActionResult<Void> modifySignature(@PathVariable String username, @RequestParam(required = true) String signature) {
+		ActionResult<Void> result = new ActionResult<>();
+		try {
+			if (StringUtils.isNoneEmpty(signature)) {
+				boolean success = vcardService.updateSignature(signature, username);
+				if (success) {
+					result.setResultCode(ActionResult.CODE_SUCCESS);
+				} else {
+					result.setResultCode(ActionResult.CODE_ERROR);
+				}
+			}
+		} catch (SQLException e) {
+			logger.error(e.getMessage(), e);
+			result.setResultCode(ActionResult.CODE_ERROR);
+		}
+		return result;
+	}
+	
 	/**
 	 * 根据用户名以及是否是缩略图来获得对应的文件存储路径，不包含文件名
 	 * @update 2015年4月16日 下午8:54:55
@@ -268,7 +372,7 @@ public class UserController extends BaseController {
 	 * @return
 	 */
 	private File getAvatarSaveDir(HttpServletRequest request, String username, int fileType) {
-		if (fileType != FILE_TYPE_THUMB || fileType != FILE_TYPE_ORIGINAL) {
+		if (fileType != FILE_TYPE_THUMB && fileType != FILE_TYPE_ORIGINAL) {
 			return null;
 		}
 		File baseDir = getBaseDir(request);
@@ -288,24 +392,28 @@ public class UserController extends BaseController {
 	/**
 	 * 根据用户名以及是否是缩略图来获得对应的文件全路径，包含文件名
 	 * @param request
-	 * @param username
+	 * @param vcard
 	 * @param fileType
 	 * @return
 	 * @author tiger
 	 * @version 1.0.0
 	 * @update 2015年4月19日 下午12:43:35
 	 */
-	private File getAvatarSaveFile(HttpServletRequest request, String username, int fileType) {
-		if (fileType != FILE_TYPE_THUMB || fileType != FILE_TYPE_ORIGINAL) {
+	private File getAvatarSaveFile(HttpServletRequest request, Vcard vcard, int fileType) {
+		if (fileType != FILE_TYPE_THUMB && fileType != FILE_TYPE_ORIGINAL) {
 			return null;
 		}
+		String username = vcard.getUsername();
 		File baseDir = getBaseDir(request);
 		StringBuilder sb = new StringBuilder();
 		sb.append("avatar").append(File.separator).append(username).append(File.separator);
 		String fileName = null;
-		
+		String originalFileName = vcard.getAvatarPath();
+		String ext = FilenameUtils.getExtension(originalFileName);
 		String thumbFileName = "icon_" + username + "_thumb";
-		String originalFileName = "icon_" + username;
+		if (StringUtils.isNoneBlank(ext)) {
+			thumbFileName = thumbFileName + "." + ext;
+		}
 		
 		boolean isThumb = false;
 		if (fileType == FILE_TYPE_THUMB) {	//1:缩略图:/upload/avatar/username/thumb/...

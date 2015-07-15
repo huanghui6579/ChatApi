@@ -180,4 +180,12 @@ public class VcardDto {
 	public void setHash(String hash) {
 		this.hash = hash;
 	}
+
+	@Override
+	public String toString() {
+		return "VcardDto [username=" + username + ", nickName=" + nickName + ", realName=" + realName + ", country="
+				+ country + ", province=" + province + ", city=" + city + ", street=" + street + ", mobilePhone="
+				+ mobilePhone + ", telephone=" + telephone + ", gender=" + gender + ", signature=" + signature
+				+ ", avatarPath=" + avatarPath + ", hash=" + hash + "]";
+	}
 }

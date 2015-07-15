@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : Mysql
-Source Server Version : 50539
+Source Server         : mysql
+Source Server Version : 50625
 Source Host           : localhost:3306
 Source Database       : chat_api
 
 Target Server Type    : MYSQL
-Target Server Version : 50539
+Target Server Version : 50625
 File Encoding         : 65001
 
-Date: 2015-07-13 21:49:52
+Date: 2015-07-15 19:45:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -36,18 +36,19 @@ CREATE TABLE `t_attach` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_vcard`;
 CREATE TABLE `t_vcard` (
-  `username` varchar(32) NOT NULL,
-  `nickName` varchar(255) DEFAULT NULL,
-  `realName` varchar(255) DEFAULT NULL,
-  `country` varchar(255) DEFAULT NULL,
-  `province` varchar(255) DEFAULT NULL,
-  `city` varchar(255) DEFAULT NULL,
-  `street` varchar(255) DEFAULT NULL,
-  `mobilePhone` varchar(255) DEFAULT NULL,
-  `telephone` varchar(255) DEFAULT NULL,
-  `avatarPath` varchar(255) DEFAULT NULL,
-  `gender` tinyint(4) DEFAULT '0',
-  `signature` varchar(255) DEFAULT NULL,
-  `hash` varchar(255) DEFAULT NULL,
+  `username` varchar(32) NOT NULL COMMENT '用户名，主键',
+  `nickName` varchar(255) DEFAULT NULL COMMENT '用户昵称',
+  `realName` varchar(255) DEFAULT NULL COMMENT '用户真实姓名',
+  `country` varchar(255) DEFAULT NULL COMMENT '国家',
+  `province` varchar(255) DEFAULT NULL COMMENT '省份',
+  `city` varchar(255) DEFAULT NULL COMMENT '城市',
+  `street` varchar(255) DEFAULT NULL COMMENT '具体的街道地址',
+  `mobilePhone` varchar(255) DEFAULT NULL COMMENT '手机号码',
+  `telephone` varchar(255) DEFAULT NULL COMMENT '固定电话',
+  `avatarPath` varchar(255) DEFAULT NULL COMMENT '头像路径，目前就是文件名称',
+  `mimeType` varchar(255) DEFAULT NULL COMMENT '文件的mime类型',
+  `gender` tinyint(4) DEFAULT '0' COMMENT '性别，默认是0：未知，1：男，2:女',
+  `signature` varchar(255) DEFAULT NULL COMMENT '个性签名',
+  `hash` varchar(255) DEFAULT NULL COMMENT '文件的MD5 hash值',
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
