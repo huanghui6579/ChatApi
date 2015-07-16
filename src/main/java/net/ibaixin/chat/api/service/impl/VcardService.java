@@ -1,15 +1,15 @@
 package net.ibaixin.chat.api.service.impl;
 
-import java.sql.SQLException;
 import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import net.ibaixin.chat.api.dao.VcardDao;
 import net.ibaixin.chat.api.model.Vcard;
 import net.ibaixin.chat.api.model.Vcard.Gender;
 import net.ibaixin.chat.api.service.IVcardService;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * 用户电子名片的业务逻辑层实现层
@@ -24,7 +24,7 @@ public class VcardService implements IVcardService {
 	private VcardDao vcardDao;
 
 	@Override
-	public Vcard saveVcard(Vcard vcard) throws SQLException {
+	public Vcard saveVcard(Vcard vcard) throws Exception {
 		int count = 0;
 		if (updateVcard(vcard)) {	//更新电子名片成功
 			return vcard;
@@ -39,24 +39,24 @@ public class VcardService implements IVcardService {
 	}
 
 	@Override
-	public boolean updateVcard(Vcard vcard) throws SQLException {
+	public boolean updateVcard(Vcard vcard) throws Exception {
 		int count = vcardDao.updateVcard(vcard);
 		return count > 0;
 	}
 
 	@Override
-	public boolean deleteVcard(String id) throws SQLException {
+	public boolean deleteVcard(String id) throws Exception {
 		int count = vcardDao.deleteVcard(id);
 		return count > 0;
 	}
 
 	@Override
-	public Vcard getVcard(String id) throws SQLException {
+	public Vcard getVcard(String id) throws Exception {
 		return vcardDao.getVcard(id);
 	}
 
 	@Override
-	public boolean saveAvatar(Vcard vcard) throws SQLException {
+	public boolean saveAvatar(Vcard vcard) throws Exception {
 		int count = 0;
 		boolean success = false;
 		count = vcardDao.updateAvatar(vcard);
@@ -72,12 +72,12 @@ public class VcardService implements IVcardService {
 	}
 
 	@Override
-	public String getAvatarPath(String id) throws SQLException {
+	public String getAvatarPath(String id) throws Exception {
 		return vcardDao.getAvatarPath(id);
 	}
 
 	@Override
-	public boolean saveNickName(String nickName, String id) throws SQLException {
+	public boolean saveNickName(String nickName, String id) throws Exception {
 		Vcard vcard = new Vcard();
 		vcard.setNickName(nickName);
 		vcard.setUsername(id);
@@ -96,7 +96,7 @@ public class VcardService implements IVcardService {
 	}
 
 	@Override
-	public boolean saveGender(Gender gender, String id) throws SQLException {
+	public boolean saveGender(Gender gender, String id) throws Exception {
 		Vcard vcard = new Vcard();
 		vcard.setGender(gender);
 		vcard.setUsername(id);
@@ -115,7 +115,7 @@ public class VcardService implements IVcardService {
 	}
 
 	@Override
-	public boolean saveAddress(Vcard vcard) throws SQLException {
+	public boolean saveAddress(Vcard vcard) throws Exception {
 		int count = 0;
 		boolean success = false;
 		count = vcardDao.updateAddress(vcard);
@@ -131,7 +131,7 @@ public class VcardService implements IVcardService {
 	}
 
 	@Override
-	public boolean saveSignature(String signature, String id) throws SQLException {
+	public boolean saveSignature(String signature, String id) throws Exception {
 		Vcard vcard = new Vcard();
 		vcard.setSignature(signature);
 		vcard.setUsername(id);
@@ -150,29 +150,34 @@ public class VcardService implements IVcardService {
 	}
 
 	@Override
-	public boolean hasVcard(String id) throws SQLException {
+	public boolean hasVcard(String id) throws Exception {
 		long count = vcardDao.getVcardCountById(id);
 		return count > 0;
 	}
 
 	@Override
-	public String getAvatarHash(String id) throws SQLException {
+	public String getAvatarHash(String id) throws Exception {
 		return vcardDao.getAvatarHash(id);
 	}
 
 	@Override
-	public List<Vcard> getVcardByIds(List<String> ids) {
+	public List<Vcard> getVcardByIds(List<String> ids) throws Exception {
 		return vcardDao.getVcards(ids);
 	}
 
 	@Override
-	public Vcard addVcard(Vcard vcard) throws SQLException {
+	public Vcard addVcard(Vcard vcard) throws Exception {
 		if (vcard != null) {
-			int count = vcardDao.addVcard(vcard);
-			if (count > 0) {
-				return vcard;
-			} else {
+			boolean existsVcard = existsVcard(vcard.getUsername());
+			if (existsVcard) {	//该用户名已经存在
 				return null;
+			} else {
+				int count = vcardDao.addVcard(vcard);
+				if (count > 0) {
+					return vcard;
+				} else {
+					return null;
+				}
 			}
 		} else {
 			return null;
@@ -180,13 +185,13 @@ public class VcardService implements IVcardService {
 	}
 
 	@Override
-	public boolean updateAvatar(Vcard vcard) throws SQLException {
+	public boolean updateAvatar(Vcard vcard) throws Exception {
 		int count = vcardDao.updateAvatar(vcard);
 		return count > 0;
 	}
 
 	@Override
-	public boolean updateNickName(String nickName, String id) throws SQLException {
+	public boolean updateNickName(String nickName, String id) throws Exception {
 		Vcard vcard = new Vcard();
 		vcard.setNickName(nickName);
 		vcard.setUsername(id);
@@ -195,7 +200,7 @@ public class VcardService implements IVcardService {
 	}
 
 	@Override
-	public boolean updateGender(Gender gender, String id) throws SQLException {
+	public boolean updateGender(Gender gender, String id) throws Exception {
 		Vcard vcard = new Vcard();
 		vcard.setGender(gender);
 		vcard.setUsername(id);
@@ -204,7 +209,7 @@ public class VcardService implements IVcardService {
 	}
 
 	@Override
-	public boolean updateAddress(Vcard vcard) throws SQLException {
+	public boolean updateAddress(Vcard vcard) throws Exception {
 		if (vcard != null) {
 			int count = vcardDao.updateAddress(vcard);
 			return count > 0;
@@ -214,7 +219,7 @@ public class VcardService implements IVcardService {
 	}
 
 	@Override
-	public boolean updateSignature(String signature, String id) throws SQLException {
+	public boolean updateSignature(String signature, String id) throws Exception {
 		Vcard vcard = new Vcard();
 		vcard.setSignature(signature);
 		vcard.setUsername(id);
@@ -223,7 +228,17 @@ public class VcardService implements IVcardService {
 	}
 
 	@Override
-	public Vcard getAvatarInfo(String id) throws SQLException {
+	public Vcard getAvatarInfo(String id) throws Exception {
 		return vcardDao.getAvatarInfo(id);
+	}
+
+	@Override
+	public boolean existsVcard(String username) throws Exception {
+		if (StringUtils.isNotEmpty(username)) {
+			long count = vcardDao.countVcardById(username);
+			return count > 0;
+		} else {
+			return false;
+		}
 	}
 }

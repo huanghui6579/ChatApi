@@ -54,7 +54,7 @@
 	</select>
 	
 	<insert id="addVcard" parameterMap="vcardParameterMap">
-	    insert into t_vcard values (#{username}, #{nickName}, #{realName}, #{country}, #{province}, #{city}, #{street}, #{mobilePhone}, #{telephone}, #{avatarPath}, #{gender.value}, #{signature}, #{hash})
+	    insert into t_vcard values (#{username}, #{nickName}, #{realName}, #{country}, #{province}, #{city}, #{street}, #{mobilePhone}, #{telephone}, #{avatarPath}, #{mimeType}, #{gender.value}, #{signature}, #{hash})
 	</insert>
 	
 	<delete id="deleteVcard" parameterType="java.lang.String">
@@ -105,7 +105,11 @@
 	</update>
 	
 	<select id="getAvatarHash" parameterType="java.lang.String" resultType="java.lang.String">
-	    select hash from t_avatar where username = #{username}
+	    select hash from t_vcard where username = #{username}
+	</select>
+	
+	<select id="countVcardById" parameterType="java.lang.String" resultType="java.lang.Long">
+	    select count(*) from t_vcard where username = #{username}
 	</select>
 	
 	<select id="getVcards" parameterType="java.util.List" resultMap="vcardResultMap">

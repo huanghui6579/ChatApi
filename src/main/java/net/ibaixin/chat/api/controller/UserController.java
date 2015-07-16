@@ -2,14 +2,12 @@ package net.ibaixin.chat.api.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.sql.SQLException;
 import java.util.List;
 
-import javax.servlet.ServletContext;
+import javax.activation.MimetypesFileTypeMap;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.FilenameUtils;
@@ -85,12 +83,75 @@ public class UserController extends BaseController {
 				} else {
 					result.setResultCode(ActionResult.CODE_NO_DATA);
 				}
-			} catch (SQLException e) {
+			} catch (Exception e) {
 				result.setResultCode(ActionResult.CODE_ERROR_PARAM);
 				e.printStackTrace();
 			}
 		} else {	//错误的请求参数
 			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+		}
+		return result;
+	}
+	
+	/**
+	 * 添加电子名片信息，新建时，只添加部分字段，其余字段需更新
+	 * @param jsonStr
+	 * @return
+	 * @update 2015年7月16日 上午10:29:40
+	 */
+	@RequestMapping(value = "/vcard/add", method = RequestMethod.POST)
+	@ResponseBody
+	public ActionResult<VcardDto> addVcard(@RequestParam(required = true) String jsonStr) {
+		ActionResult<VcardDto> result = new ActionResult<>();
+		VcardDto vcardDto = null;
+		if (StringUtils.isNotBlank(jsonStr)) {
+			try {
+				vcardDto = SystemUtil.json2obj(jsonStr, VcardDto.class);
+			} catch (IOException e) {
+				result.setResultCode(ActionResult.CODE_ERROR);
+				logger.error((e == null ? "error" : e.getMessage()), e);
+			}
+		} else {
+			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+			return result;
+		}
+		if (vcardDto == null) {
+			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+			return result;
+		}
+		Vcard vcard = new Vcard();
+		//账号、用户名
+		vcard.setUsername(vcardDto.getUsername());
+		vcard.setNickName(vcardDto.getNickName());
+		vcard.setAvatarPath(vcardDto.getAvatarPath());
+		vcard.setCity(vcardDto.getCity());
+		vcard.setCountry(vcardDto.getCountry());
+		try {
+			vcard.setGender(Gender.valueOf(vcardDto.getGender()));
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+		}
+		vcard.setHash(vcardDto.getHash());
+		if (StringUtils.isNoneBlank(vcardDto.getAvatarPath())) {
+			String mimeType = MimetypesFileTypeMap.getDefaultFileTypeMap().getContentType(vcardDto.getAvatarPath());
+			vcard.setMimeType(mimeType);
+		}
+		vcard.setMobilePhone(vcardDto.getMobilePhone());
+		vcard.setProvince(vcardDto.getProvince());
+		vcard.setRealName(vcardDto.getRealName());
+		vcard.setSignature(vcardDto.getSignature());
+		vcard.setStreet(vcardDto.getStreet());
+		vcard.setTelephone(vcardDto.getTelephone());
+		try {
+			vcard = vcardService.addVcard(vcard);
+			if (vcard != null) {
+				result.setResultCode(ActionResult.CODE_SUCCESS);
+			} else {
+				result.setResultCode(ActionResult.CODE_ERROR);
+			}
+		} catch (Exception e) {
+			logger.error(e.getMessage() ,e);
+			result.setResultCode(ActionResult.CODE_ERROR);
 		}
 		return result;
 	}
@@ -176,7 +237,7 @@ public class UserController extends BaseController {
 				} else {
 					result.setResultCode(ActionResult.CODE_ERROR);
 				}
-			} catch (SQLException e) {
+			} catch (Exception e) {
 				result.setResultCode(ActionResult.CODE_ERROR);
 				logger.error(e.getMessage());
 			}
@@ -238,7 +299,7 @@ public class UserController extends BaseController {
 				} else {
 					return new ResponseEntity<InputStreamResource>(null, headers, HttpStatus.NO_CONTENT);
 				}
-			} catch (SQLException | FileNotFoundException e) {
+			} catch (Exception e) {
 				logger.error(e.getMessage());
 				return new ResponseEntity<InputStreamResource>(null, headers, HttpStatus.NO_CONTENT);
 			}
@@ -262,7 +323,12 @@ public class UserController extends BaseController {
 		if (StringUtils.isNotBlank(username)) {
 			List<String> rosterNames = rosterOpenfireService.getRosters(username);
 			if (!CollectionUtils.isEmpty(rosterNames)) {
-				List<Vcard> list = vcardService.getVcardByIds(rosterNames);
+				List<Vcard> list = null;
+				try {
+					list = vcardService.getVcardByIds(rosterNames);
+				} catch (Exception e) {
+					logger.error(e.getMessage(), e);
+				}
 				if (!CollectionUtils.isEmpty(list)) {
 					result.setData(list);
 					result.setResultCode(ActionResult.CODE_SUCCESS);
@@ -290,7 +356,7 @@ public class UserController extends BaseController {
 				} else {
 					result.setResultCode(ActionResult.CODE_ERROR);
 				}
-			} catch (SQLException e) {
+			} catch (Exception e) {
 				logger.error(e.getMessage(), e);
 				result.setResultCode(ActionResult.CODE_ERROR);
 			}
@@ -313,7 +379,7 @@ public class UserController extends BaseController {
 				} else {
 					result.setResultCode(ActionResult.CODE_ERROR);
 				}
-			} catch (SQLException e) {
+			} catch (Exception e) {
 				logger.error(e.getMessage(), e);
 				result.setResultCode(ActionResult.CODE_ERROR);
 			}
@@ -337,7 +403,7 @@ public class UserController extends BaseController {
 					result.setResultCode(ActionResult.CODE_ERROR);
 				}
 			}
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			result.setResultCode(ActionResult.CODE_ERROR);
 		}
@@ -357,7 +423,7 @@ public class UserController extends BaseController {
 					result.setResultCode(ActionResult.CODE_ERROR);
 				}
 			}
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			result.setResultCode(ActionResult.CODE_ERROR);
 		}

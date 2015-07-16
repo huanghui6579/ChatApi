@@ -311,6 +311,23 @@
 		  	});
 		});
 		
+		$('#vcardAddButton').click(function() {
+			var vcardAddResultObj = $('#vcardAddResult');
+			$.ajax({
+			  method: "POST",
+			  url: 'user/vcard/add',
+			  data: {
+				  'jsonStr': JSON.stringify($('#vcardAddForm').serializeObject()),
+			  },
+			  beforeSend: function(xhr, o) {
+				  vcardAddResultObj.html("正在提交...");
+			  }
+			})
+		  	.always(function(msg) {
+		  		vcardAddResultObj.html(msg);
+		  	});
+		});
+		
 		//修改昵称
 		/* $('#nickModifyForm').ajaxForm({
 			url: 'user/modify/nick/' + $('#nickModifyForm input:first').val(),
@@ -467,6 +484,18 @@
 			<!-- <input type="button" id="realnameModifyButton" value="提交真实姓名" /> -->
 		</form>
 		<div id="signatureModifyResult"></div>
+	</div>
+	
+	<div class="testBlock">
+		<h2>添加电子名片信息</h2>
+		<form action="#" id="vcardAddForm" method="post">
+			用户名：<input type="text" name="username" placeholder="请输入用户名"><br/>
+			个性签名：<input type="text" name="nickName" placeholder="请输入个性签名"/><br/>
+			性别：<label><input type="radio" name="gender" value="1" />男</label><label><input type="radio" name="gender" value="2" />女</label><br/>
+			<input type="button" id="vcardAddButton" value="提交签名" />
+			<!-- <input type="button" id="realnameModifyButton" value="提交真实姓名" /> -->
+		</form>
+		<div id="vcardAddResult"></div>
 	</div>
 	
 </body>

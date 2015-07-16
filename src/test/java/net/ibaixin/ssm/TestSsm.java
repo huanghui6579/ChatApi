@@ -1,24 +1,12 @@
 package net.ibaixin.ssm;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
 
-import net.ibaixin.chat.api.model.AttachDto;
-import net.ibaixin.chat.api.model.Attachment;
-import net.ibaixin.chat.api.model.Vcard;
-import net.ibaixin.chat.api.model.Vcard.Gender;
-import net.ibaixin.chat.api.service.IAttachService;
-import net.ibaixin.chat.api.service.IUserService;
-import net.ibaixin.chat.api.service.IVcardService;
-import net.ibaixin.chat.api.service.impl.IRosterOpenfireService;
-import net.ibaixin.chat.api.utils.SystemUtil;
-
 import org.apache.log4j.Logger;
-import org.aspectj.weaver.ast.Var;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,6 +18,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import net.ibaixin.chat.api.model.AttachDto;
+import net.ibaixin.chat.api.model.Attachment;
+import net.ibaixin.chat.api.model.Vcard;
+import net.ibaixin.chat.api.model.Vcard.Gender;
+import net.ibaixin.chat.api.service.IAttachService;
+import net.ibaixin.chat.api.service.IUserService;
+import net.ibaixin.chat.api.service.IVcardService;
+import net.ibaixin.chat.api.service.impl.IRosterOpenfireService;
+import net.ibaixin.chat.api.utils.SystemUtil;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
@@ -169,7 +167,7 @@ public class TestSsm {
 		vcard.setGender(Gender.WOMAN);
 		try {
 			vcardService.saveVcard(vcard);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -181,7 +179,7 @@ public class TestSsm {
 		try {
 			vcard = vcardService.getVcard("aaa");
 			logger.info(vcard);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -191,7 +189,7 @@ public class TestSsm {
 	public void testDeleteVcard() {
 		try {
 			vcardService.deleteVcard("aaa");
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -206,7 +204,7 @@ public class TestSsm {
 		vcard.setHash("gfdghfggffghghhghf");
 		try {
 			vcardService.saveAvatar(vcard);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -217,7 +215,7 @@ public class TestSsm {
 		try {
 			String avatarPath = vcardService.getAvatarPath("aaa");
 			logger.info("-----avatarPath-----" + avatarPath);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -228,7 +226,7 @@ public class TestSsm {
 		String nickname = "大AAA";
 		try {
 			vcardService.saveNickName(nickname, "aaa");
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -239,7 +237,7 @@ public class TestSsm {
 		Gender gender = Gender.MAN;
 		try {
 			vcardService.saveGender(gender, "aaa");
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -259,7 +257,7 @@ public class TestSsm {
 		vcard.setStreet(street);
 		try {
 			vcardService.saveAddress(vcard);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -270,7 +268,7 @@ public class TestSsm {
 		String signature = "个性签名";
 		try {
 			vcardService.saveSignature(signature, "aaa");
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -286,8 +284,12 @@ public class TestSsm {
 	
 	@Test
 	public void testGetVcards() {
-		List<String> users = rosterOpenfireService.getRosters("aaa");
-		List<Vcard> vcards = vcardService.getVcardByIds(users);
-		logger.info("------------------" + vcards);
+		try {
+			List<String> users = rosterOpenfireService.getRosters("aaa");
+			List<Vcard> vcards = vcardService.getVcardByIds(users);
+			logger.info("------------------" + vcards);
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+		}
 	}
 }
