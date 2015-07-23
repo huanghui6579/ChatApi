@@ -81,6 +81,7 @@ public class UserController extends BaseController {
 					result.setData(vcardDto);
 					result.setResultCode(ActionResult.CODE_SUCCESS);
 				} else {
+					logger.warn("------vcard 获取信息失败------" + vcard);
 					result.setResultCode(ActionResult.CODE_NO_DATA);
 				}
 			} catch (Exception e) {
@@ -147,6 +148,7 @@ public class UserController extends BaseController {
 			if (vcard != null) {
 				result.setResultCode(ActionResult.CODE_SUCCESS);
 			} else {
+				logger.warn("------vcard 添加失败------" + vcard);
 				result.setResultCode(ActionResult.CODE_ERROR);
 			}
 		} catch (Exception e) {
@@ -235,6 +237,7 @@ public class UserController extends BaseController {
 				if (success) {
 					result.setResultCode(ActionResult.CODE_SUCCESS);
 				} else {
+					logger.warn("------vcard 更新失败------" + vcard);
 					result.setResultCode(ActionResult.CODE_ERROR);
 				}
 			} catch (Exception e) {
@@ -294,9 +297,11 @@ public class UserController extends BaseController {
 						inputStreamResource = new InputStreamResource(new FileInputStream(avatarFile));
 						return new ResponseEntity<InputStreamResource>(inputStreamResource, headers, HttpStatus.OK);
 					} else {
+						logger.warn("------no content------");
 						return new ResponseEntity<InputStreamResource>(null, headers, HttpStatus.NO_CONTENT);
 					}
 				} else {
+					logger.warn("------no content------");
 					return new ResponseEntity<InputStreamResource>(null, headers, HttpStatus.NO_CONTENT);
 				}
 			} catch (Exception e) {
@@ -304,6 +309,7 @@ public class UserController extends BaseController {
 				return new ResponseEntity<InputStreamResource>(null, headers, HttpStatus.NO_CONTENT);
 			}
 		} else {
+			logger.warn("------no username------");
 			return new ResponseEntity<InputStreamResource>(null, headers, HttpStatus.NOT_FOUND);
 		}
 	}
@@ -339,7 +345,43 @@ public class UserController extends BaseController {
 				result.setResultCode(ActionResult.CODE_NO_DATA);
 			}
 		} else {
+			logger.warn("------no username------");
 			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+		}
+		return result;
+	}
+	
+	/**
+	 * 分页查询电子名片信息
+	 * @param pageNumber 第几页，从1开始
+	 * @param pageCount 每页显示多少条记录,默认为10条
+	 * @return
+	 * @update 2015年7月22日 下午4:14:35
+	 */
+	@RequestMapping("/vcard/vcards")
+	@ResponseBody
+	public ActionResult<List<Vcard>> getVcardList(@RequestParam int pageNumber, int pageCount, int pageable) {
+		logger.info("---pageNumber--" + pageNumber + "----pageCount---" + pageCount);
+		pageCount = pageCount <= 0 ? 10 : pageCount;
+		pageNumber = pageNumber <= 0 ? 1 : pageNumber;
+		ActionResult<List<Vcard>> result = new ActionResult<>();
+		int pageOffset = (pageNumber - 1) * pageCount;
+		List<Vcard> vcardList = null;
+		try {
+			if (pageable == 0) {	//不分页，加载全部数据
+				vcardList = vcardService.getVcardListAll();
+			} else {
+				vcardList = vcardService.getVcardList(pageOffset, pageCount);
+			}
+			if (!CollectionUtils.isEmpty(vcardList)) {
+				result.setResultCode(ActionResult.CODE_SUCCESS);
+				result.setData(vcardList);
+			} else {
+				result.setResultCode(ActionResult.CODE_NO_DATA);
+			}
+		} catch (Exception e) {
+			result.setResultCode(ActionResult.CODE_ERROR);
+			logger.error(e.getMessage(), e);
 		}
 		return result;
 	}
@@ -361,6 +403,7 @@ public class UserController extends BaseController {
 				result.setResultCode(ActionResult.CODE_ERROR);
 			}
 		} else {
+			logger.warn("------no nickname------");
 			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
 		}
 		return result;
@@ -384,6 +427,7 @@ public class UserController extends BaseController {
 				result.setResultCode(ActionResult.CODE_ERROR);
 			}
 		} else {
+			logger.warn("------no gender------");
 			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
 		}
 		return result;
@@ -426,6 +470,41 @@ public class UserController extends BaseController {
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			result.setResultCode(ActionResult.CODE_ERROR);
+		}
+		return result;
+	}
+	
+	/**
+	 * 根据用户名数组批量删除电子名片信息，用户名的分隔符为","
+	 * @param ids
+	 * @return
+	 * @update 2015年7月23日 上午11:26:47
+	 */
+	@RequestMapping(value = "/vcard/delete")
+	@ResponseBody
+	public ActionResult<Void> deleteVcards(@RequestParam(required = true) String ids) {
+		ActionResult<Void> result = new ActionResult<>();
+		if (StringUtils.isNotBlank(ids)) {
+			try {
+				boolean success = false;
+				if (ids.indexOf(",") != -1) {	//多个用户名,则执行批量删除任务
+					String[] idArray = ids.split(",");
+					success = vcardService.deleteVcards(idArray);
+				} else {	//只有一个用户名，则作为单条删除就行了
+					success = vcardService.deleteVcard(ids);
+				}
+				if (success) {
+					result.setResultCode(ActionResult.CODE_SUCCESS);
+				} else {
+					result.setResultCode(ActionResult.CODE_ERROR);
+				}
+			} catch (Exception e) {
+				logger.error(e.getMessage(), e);
+				result.setResultCode(ActionResult.CODE_ERROR);
+			}
+		} else {
+			logger.warn("------no ids------");
+			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
 		}
 		return result;
 	}

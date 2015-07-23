@@ -41,6 +41,12 @@ public interface IVcardService {
 	public boolean deleteVcard(String id) throws Exception;
 	
 	/**
+	 * 根据主键批量删除电子名片
+	 * @param ids
+	 */
+	public boolean deleteVcards(String[] ids) throws Exception;
+	
+	/**
 	 * 根据主键获得对应的电子名片信息
 	 * @param id
 	 * @return
@@ -180,4 +186,22 @@ public interface IVcardService {
 	 * @update 2015年7月16日 下午2:14:44
 	 */
 	public boolean existsVcard(String username) throws Exception;
+	
+	/**
+	 * 分页获取电子名片列表
+	 * @param pageOffset 页面的索引位置，从0开始
+	 * @param pageCount 每页显示的数量
+	 * @return
+	 * @throws Exception
+	 * @update 2015年7月22日 下午3:49:06
+	 */
+	public List<Vcard> getVcardList(int pageOffset, int pageCount) throws Exception;
+	
+	/**
+	 * 获取所有的电子名片信息
+	 * @return
+	 * @throws Exception
+	 * @update 2015年7月23日 下午4:08:39
+	 */
+	public List<Vcard> getVcardListAll() throws Exception;
 }

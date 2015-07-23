@@ -24,6 +24,9 @@
 
 <link href="http://hayageek.github.io/jQuery-Upload-File/uploadfile.min.css" rel="stylesheet">
 
+<!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="resources/DataTables/css/jquery.dataTables.css">
+<!-- <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css"> -->
 
 <style type="text/css">
 	div {
@@ -52,6 +55,10 @@
 <script type="text/javascript" src="resources/js/jquery.form.js"></script>
 <script type="text/javascript" src="resources/js/spark-md5.js"></script>
 <script type="text/javascript" src="resources/js/jquery.myplugin.js"></script>
+ 
+<!-- DataTables -->
+<script type="text/javascript" charset="utf8" src="resources/DataTables/js/jquery.dataTables.js"></script>
+<!-- <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script> -->
 
 <script type="text/javascript">
 	$(function() {
@@ -116,7 +123,7 @@
 		});
 		
 		
-		var bar = $('.bar');
+		/* var bar = $('.bar');
 		var percent = $('.percent');
 		var status = $('#status');
 		var uploadObj = $("#fileuploader").uploadFile({
@@ -134,7 +141,7 @@
 		});
 		$("#startUpload").click(function() {
 			uploadObj.startUpload();
-		});
+		}); */
 		
 		$('#addFile').click(function() {
 			var inputSpan = $('#myForm .inputSpan:last');
@@ -328,6 +335,152 @@
 		  	});
 		});
 		
+		var table = $('#table_id').DataTable({
+			//deferRender: true,	//延迟渲染
+			//"info": false,	//是否显示左下角的提示信息
+			"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "全部"]],
+			"pagingType": "full_numbers",
+			"processing": true,	//是否显示正在处理的提示语
+			//"serverSide": true,	//服务器端处理
+			"language": {
+				'lengthMenu': "每页显示 _MENU_条记录",
+			    "info": "当前第 _PAGE_ 页，共  _PAGES_ 页， 共_TOTAL_条记录",
+			    "processing": "正在处理...",
+			    "loadingRecords": "正是加载，请稍候...",
+			    "search": "搜索:",
+			    'searchPlaceholder': '输入关键字搜索',
+			    "zeroRecords": "无数据",
+			    "emptyTable": "无数据",
+			    "paginate": {
+	            	"first": "首页",
+	            	"last": "尾页",
+	            	"next": "下一页",
+	            	"previous": "上一页"
+	           	}
+			},
+			ajax: {
+				'url': 'user/vcard/vcards',
+				'dataType': 'json',
+				'data': {
+					'pageNumber': 1,
+					'pageCount': 10,
+					'pageable':'0'	//0表示不分页，1分页
+				},
+				'dataSrc': function(data) {
+					return data.data;
+					//var resultCode = data.resultCode;
+					//if (resultCode == 100) {	//成功，且有数据
+					//}
+				}
+			},
+			columns: [
+				{
+					'data': 'username',
+					'defaultContent': ''
+				},
+				{
+					'data': 'nickName',
+					'defaultContent': ''
+				},
+				{
+					'data': 'realName',
+					'defaultContent': ''
+				},
+				{
+					'data': 'country',
+					'defaultContent': ''
+				},
+				{
+					'data': 'province',
+					'defaultContent': ''
+				},
+				{
+					'data': 'city',
+					'defaultContent': ''
+				},
+				{
+					'data': 'street',
+					'defaultContent': ''
+				},
+				{
+					'data': 'mobilePhone',
+					'defaultContent': ''
+				},
+				{
+					'data': 'telephone',
+					'defaultContent': ''
+				},
+				{
+					'data': 'avatarPath',
+					'defaultContent': ''
+				},
+				{
+					'data': 'mimeType',
+					'defaultContent': ''
+				},
+				{
+					'data': 'gender',
+					'render': function ( data, type, full, meta ) {
+						if (data == 1) {	//男
+							return '男';
+						} else if (data ==2) {	//女
+							return '女';
+						} else {	//未知
+							return '未知';
+						}
+				    }
+				},
+				{
+					'data': 'signature',
+					'defaultContent':''
+				},
+				{
+					'data': 'hash',
+					'defaultContent':''
+				}
+				
+			]
+		});
+		
+		$('#table_id tbody').on('click', 'tr', function() {
+			$(this).toggleClass('selected');
+		});
+		
+		$('#deleteRow').click( function () {
+			var selectArray = table.rows('.selected').data();
+			var selectLength = selectArray.length;
+			if (selectLength > 0) {	//选择了行
+				var confirm = window.confirm('确定删除选中项?');
+				if (confirm) {
+					var ids = '';
+					$.each(selectArray, function(index,value) {
+						ids += value.username + ",";
+					});
+					ids = ids.substring(0, ids.length - 1);
+					$.ajax({
+						method: "POST",
+						url: 'user/vcard/delete',
+						dataType: 'json',
+						data: {
+							'ids': ids,
+						}
+					})
+				  	.always(function(msg) {
+				  		var resultCode = msg.resultCode;
+				  		if (resultCode == 100) {	//删除成功
+					  		table.rows('.selected').remove().draw( false );
+				  		} else {
+				  			alert("删除失败!");
+				  		}
+				  	});
+				}
+			} else {
+				alert("请选择要删除的项");
+			}
+			//table.rows('.selected').remove().draw( false );
+	        //alert( table.rows('.selected').data().length +' row(s) selected' );
+	    } );
+		
 		//修改昵称
 		/* $('#nickModifyForm').ajaxForm({
 			url: 'user/modify/nick/' + $('#nickModifyForm input:first').val(),
@@ -344,6 +497,43 @@
 </script>
 </head>
 <body>
+
+	<!-- 表格 -->
+	<div class="testBlock">
+		<h2>表格</h2>
+		<button type="button" id="deleteRow">删除选中行</button>
+		<table id="table_id" class="display">
+		    <thead>
+		        <tr>
+		            <th>账号</th>
+		            <th>昵称</th>
+		            <th>姓名</th>
+		            <th>国家</th>
+		            <th>省份</th>
+		            <th>城市</th>
+		            <th>街道</th>
+		            <th>手机号</th>
+		            <th>座机号</th>
+		            <th>头像名称</th>
+		            <th>头像类型</th>
+		            <th>性别</th>
+		            <th>签名</th>
+		            <th>头像hash</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <!-- <tr>
+		            <td>Row 1 Data 1</td>
+		            <td>Row 1 Data 2</td>
+		        </tr>
+		        <tr>
+		            <td>Row 2 Data 1</td>
+		            <td>Row 2 Data 2</td>
+		        </tr> -->
+		    </tbody>
+		</table>
+	</div>
+
 	<!-- <div class="testBlock">
 		<form action="upload" method="post" enctype="multipart/form-data">
 			用户名：<input type="text" name="jsonStr" /><br />
@@ -490,7 +680,7 @@
 		<h2>添加电子名片信息</h2>
 		<form action="#" id="vcardAddForm" method="post">
 			用户名：<input type="text" name="username" placeholder="请输入用户名"><br/>
-			个性签名：<input type="text" name="nickName" placeholder="请输入个性签名"/><br/>
+			昵称：<input type="text" name="nickName" placeholder="请输入个性签名"/><br/>
 			性别：<label><input type="radio" name="gender" value="1" />男</label><label><input type="radio" name="gender" value="2" />女</label><br/>
 			<input type="button" id="vcardAddButton" value="提交签名" />
 			<!-- <input type="button" id="realnameModifyButton" value="提交真实姓名" /> -->

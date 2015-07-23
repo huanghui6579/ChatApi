@@ -2,15 +2,13 @@ package net.ibaixin.chat.api.service.impl;
 
 import java.util.List;
 
-import javax.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import net.ibaixin.chat.api.dao.UserDao;
 import net.ibaixin.chat.api.model.User;
 import net.ibaixin.chat.api.model.UserDto;
 import net.ibaixin.chat.api.service.IUserService;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * 用户的service
@@ -22,37 +20,40 @@ public class UserService implements IUserService {
 	private UserDao userMapper;
 	
 	@Autowired
-	public void setUserMapper(UserDao userMapper) {
+	public void setUserMapper(UserDao userMapper) throws Exception {
 		this.userMapper = userMapper;
 	}
 
 	@Override
-	public void add(User user) {
-		userMapper.addUser(user);
+	public boolean add(User user) throws Exception {
+		int count = userMapper.addUser(user);
+		return count > 0;
 	}
 
 	@Override
-	public void delete(String id) {
-		userMapper.deleteUser(id);
+	public boolean delete(String id) throws Exception {
+		int count = userMapper.deleteUser(id);
+		return count > 0;
 	}
 
 	@Override
-	public void update(User user) {
-		userMapper.updateUser(user);
+	public boolean update(User user) throws Exception {
+		int count = userMapper.updateUser(user);
+		return count > 0;
 	}
 
 	@Override
-	public User getUser(String id) {
+	public User getUser(String id) throws Exception {
 		return userMapper.getUser(id);
 	}
 
 	@Override
-	public List<User> getUsers() {
+	public List<User> getUsers() throws Exception {
 		return userMapper.getUsers();
 	}
 
 	@Override
-	public List<User> getUsers(UserDto userDto) {
+	public List<User> getUsers(UserDto userDto) throws Exception {
 		return userMapper.getUsersPage(userDto);
 	}
 

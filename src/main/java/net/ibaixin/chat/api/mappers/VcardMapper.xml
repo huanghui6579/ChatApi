@@ -61,6 +61,16 @@
 	    delete from t_vcard where username = #{username}
 	</delete>
 	
+	<delete id="deleteVcards"><!--  parameterType="java.lang.reflect.Array" -->
+	    delete from t_vcard 
+		<where>
+	        username in 
+	        <foreach collection="array" open="(" close=")" separator="," item="uid" index="index">
+	            #{uid}
+	        </foreach>
+	    </where>
+	</delete>
+	
 	<update id="updateVcard" parameterMap="vcardParameterMap">
 	    update t_vcard set nickName = #{nickName}, realName = #{realName}, country = #{country}, province = #{province}, city = #{city}, street = #{street}, mobilePhone = #{mobilePhone}, telephone = #{telephone}, avatarPath = #{avatarPath}, mimeType = #{mimeType}, hash = #{hash}, gender = #{gender.value}, signature = #{signature} where username = #{username}
 	</update>
@@ -120,6 +130,14 @@
 	            #{uid}
 	        </foreach>
 	    </where>
+	</select>
+	
+	<select id="getVcardList" parameterType="java.util.Map" resultMap="vcardResultMap">
+	    select * from t_vcard LIMIT #{offset}, #{limit};
+	</select>
+	
+	<select id="getVcardListAll" resultMap="vcardResultMap">
+	    select * from t_vcard;
 	</select>
 	
 </mapper>

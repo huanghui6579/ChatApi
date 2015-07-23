@@ -6,15 +6,15 @@ import net.ibaixin.chat.api.model.User;
 import net.ibaixin.chat.api.model.UserDto;
 
 public interface IUserService {
-	public void add(User user);
+	public boolean add(User user) throws Exception;
 	
-	public void delete(String id);
+	public boolean delete(String id) throws Exception;
 	
-	public void update(User user);
+	public boolean update(User user) throws Exception;
 	
-	public User getUser(String id);
+	public User getUser(String id) throws Exception;
 	
-	public List<User> getUsers();
+	public List<User> getUsers() throws Exception;
 	
-	public List<User> getUsers(UserDto userDto);
+	public List<User> getUsers(UserDto userDto) throws Exception;
 }

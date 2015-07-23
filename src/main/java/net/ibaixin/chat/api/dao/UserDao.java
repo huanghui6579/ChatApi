@@ -6,15 +6,24 @@ import net.ibaixin.chat.api.model.User;
 import net.ibaixin.chat.api.model.UserDto;
 
 public interface UserDao {
-	public void addUser(User user);
+	public int addUser(User user) throws Exception;
 	
-	public void deleteUser(String id);
+	public int deleteUser(String id) throws Exception;
 	
-	public void updateUser(User user);
+	/**
+	 * 批量删除用户
+	 * @param ids 用户账号的集合
+	 * @return
+	 * @throws Exception
+	 * @update 2015年7月23日 上午10:31:19
+	 */
+	public int deleteUsers(List<String> ids) throws Exception;
 	
-	public User getUser(String id);
+	public int updateUser(User user) throws Exception;
 	
-	public List<User> getUsers();
+	public User getUser(String id) throws Exception;
 	
-	public List<User> getUsersPage(UserDto userDto);
+	public List<User> getUsers() throws Exception;
+	
+	public List<User> getUsersPage(UserDto userDto) throws Exception;
 }

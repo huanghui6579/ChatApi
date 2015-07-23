@@ -1,10 +1,14 @@
 package net.ibaixin.chat.api.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import net.ibaixin.chat.api.dao.VcardDao;
 import net.ibaixin.chat.api.model.Vcard;
@@ -240,5 +244,28 @@ public class VcardService implements IVcardService {
 		} else {
 			return false;
 		}
+	}
+
+	@Override
+	public List<Vcard> getVcardList(int pageOffset, int pageCount) throws Exception {
+		Map<String, Integer> param = new HashMap<>();
+		param.put("offset", pageOffset);
+		param.put("limit", pageCount);
+		return vcardDao.getVcardList(param);
+	}
+
+	@Override
+	public boolean deleteVcards(String[] ids) throws Exception {
+		if (!ArrayUtils.isEmpty(ids)) {
+			int count = vcardDao.deleteVcards(ids);
+			return count > 0;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public List<Vcard> getVcardListAll() throws Exception {
+		return vcardDao.getVcardListAll();
 	}
 }

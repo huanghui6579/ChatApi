@@ -1,6 +1,7 @@
 package net.ibaixin.chat.api.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import net.ibaixin.chat.api.model.Vcard;
 
@@ -30,6 +31,12 @@ public interface VcardDao {
 	 * @param id
 	 */
 	public int deleteVcard(String id) throws Exception;
+	
+	/**
+	 * 根据主键批量删除电子名片
+	 * @param ids
+	 */
+	public int deleteVcards(String[] ids) throws Exception;
 	
 	/**
 	 * 根据主键获得对应的电子名片信息
@@ -130,6 +137,24 @@ public interface VcardDao {
 	 * @return
 	 */
 	public List<Vcard> getVcards(List<String> ids) throws Exception;
+	
+	/**
+	 * 分页获取电子名片列表
+	 * @param param 参数集合，主要有offset:页面的索引位置，从0开始;limit:每页显示的数量
+	 * @return
+	 * @throws Exception
+	 * @update 2015年7月22日 下午3:27:59
+	 */
+	public List<Vcard> getVcardList(Map<String, Integer> param) throws Exception;
+	
+	/**
+	 * 获取电子名片列表
+	 * @param param 参数集合，主要有offset:页面的索引位置，从0开始;limit:每页显示的数量
+	 * @return
+	 * @throws Exception
+	 * @update 2015年7月22日 下午3:27:59
+	 */
+	public List<Vcard> getVcardListAll() throws Exception;
 	
 	/**
 	 * 判断是否存在该用户的电子名片信息
