@@ -103,6 +103,7 @@ public class UserController extends BaseController {
 	@RequestMapping(value = "/vcard/add", method = RequestMethod.POST)
 	@ResponseBody
 	public ActionResult<VcardDto> addVcard(@RequestParam(required = true) String jsonStr) {
+		logger.info("---------addVcard----jsonStr----" + jsonStr);
 		ActionResult<VcardDto> result = new ActionResult<>();
 		VcardDto vcardDto = null;
 		if (StringUtils.isNotBlank(jsonStr)) {
