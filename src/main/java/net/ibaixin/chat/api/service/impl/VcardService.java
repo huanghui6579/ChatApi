@@ -6,10 +6,12 @@ import java.util.Map;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import net.ibaixin.chat.api.controller.UserController;
 import net.ibaixin.chat.api.dao.VcardDao;
 import net.ibaixin.chat.api.model.Vcard;
 import net.ibaixin.chat.api.model.Vcard.Gender;
@@ -23,6 +25,7 @@ import net.ibaixin.chat.api.service.IVcardService;
  */
 @Service("vcardService")
 public class VcardService implements IVcardService {
+	private static Logger logger = Logger.getLogger(UserController.class); 
 	
 	@Autowired
 	private VcardDao vcardDao;
@@ -171,6 +174,7 @@ public class VcardService implements IVcardService {
 
 	@Override
 	public Vcard addVcard(Vcard vcard) throws Exception {
+		logger.info("----addVcard----" + vcard);
 		if (vcard != null) {
 			boolean existsVcard = existsVcard(vcard.getUsername());
 			if (existsVcard) {	//该用户名已经存在
