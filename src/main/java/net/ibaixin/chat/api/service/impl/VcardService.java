@@ -25,7 +25,7 @@ import net.ibaixin.chat.api.service.IVcardService;
  */
 @Service("vcardService")
 public class VcardService implements IVcardService {
-	private static Logger logger = Logger.getLogger(UserController.class); 
+	private static Logger logger = Logger.getLogger(VcardService.class); 
 	
 	@Autowired
 	private VcardDao vcardDao;
