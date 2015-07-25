@@ -7,7 +7,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
 
-import javax.activation.MimetypesFileTypeMap;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.FilenameUtils;
@@ -76,7 +75,7 @@ public class UserController extends BaseController {
 					vcardDto.setRealName(vcard.getRealName());
 					vcardDto.setStreet(vcard.getStreet());
 					vcardDto.setSignature(vcard.getSignature());
-					vcardDto.setAvatarPath(vcard.getAvatarPath());
+					vcardDto.setMimeType(vcard.getMimeType());
 					vcardDto.setHash(vcard.getHash());
 					result.setData(vcardDto);
 					result.setResultCode(ActionResult.CODE_SUCCESS);
@@ -125,7 +124,7 @@ public class UserController extends BaseController {
 		//账号、用户名
 		vcard.setUsername(vcardDto.getUsername());
 		vcard.setNickName(vcardDto.getNickName());
-		vcard.setAvatarPath(vcardDto.getAvatarPath());
+		vcard.setMimeType(vcardDto.getMimeType());
 		vcard.setCity(vcardDto.getCity());
 		vcard.setCountry(vcardDto.getCountry());
 		try {
@@ -134,10 +133,6 @@ public class UserController extends BaseController {
 			logger.error(e.getMessage(), e);
 		}
 		vcard.setHash(vcardDto.getHash());
-		if (StringUtils.isNoneBlank(vcardDto.getAvatarPath())) {
-			String mimeType = MimetypesFileTypeMap.getDefaultFileTypeMap().getContentType(vcardDto.getAvatarPath());
-			vcard.setMimeType(mimeType);
-		}
 		vcard.setMobilePhone(vcardDto.getMobilePhone());
 		vcard.setProvince(vcardDto.getProvince());
 		vcard.setRealName(vcardDto.getRealName());

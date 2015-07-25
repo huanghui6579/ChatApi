@@ -68,9 +68,9 @@ public class VcardDto {
 	private String signature;
 	
 	/**
-	 * 用户头像的原始图片的下载地址
+	 * 头像的mimeType
 	 */
-	private String avatarPath;
+	private String mimeType;
 	
 	/**
 	 * 文件的hash值
@@ -165,14 +165,6 @@ public class VcardDto {
 		this.username = username;
 	}
 
-	public String getAvatarPath() {
-		return avatarPath;
-	}
-
-	public void setAvatarPath(String avatarPath) {
-		this.avatarPath = avatarPath;
-	}
-
 	public String getHash() {
 		return hash;
 	}
@@ -181,11 +173,19 @@ public class VcardDto {
 		this.hash = hash;
 	}
 
+	public String getMimeType() {
+		return mimeType;
+	}
+
+	public void setMimeType(String mimeType) {
+		this.mimeType = mimeType;
+	}
+
 	@Override
 	public String toString() {
 		return "VcardDto [username=" + username + ", nickName=" + nickName + ", realName=" + realName + ", country="
 				+ country + ", province=" + province + ", city=" + city + ", street=" + street + ", mobilePhone="
 				+ mobilePhone + ", telephone=" + telephone + ", gender=" + gender + ", signature=" + signature
-				+ ", avatarPath=" + avatarPath + ", hash=" + hash + "]";
+				+ ", mimeType=" + mimeType + ", hash=" + hash + "]";
 	}
 }

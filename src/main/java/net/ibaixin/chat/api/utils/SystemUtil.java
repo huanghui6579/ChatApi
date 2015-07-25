@@ -11,7 +11,6 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class SystemUtil {
 	private SystemUtil() {}
@@ -76,7 +75,7 @@ public class SystemUtil {
 			MessageDigest digest = MessageDigest.getInstance("MD5");
 			digest.update(str.getBytes("UTF-8"));
 			byte[] hash = digest.digest();
-			StringBuffer hexString = new StringBuffer();
+			StringBuilder hexString = new StringBuilder();
 			for (int i = 0; i < hash.length; i++) {
 				if ((0xff & hash[i]) < 0x10) {
 					hexString.append(0).append(Integer.toHexString((0xFF & hash[i])));
