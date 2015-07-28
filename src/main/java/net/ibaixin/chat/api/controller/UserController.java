@@ -260,7 +260,7 @@ public class UserController extends BaseController {
 		if (StringUtils.isNotBlank(username)) {
 			try {
 				Vcard vcard = vcardService.getAvatarInfo(username);
-				logger.debug("-----username-----" + username + "-------fileType-----" + fileType + "---vcard---" + vcard);
+				logger.info("-----username-----" + username + "-------fileType-----" + fileType + "---vcard---" + vcard);
 				if (vcard != null) {
 					vcard.setUsername(username);
 					File avatarFile = getAvatarSaveFile(request, vcard, fileType);
