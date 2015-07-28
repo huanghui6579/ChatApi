@@ -213,6 +213,9 @@
 		    }
 		    reader.readAsDataURL(file);
 		}
+		var bar = $('.bar');
+		var percent = $('.percent');
+		var status = $('#status');
 		$('#myForm').ajaxForm({
 			dataType:  'json',
 			beforeSerialize: function(form, options) {
