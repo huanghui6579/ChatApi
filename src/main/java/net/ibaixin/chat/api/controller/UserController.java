@@ -95,19 +95,25 @@ public class UserController extends BaseController {
 	
 	/**
 	 * 添加电子名片信息，新建时，只添加部分字段，其余字段需更新
-	 * @param jsonStr
+	 * @param jsonStr 电子名片信息的json字符串，该参数是必需的
+	 * @param files 文件上传的头像数组，该参数不是必需的
+	 * @param attachStr 头像的json字符串， 该参数不是必需的
 	 * @return
 	 * @update 2015年7月16日 上午10:29:40
 	 */
 	@RequestMapping(value = "/vcard/add", method = RequestMethod.POST)
 	@ResponseBody
-	public ActionResult<VcardDto> addVcard(@RequestParam(required = true) String jsonStr) {
+	public ActionResult<VcardDto> addVcard(@RequestParam(required = true) String jsonStr, @RequestParam(value = "avatarFile", required = false) MultipartFile[] files, @RequestParam(required = false) String attachStr, HttpServletRequest request) {
 		logger.info("---------addVcard----jsonStr----" + jsonStr);
 		ActionResult<VcardDto> result = new ActionResult<>();
 		VcardDto vcardDto = null;
+		AttachDto attachDto = null;
 		if (StringUtils.isNotBlank(jsonStr)) {
 			try {
 				vcardDto = SystemUtil.json2obj(jsonStr, VcardDto.class);
+				if (StringUtils.isNotBlank(attachStr)) {
+					attachDto = SystemUtil.json2obj(attachStr, AttachDto.class);
+				}
 			} catch (IOException e) {
 				result.setResultCode(ActionResult.CODE_ERROR);
 				logger.error((e == null ? "error" : e.getMessage()), e);
@@ -121,8 +127,10 @@ public class UserController extends BaseController {
 			return result;
 		}
 		Vcard vcard = new Vcard();
+		String username = vcardDto.getUsername();
+		
 		//账号、用户名
-		vcard.setUsername(vcardDto.getUsername());
+		vcard.setUsername(username);
 		vcard.setNickName(vcardDto.getNickName());
 		vcard.setMimeType(vcardDto.getMimeType());
 		vcard.setCity(vcardDto.getCity());
@@ -139,10 +147,19 @@ public class UserController extends BaseController {
 		vcard.setSignature(vcardDto.getSignature());
 		vcard.setStreet(vcardDto.getStreet());
 		vcard.setTelephone(vcardDto.getTelephone());
+		
+		//处理文件上传，保存文件
+		if (attachDto != null) {
+			attachDto.setSender(username);
+			boolean success = handlerAvatarUpload(files, attachDto, request, vcard);
+			logger.info("---addVcard---handlerAvatarUpload-----attachDto---" + attachDto + "----result----" + success);
+		}
+		
 		try {
 			vcard = vcardService.addVcard(vcard);
 			if (vcard != null) {
 				result.setResultCode(ActionResult.CODE_SUCCESS);
+				
 			} else {
 				logger.warn("------vcard 添加失败------" + vcard);
 				result.setResultCode(ActionResult.CODE_ERROR);
@@ -186,62 +203,91 @@ public class UserController extends BaseController {
 		}
 		//判断文件是否为空
 		if (files != null && files.length > 0) {
-			String sender = attachDto.getSender();
-			String hash = attachDto.getHash();
-			String fileName = attachDto.getFileName();
-			String mimeType = attachDto.getMimeType();
-			
-			//源文件的存储路径
-			File avatarSaveDir = getAvatarSaveDir(request, sender, FILE_TYPE_ORIGINAL);
-			//缩略图的存储路径
-			File avatarThumbSaveDir = getAvatarSaveDir(request, sender, FILE_TYPE_THUMB);
-			
-			//原始文件的名称
-			String avatarName = avatarName(sender, FILE_TYPE_ORIGINAL);
-			//文件的缩略图名称
-			String avatarThumbName = avatarName(sender, FILE_TYPE_THUMB);
-			logger.info("---原始文件保存路径----" + avatarSaveDir);
-			for (MultipartFile file : files) {
-				if (!file.isEmpty()) {
-					String originalFilename = file.getOriginalFilename();
-					//文件的后缀
-					String ext = FilenameUtils.getExtension(originalFilename);
-					//保存文件到本地
-					if (!originalFilename.equals(fileName)) {	//缩略图
-						if (StringUtils.isNotBlank(ext)) {
-							avatarThumbName = avatarThumbName + "." + ext;
-						}
-						saveFile(file, avatarThumbSaveDir, avatarThumbName);
-					} else {
-						if (StringUtils.isNotBlank(ext)) {
-							avatarName = avatarName + "." + ext;
-						}
-						saveFile(file, avatarSaveDir, avatarName);
-					}
-				}
-			}
-			
-			//添加或者保存该头像信息
 			Vcard vcard = new Vcard();
-			vcard.setUsername(sender);
-			vcard.setAvatarPath(avatarName);
-			vcard.setMimeType(mimeType);
-			vcard.setHash(hash);
-			
-			try {
-				boolean success = vcardService.updateAvatar(vcard);
-				if (success) {
-					result.setResultCode(ActionResult.CODE_SUCCESS);
-				} else {
-					logger.warn("------vcard 更新失败------" + vcard);
+			boolean success = false;
+			success = handlerAvatarUpload(files, attachDto, request, vcard);
+			if (success) {	//处理成功
+				try {
+					success = vcardService.updateAvatar(vcard);
+					if (success) {
+						result.setResultCode(ActionResult.CODE_SUCCESS);
+					} else {
+						logger.warn("------vcard 更新失败------" + vcard);
+						result.setResultCode(ActionResult.CODE_ERROR);
+					}
+				} catch (Exception e) {
 					result.setResultCode(ActionResult.CODE_ERROR);
+					logger.error(e.getMessage());
 				}
-			} catch (Exception e) {
+			} else {	//处理失败
+				logger.error("----handlerAvatarUpload---failed---jsonStr----" + jsonStr);
 				result.setResultCode(ActionResult.CODE_ERROR);
-				logger.error(e.getMessage());
 			}
 		}
 		return result;
+	}
+	
+	/**
+	 * 处理电子名片的头像上传
+	 * @param files 文件数组
+	 * @param attachDto 文件信息实体
+	 * @param vcard 电子名片实体
+	 * @param request 
+	 * @return 是否处理成功
+	 * @update 2015年7月29日 上午9:56:54
+	 */
+	private boolean handlerAvatarUpload(MultipartFile[] files, AttachDto attachDto, HttpServletRequest request, Vcard vcard) {
+		//判断文件是否为空
+		if (files != null && files.length > 0) {
+			try {
+				String sender = attachDto.getSender();
+				String hash = attachDto.getHash();
+				String fileName = attachDto.getFileName();
+				String mimeType = attachDto.getMimeType();
+				
+				//源文件的存储路径
+				File avatarSaveDir = getAvatarSaveDir(request, sender, FILE_TYPE_ORIGINAL);
+				//缩略图的存储路径
+				File avatarThumbSaveDir = getAvatarSaveDir(request, sender, FILE_TYPE_THUMB);
+				
+				//原始文件的名称
+				String avatarName = avatarName(sender, FILE_TYPE_ORIGINAL);
+				//文件的缩略图名称
+				String avatarThumbName = avatarName(sender, FILE_TYPE_THUMB);
+				logger.info("---原始文件保存路径----" + avatarSaveDir);
+				for (MultipartFile file : files) {
+					if (!file.isEmpty()) {
+						String originalFilename = file.getOriginalFilename();
+						//文件的后缀
+						String ext = FilenameUtils.getExtension(originalFilename);
+						//保存文件到本地
+						if (!originalFilename.equals(fileName)) {	//缩略图
+							if (StringUtils.isNotBlank(ext)) {
+								avatarThumbName = avatarThumbName + "." + ext;
+							}
+							saveFile(file, avatarThumbSaveDir, avatarThumbName);
+						} else {
+							if (StringUtils.isNotBlank(ext)) {
+								avatarName = avatarName + "." + ext;
+							}
+							saveFile(file, avatarSaveDir, avatarName);
+						}
+					}
+				}
+				
+				//添加或者保存该头像信息
+				vcard.setUsername(sender);
+				vcard.setAvatarPath(avatarName);
+				vcard.setMimeType(mimeType);
+				vcard.setHash(hash);
+				return true;
+			} catch (Exception e) {
+				logger.error(e.getMessage(), e);
+			}
+			return false;
+		} else {
+			return false;
+		}
 	}
 	
 	/**
