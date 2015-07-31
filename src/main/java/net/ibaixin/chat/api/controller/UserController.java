@@ -10,6 +10,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -358,12 +359,52 @@ public class UserController extends BaseController {
 	}
 	
 	/**
-	 * 获取对应的用户的好友的所有头像的hash值
+	 * 获取对应的用户所有头像的hash值和昵称等基本信息
+	 * @param usernameStr 用户名字符串，多个用户用","分割
 	 * @author tiger
 	 * @version 1.0.0
 	 * @update 2015年4月18日 下午5:54:16
+	 * @return
+	 */
+	@RequestMapping("/userSimpleVcards")
+	@ResponseBody
+	public ActionResult<List<Vcard>> getUsersSimpleVcards(@RequestParam String usernameStr) {
+		ActionResult<List<Vcard>> result = new ActionResult<>();
+		if (StringUtils.isNotBlank(usernameStr)) {
+			try {
+				String[] names = usernameStr.split(",");
+				if (ArrayUtils.isNotEmpty(names)) {
+					List<Vcard> list = null;
+					try {
+						list = vcardService.getSimpleVcardByIds(names);
+					} catch (Exception e) {
+						logger.error(e.getMessage(), e);
+					}
+					if (!CollectionUtils.isEmpty(list)) {
+						result.setData(list);
+						result.setResultCode(ActionResult.CODE_SUCCESS);
+					} else {
+						result.setResultCode(ActionResult.CODE_NO_DATA);
+					}
+				} else {
+					result.setResultCode(ActionResult.CODE_NO_DATA);
+				}
+			} catch (Exception e) {
+				logger.error(e.getMessage(), e);
+				result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+			}
+		} else {
+			logger.warn("------no username------");
+			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+		}
+		return result;
+	}
+	
+	/**
+	 * 根据用户名获取对应好友的简单电子名片信息，值包含昵称、头像hash、性别
 	 * @param username
 	 * @return
+	 * @update 2015年7月31日 下午7:36:44
 	 */
 	@RequestMapping("/rosterVcards/{username}")
 	@ResponseBody

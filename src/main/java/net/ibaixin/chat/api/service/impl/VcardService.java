@@ -9,9 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
 
-import net.ibaixin.chat.api.controller.UserController;
 import net.ibaixin.chat.api.dao.VcardDao;
 import net.ibaixin.chat.api.model.Vcard;
 import net.ibaixin.chat.api.model.Vcard.Gender;
@@ -271,5 +269,10 @@ public class VcardService implements IVcardService {
 	@Override
 	public List<Vcard> getVcardListAll() throws Exception {
 		return vcardDao.getVcardListAll();
+	}
+
+	@Override
+	public List<Vcard> getSimpleVcardByIds(String[] ids) throws Exception {
+		return vcardDao.getSimpleVcardByIds(ids);
 	}
 }

@@ -132,6 +132,16 @@
 	    </where>
 	</select>
 	
+	<select id="getSimpleVcardByIds" resultMap="vcardResultMap">
+	    select username, hash, nickName from t_vcard 
+	    <where>
+	        username in 
+	        <foreach collection="list" open="(" close=")" separator="," item="uid" index="index">
+	            #{uid}
+	        </foreach>
+	    </where>
+	</select>
+	
 	<select id="getVcardList" parameterType="java.util.Map" resultMap="vcardResultMap">
 	    select * from t_vcard LIMIT #{offset}, #{limit};
 	</select>
