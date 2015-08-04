@@ -366,7 +366,7 @@ public class UserController extends BaseController {
 	 * @update 2015年4月18日 下午5:54:16
 	 * @return
 	 */
-	@RequestMapping("/userSimpleVcards")
+	@RequestMapping("/vcard/userSimpleVcards")
 	@ResponseBody
 	public ActionResult<List<Vcard>> getUsersSimpleVcards(@RequestParam String usernameStr) {
 		ActionResult<List<Vcard>> result = new ActionResult<>();
