@@ -3,13 +3,18 @@ package net.ibaixin.chat.api.controller;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.fileupload.FileUpload;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -21,6 +26,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -184,8 +190,8 @@ public class UserController extends BaseController {
 	 */
 	@RequestMapping(value = "/uploadAvatar", method = RequestMethod.POST)
 	@ResponseBody
-	public ActionResult<Void> uploadAvatar(@RequestParam(value = "avatarFile", required = false) MultipartFile[] files, @RequestParam(required = true) String jsonStr, HttpServletRequest request) {
-		ActionResult<Void> result = new ActionResult<>();
+	public ActionResult<AttachDto> uploadAvatar(@RequestParam(value = "avatarFile", required = false) MultipartFile[] files, @RequestParam(required = true) String jsonStr, HttpServletRequest request) {
+		ActionResult<AttachDto> result = new ActionResult<>();
 		AttachDto attachDto = null;
 		if (StringUtils.isNotBlank(jsonStr)) {
 			try {
@@ -211,6 +217,10 @@ public class UserController extends BaseController {
 				try {
 					success = vcardService.updateAvatar(vcard);
 					if (success) {
+						attachDto = new AttachDto();
+						attachDto.setSender(vcard.getUsername());
+						attachDto.setHash(vcard.getHash());
+						result.setData(attachDto);
 						result.setResultCode(ActionResult.CODE_SUCCESS);
 					} else {
 						logger.warn("------vcard 更新失败------" + vcard);
@@ -355,6 +365,45 @@ public class UserController extends BaseController {
 		} else {
 			logger.warn("------no username------");
 			return new ResponseEntity<InputStreamResource>(null, headers, HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	/**
+	 * 将图片显示到页面中
+	 * @param request
+	 * @param response
+	 * @update 2015年8月11日 下午7:11:41
+	 */
+	@RequestMapping(value = "/avatar/show/{username}")
+	public void showImage(@PathVariable String username, int fileType, HttpServletRequest request, HttpServletResponse response) {
+		String avatarName = request.getParameter("avatarName");
+		if (fileType != FILE_TYPE_ORIGINAL && fileType != FILE_TYPE_THUMB) {	//默认为缩略图
+			fileType = FILE_TYPE_THUMB;
+		}
+		try {
+			Vcard vcard = null;
+			if (avatarName == null) {
+				//从数据库查询
+				vcard = vcardService.getAvatarInfo(username);
+			} else {
+				vcard = new Vcard();
+				vcard.setUsername(username);
+				vcard.setAvatarPath(avatarName);
+			}
+			if (vcard != null) {
+				File avatarFile = getAvatarSaveFile(request, vcard, fileType);
+				if (avatarFile != null && avatarFile.exists()) {	//文件存在
+					OutputStream os = response.getOutputStream();
+					FileUtils.copyFile(avatarFile, os);
+				} else {
+					logger.warn("-----showImage---文件不存在---avatarFile--" + avatarFile + "----username----" + username + "-----的头像数据---fileType--" + fileType + "---avatarName----" + avatarName);
+				}
+			} else {
+				//没有该好友的数据
+				logger.warn("-----showImage---没有--" + username + "-----的头像数据---fileType--" + fileType + "---avatarName----" + avatarName);
+			}
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
 		}
 	}
 	
