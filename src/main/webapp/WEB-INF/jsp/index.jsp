@@ -382,8 +382,13 @@
 				//console.info(row);	//<tr class="odd" role="row">
 				var thumbTd = $(row).children('td:first');
 				var originalTd = $(thumbTd).next('td');
-				var imgThumbUrl = "user/avatar/show/" + data.username + "?fileType=1&avatarName=" + data.avatarPath;
-				var imgOriginalUrl = "user/avatar/show/" + data.username + "?fileType=2&avatarName=" + data.avatarPath;
+				var avatarName = data.avatarPath;
+				var imgThumbUrl = '#';
+				var imgOriginalUrl = '#';
+				if (avatarName != null && avatarName != 'undefined') {
+					imgThumbUrl = "user/avatar/show/" + data.username + "?fileType=1&avatarName=" + avatarName;
+					imgOriginalUrl = "user/avatar/show/" + data.username + "?fileType=2&avatarName=" + avatarName;
+				}
 				$(thumbTd).html("<img src='" + imgThumbUrl + "' width='64px' height='64px' title='" + data.username + "' />");
 				$(originalTd).html("<img src='" + imgOriginalUrl + "' width='100px' height='100px' title='" + data.username + "' />");
 				//console.info(data.username);	//data obj
