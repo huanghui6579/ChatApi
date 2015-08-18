@@ -136,7 +136,7 @@
 	    select username, hash, nickName from t_vcard 
 	    <where>
 	        username in 
-	        <foreach collection="list" open="(" close=")" separator="," item="uid" index="index">
+	        <foreach collection="array" open="(" close=")" separator="," item="uid" index="index">
 	            #{uid}
 	        </foreach>
 	    </where>

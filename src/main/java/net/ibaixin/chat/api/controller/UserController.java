@@ -214,8 +214,8 @@ public class UserController extends BaseController {
 			boolean success = false;
 			success = handlerAvatarUpload(files, attachDto, request, vcard);
 			if (success) {	//处理成功
-				try {
-					success = vcardService.updateAvatar(vcard);
+				try {//若更新失败，则可能是没有该记录，则添加该记录
+					success = vcardService.saveAvatar(vcard);
 					if (success) {
 						attachDto = new AttachDto();
 						attachDto.setSender(vcard.getUsername());
