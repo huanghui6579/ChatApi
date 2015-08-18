@@ -133,7 +133,7 @@
 	</select>
 	
 	<select id="getSimpleVcardByIds" resultMap="vcardResultMap">
-	    select username, hash, nickName from t_vcard 
+	    select username, hash, nickName, mimeType from t_vcard 
 	    <where>
 	        username in 
 	        <foreach collection="array" open="(" close=")" separator="," item="uid" index="index">

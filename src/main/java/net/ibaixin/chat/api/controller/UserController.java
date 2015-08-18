@@ -417,7 +417,7 @@ public class UserController extends BaseController {
 	 */
 	@RequestMapping("/vcard/userSimpleVcards")
 	@ResponseBody
-	public ActionResult<List<Vcard>> getUsersSimpleVcards(@RequestParam String usernameStr) {
+	public ActionResult<List<Vcard>> getUserSimpleVcards(@RequestParam String usernameStr) {
 		ActionResult<List<Vcard>> result = new ActionResult<>();
 		if (StringUtils.isNotBlank(usernameStr)) {
 			try {
