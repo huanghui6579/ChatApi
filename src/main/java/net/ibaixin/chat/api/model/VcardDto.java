@@ -33,14 +33,29 @@ public class VcardDto {
 	private String country;
 	
 	/**
+	 * 国家编码，如：中国---86
+	 */
+	private int countryId;
+	
+	/**
 	 * 用户的省份
 	 */
 	private String province;
 	
 	/**
+	 * 省份编码
+	 */
+	private int provinceId;
+	
+	/**
 	 * 用户所在的城市
 	 */
 	private String city;
+	
+	/**
+	 * 城市编码
+	 */
+	private int cityId;
 	
 	/**
 	 * 用户所在的街道地址，详细地址
@@ -181,11 +196,36 @@ public class VcardDto {
 		this.mimeType = mimeType;
 	}
 
+	public int getCountryId() {
+		return countryId;
+	}
+
+	public void setCountryId(int countryId) {
+		this.countryId = countryId;
+	}
+
+	public int getProvinceId() {
+		return provinceId;
+	}
+
+	public void setProvinceId(int provinceId) {
+		this.provinceId = provinceId;
+	}
+
+	public int getCityId() {
+		return cityId;
+	}
+
+	public void setCityId(int cityId) {
+		this.cityId = cityId;
+	}
+
 	@Override
 	public String toString() {
 		return "VcardDto [username=" + username + ", nickName=" + nickName + ", realName=" + realName + ", country="
-				+ country + ", province=" + province + ", city=" + city + ", street=" + street + ", mobilePhone="
-				+ mobilePhone + ", telephone=" + telephone + ", gender=" + gender + ", signature=" + signature
-				+ ", mimeType=" + mimeType + ", hash=" + hash + "]";
+				+ country + ", countryId=" + countryId + ", province=" + province + ", provinceId=" + provinceId
+				+ ", city=" + city + ", cityId=" + cityId + ", street=" + street + ", mobilePhone=" + mobilePhone
+				+ ", telephone=" + telephone + ", gender=" + gender + ", signature=" + signature + ", mimeType="
+				+ mimeType + ", hash=" + hash + "]";
 	}
 }

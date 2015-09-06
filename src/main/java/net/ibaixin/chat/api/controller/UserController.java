@@ -74,11 +74,14 @@ public class UserController extends BaseController {
 					VcardDto vcardDto = new VcardDto();
 					vcardDto.setUsername(username);
 					vcardDto.setCity(vcard.getCity());
+					vcardDto.setCityId(vcard.getCityId());
 					vcardDto.setCountry(vcard.getCountry());
+					vcardDto.setCountryId(vcard.getCountryId());
 					vcardDto.setGender(vcard.getGender().ordinal());
 					vcardDto.setMobilePhone(vcard.getMobilePhone());
 					vcardDto.setNickName(vcard.getNickName());
 					vcardDto.setProvince(vcard.getProvince());
+					vcardDto.setProvinceId(vcard.getProvinceId());
 					vcardDto.setRealName(vcard.getRealName());
 					vcardDto.setStreet(vcard.getStreet());
 					vcardDto.setSignature(vcard.getSignature());
