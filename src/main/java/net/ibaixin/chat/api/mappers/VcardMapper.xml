@@ -8,8 +8,11 @@
         <result column="nickName" property="nickName"/>
         <result column="realName" property="realName"/>
         <result column="country" property="country"/>
+        <result column="countryId" property="countryId"/>
         <result column="province" property="province"/>
+        <result column="provinceId" property="provinceId"/>
         <result column="city" property="city"/>
+        <result column="cityId" property="cityId"/>
         <result column="street" property="street"/>
         <result column="mobilePhone" property="mobilePhone"/>
         <result column="telephone" property="telephone"/>
@@ -25,8 +28,11 @@
         <parameter property="nickName" />
         <parameter property="realName" />
         <parameter property="country" />
+        <parameter property="countryId" />
         <parameter property="province" />
+        <parameter property="provinceId" />
         <parameter property="city" />
+        <parameter property="cityId" />
         <parameter property="street" />
         <parameter property="mobilePhone" />
         <parameter property="telephone" />
@@ -54,7 +60,7 @@
 	</select>
 	
 	<insert id="addVcard" parameterMap="vcardParameterMap">
-	    insert into t_vcard values (#{username}, #{nickName}, #{realName}, #{country}, #{province}, #{city}, #{street}, #{mobilePhone}, #{telephone}, #{avatarPath}, #{mimeType}, #{gender.value}, #{signature}, #{hash})
+	    insert into t_vcard values (#{username}, #{nickName}, #{realName}, #{country}, #{countryId}, #{province}, #{provinceId}, #{city}, #{cityId}, #{street}, #{mobilePhone}, #{telephone}, #{avatarPath}, #{mimeType}, #{gender.value}, #{signature}, #{hash})
 	</insert>
 	
 	<delete id="deleteVcard" parameterType="java.lang.String">
@@ -72,7 +78,7 @@
 	</delete>
 	
 	<update id="updateVcard" parameterMap="vcardParameterMap">
-	    update t_vcard set nickName = #{nickName}, realName = #{realName}, country = #{country}, province = #{province}, city = #{city}, street = #{street}, mobilePhone = #{mobilePhone}, telephone = #{telephone}, avatarPath = #{avatarPath}, mimeType = #{mimeType}, hash = #{hash}, gender = #{gender.value}, signature = #{signature} where username = #{username}
+	    update t_vcard set nickName = #{nickName}, realName = #{realName}, country = #{country}, countryId = #{countryId}, province = #{province}, provinceId = #{provinceId}, city = #{city}, cityId = #{cityId}, street = #{street}, mobilePhone = #{mobilePhone}, telephone = #{telephone}, avatarPath = #{avatarPath}, mimeType = #{mimeType}, hash = #{hash}, gender = #{gender.value}, signature = #{signature} where username = #{username}
 	</update>
 	
 	<update id="updateAvatar" parameterMap="vcardParameterMap">
@@ -99,9 +105,10 @@
 	    update t_vcard set 
 	    <if test="country != null and country != ''">
 	        country = #{country}, 
+	        countryId = #{countryId}, 
 	    </if>
 	    
-	    province = #{province}, city = #{city}
+	    province = #{province}, provinceId = #{provinceId}, city = #{city}, cityId = #{cityId}
 	    
 	    <if test="street != null and street != ''">
 	        , street = #{street} 

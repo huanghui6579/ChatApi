@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : mysql
-Source Server Version : 50625
-Source Host           : localhost:3306
-Source Database       : chat_api
+Source Server         : ibaixin
+Source Server Version : 50173
+Source Host           : www.ibaixin.net:3306
+Source Database       : ibaixin_chat_api
 
 Target Server Type    : MYSQL
-Target Server Version : 50625
+Target Server Version : 50173
 File Encoding         : 65001
 
-Date: 2015-07-15 19:45:06
+Date: 2015-09-06 14:46:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -50,5 +50,8 @@ CREATE TABLE `t_vcard` (
   `gender` tinyint(4) DEFAULT '0' COMMENT '性别，默认是0：未知，1：男，2:女',
   `signature` varchar(255) DEFAULT NULL COMMENT '个性签名',
   `hash` varchar(255) DEFAULT NULL COMMENT '文件的MD5 hash值',
+  `countryId` int(11) DEFAULT NULL COMMENT '国家编码，如：中国---86',
+  `provinceId` int(11) DEFAULT NULL COMMENT '省份的编码',
+  `cityId` int(11) DEFAULT NULL COMMENT '城市的编码',
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
