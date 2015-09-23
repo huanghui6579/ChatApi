@@ -144,7 +144,9 @@ public class UserController extends BaseController {
 		vcard.setNickName(vcardDto.getNickName());
 		vcard.setMimeType(vcardDto.getMimeType());
 		vcard.setCity(vcardDto.getCity());
+		vcard.setCityId(vcardDto.getCityId());
 		vcard.setCountry(vcardDto.getCountry());
+		vcard.setCountryId(vcardDto.getCountryId());
 		try {
 			vcard.setGender(Gender.valueOf(vcardDto.getGender()));
 		} catch (Exception e) {
@@ -153,6 +155,7 @@ public class UserController extends BaseController {
 		vcard.setHash(vcardDto.getHash());
 		vcard.setMobilePhone(vcardDto.getMobilePhone());
 		vcard.setProvince(vcardDto.getProvince());
+		vcard.setProvinceId(vcardDto.getProvinceId());
 		vcard.setRealName(vcardDto.getRealName());
 		vcard.setSignature(vcardDto.getSignature());
 		vcard.setStreet(vcardDto.getStreet());
@@ -166,6 +169,7 @@ public class UserController extends BaseController {
 		}
 		
 		try {
+			logger.info("-----addVcard----vcard--" + vcard);
 			vcard = vcardService.addVcard(vcard);
 			if (vcard != null) {
 				result.setResultCode(ActionResult.CODE_SUCCESS);
@@ -218,6 +222,7 @@ public class UserController extends BaseController {
 			success = handlerAvatarUpload(files, attachDto, request, vcard);
 			if (success) {	//处理成功
 				try {//若更新失败，则可能是没有该记录，则添加该记录
+					logger.info("------saveAvatar---vcard---" + vcard);
 					success = vcardService.saveAvatar(vcard);
 					if (success) {
 						attachDto = new AttachDto();
