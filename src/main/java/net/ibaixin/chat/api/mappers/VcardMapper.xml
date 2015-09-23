@@ -60,7 +60,7 @@
 	</select>
 	
 	<insert id="addVcard" parameterMap="vcardParameterMap">
-	    insert into t_vcard values (#{username}, #{nickName}, #{realName}, #{country}, #{countryId}, #{province}, #{provinceId}, #{city}, #{cityId}, #{street}, #{mobilePhone}, #{telephone}, #{avatarPath}, #{mimeType}, #{gender.value}, #{signature}, #{hash})
+	    insert into t_vcard values (#{username}, #{nickName}, #{realName}, #{country}, #{province}, #{city}, #{street}, #{mobilePhone}, #{telephone}, #{avatarPath}, #{mimeType}, #{gender.value}, #{signature}, #{hash}, #{countryId}, #{provinceId}, #{cityId})
 	</insert>
 	
 	<delete id="deleteVcard" parameterType="java.lang.String">
