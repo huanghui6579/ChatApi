@@ -212,4 +212,13 @@ public interface IVcardService {
 	 * @update 2015年7月30日 下午3:45:21
 	 */
 	public List<Vcard> getSimpleVcardByIds(String[] ids) throws Exception;
+	
+	/**
+	 * 根据用户名数组获取对应的简单的电子名片信息，只包括头像的hash，昵称，性别
+	 * @param id 主键，username
+	 * @return
+	 * @throws Exception
+	 * @update 2015年9月28日 下午3:56:36
+	 */
+	public Vcard getSimpleVcardById(String id) throws Exception;
 }

@@ -275,4 +275,9 @@ public class VcardService implements IVcardService {
 	public List<Vcard> getSimpleVcardByIds(String[] ids) throws Exception {
 		return vcardDao.getSimpleVcardByIds(ids);
 	}
+
+	@Override
+	public Vcard getSimpleVcardById(String id) throws Exception {
+		return vcardDao.getSimpleVcardById(id);
+	}
 }

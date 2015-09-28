@@ -491,6 +491,31 @@ public class UserController extends BaseController {
 	}
 	
 	/**
+	 * 获取用户简单的电子名片信息，值包含昵称、hash、mimeType等
+	 * @param username
+	 * @return
+	 * @update 2015年9月28日 下午4:02:54
+	 */
+	@RequestMapping("/vcard/userSimpleVcard/{username}")
+	@ResponseBody
+	public ActionResult<Vcard> getUserSimpleVcard(@PathVariable String username) {
+		ActionResult<Vcard> result = new ActionResult<>();
+		try {
+			Vcard vcard = vcardService.getSimpleVcardById(username);
+			if (vcard != null) {
+				result.setData(vcard);
+				result.setResultCode(ActionResult.CODE_SUCCESS);
+			} else {
+				result.setResultCode(ActionResult.CODE_NO_DATA);
+			}
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+		}
+		return result;
+	}
+	
+	/**
 	 * 根据用户名获取对应好友的简单电子名片信息，值包含昵称、头像hash、性别
 	 * @param username
 	 * @return

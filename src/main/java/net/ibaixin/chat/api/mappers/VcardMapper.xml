@@ -149,6 +149,10 @@
 	    </where>
 	</select>
 	
+	<select id="getSimpleVcardById" parameterType="java.lang.String" resultMap="vcardResultMap">
+	    select username, hash, nickName, mimeType from t_vcard username = #{username}
+	</select>
+	
 	<select id="getVcardList" parameterType="java.util.Map" resultMap="vcardResultMap">
 	    select * from t_vcard LIMIT #{offset}, #{limit};
 	</select>
