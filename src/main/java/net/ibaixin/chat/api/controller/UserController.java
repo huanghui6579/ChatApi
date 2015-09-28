@@ -90,7 +90,40 @@ public class UserController extends BaseController {
 					result.setData(vcardDto);
 					result.setResultCode(ActionResult.CODE_SUCCESS);
 				} else {
-					logger.warn("------vcard 获取信息失败------" + vcard);
+					logger.warn("------vcard 为空---username---" + username);
+					result.setResultCode(ActionResult.CODE_NO_DATA);
+				}
+			} catch (Exception e) {
+				result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+				e.printStackTrace();
+			}
+		} else {	//错误的请求参数
+			result.setResultCode(ActionResult.CODE_ERROR_PARAM);
+		}
+		return result;
+	}
+	
+	/**
+	 * 获取用户头像的hash值
+	 * @param username
+	 * @return
+	 * @update 2015年9月28日 下午3:20:44
+	 */
+	@RequestMapping("/vcard/icon/{username}")
+	@ResponseBody
+	public ActionResult<VcardDto> getIconHash(@PathVariable String username) {
+		ActionResult<VcardDto> result = new ActionResult<>();
+		if (StringUtils.isNotBlank(username)) {
+			try {
+				String iconHash = vcardService.getAvatarHash(username);
+				if (StringUtils.isNoneBlank(iconHash)) {
+					VcardDto vcardDto = new VcardDto();
+					vcardDto.setUsername(username);
+					vcardDto.setHash(iconHash);
+					result.setData(vcardDto);
+					result.setResultCode(ActionResult.CODE_SUCCESS);
+				} else {
+					logger.warn("------getIconHash iconHash---为空---username----" + username);
 					result.setResultCode(ActionResult.CODE_NO_DATA);
 				}
 			} catch (Exception e) {
