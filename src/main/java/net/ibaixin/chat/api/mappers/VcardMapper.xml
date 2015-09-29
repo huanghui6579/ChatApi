@@ -150,7 +150,7 @@
 	</select>
 	
 	<select id="getSimpleVcardById" parameterType="java.lang.String" resultMap="vcardResultMap">
-	    select username, hash, nickName, mimeType from t_vcard username = #{username}
+	    select username, hash, nickName, mimeType from t_vcard where username = #{username}
 	</select>
 	
 	<select id="getVcardList" parameterType="java.util.Map" resultMap="vcardResultMap">
