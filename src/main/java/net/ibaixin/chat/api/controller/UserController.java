@@ -502,6 +502,7 @@ public class UserController extends BaseController {
 		ActionResult<Vcard> result = new ActionResult<>();
 		try {
 			Vcard vcard = vcardService.getSimpleVcardById(username);
+			logger.debug("------getUserSimpleVcard---username----" + username + "-----vcard-----" + vcard);
 			if (vcard != null) {
 				result.setData(vcard);
 				result.setResultCode(ActionResult.CODE_SUCCESS);
