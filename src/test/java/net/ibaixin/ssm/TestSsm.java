@@ -23,9 +23,11 @@ import net.ibaixin.chat.api.model.AttachDto;
 import net.ibaixin.chat.api.model.Attachment;
 import net.ibaixin.chat.api.model.Vcard;
 import net.ibaixin.chat.api.model.Vcard.Gender;
+import net.ibaixin.chat.api.model.home.HomeComment;
 import net.ibaixin.chat.api.service.IAttachService;
 import net.ibaixin.chat.api.service.IUserService;
 import net.ibaixin.chat.api.service.IVcardService;
+import net.ibaixin.chat.api.service.home.ICommentService;
 import net.ibaixin.chat.api.service.impl.IRosterOpenfireService;
 import net.ibaixin.chat.api.utils.SystemUtil;
 
@@ -50,6 +52,8 @@ public class TestSsm {
 
     private ObjectMapper objectMapper = null;
     
+    @Autowired
+    private ICommentService commentService;
     
     @Before
     public void setup() {
@@ -291,5 +295,20 @@ public class TestSsm {
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 		}
+	}
+	
+	@Test
+	public void testAddComment() {
+		HomeComment comment = new HomeComment();
+		comment.setName("张三");
+		comment.setContent("测试留意");
+		comment.setEmail("aaa@123.com");
+		comment.setIp("127.0.0.1");
+		comment.setLocation("广东");
+		comment.setOs("Windows 7");
+		comment.setSubject("测试主题");
+		comment.setTime(new Date());
+		
+		commentService.addComment(comment);
 	}
 }

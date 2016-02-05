@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.ibaixin.chat.api.dao.home.CommentDao">
+    
+    <resultMap type="HomeComment" id="homeCommentMap">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="subject" property="subject"/>
+        <result column="email" property="email"/>
+        <result column="content" property="content"/>
+        <result column="time" property="time"/>
+        <result column="ip" property="ip"/>
+        <result column="os" property="os"/>
+        <result column="mac" property="mac"/>
+        <result column="browser" property="browser"/>
+        <result column="location" property="location"/>
+    </resultMap>
+    
+    <!-- <parameterMap type="Vcard" id="vcardParameterMap">
+        <parameter property="username" />
+        <parameter property="nickName" />
+        <parameter property="realName" />
+        <parameter property="country" />
+        <parameter property="countryId" />
+        <parameter property="province" />
+        <parameter property="provinceId" />
+        <parameter property="city" />
+        <parameter property="cityId" />
+        <parameter property="street" />
+        <parameter property="mobilePhone" />
+        <parameter property="telephone" />
+        <parameter property="avatarPath" />
+        <parameter property="mimeType" />
+        <parameter property="gender" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler" />
+        <parameter property="signature" />
+        <parameter property="hash" />
+    </parameterMap> -->
+    
+	<insert id="addComment" parameterType="HomeComment">
+	    insert into t_home_comment (name, subject, email, content, time, ip, os, mac, browser, location) values (#{name}, #{subject}, #{email}, #{content}, #{time}, #{ip}, #{os}, #{mac}, #{browser}, #{location})
+	</insert>
+	
+	
+</mapper>
